@@ -1,0 +1,5 @@
+{
+    "min_malware_score": 30,
+    "min_suspicious_score": 15,
+    "selected": 3
+}

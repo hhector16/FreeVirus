@@ -1,0 +1,687 @@
+import sys
+import json
+from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QHBoxLayout, QPushButton, QLabel, QFrame, QStackedWidget, QPlainTextEdit, QScrollArea, QToolButton
+from PyQt5.QtGui import QPixmap, QFont
+from PyQt5.QtCore import pyqtSignal, Qt, QSize
+from Active_label import *
+
+
+class ClickableLabel(QLabel):
+    clicked = pyqtSignal()
+    def __init__(self, parent=None):
+        super().__init__(parent)
+
+    def mousePressEvent(self, event):
+        if event.button() == Qt.LeftButton:
+            self.clicked.emit()
+
+class Image_label(QLabel):
+    def __init__(self,x,min_malware,min_suspicious):
+        super().__init__()
+        self.setCursor(Qt.PointingHandCursor)
+        self.id = x
+        self.min_malware = min_malware
+        self.min_suspicious = min_suspicious
+
+    def seleccionar(self):
+        global selected_image
+
+        if selected_image is not None:
+            selected_image.setStyleSheet("border: none;")
+
+        try:
+            with open("conf.json","r") as f:
+                data = json.load(f)
+            data["selected"] = self.id
+            data["min_malware_score"] = self.min_malware
+            data["min_suspicious_score"] = self.min_suspicious
+            with open("conf.json","w") as f:
+                json.dump(data,f,indent=4)
+        except Exception as e:
+            print("Error grave al cambiar configuración de protección, ",e)
+
+        self.setStyleSheet("border: 3px solid blue;")
+        selected_image = self
+    
+
+
+
+    def mousePressEvent(self, event):
+        self.seleccionar()
+            
+class topbar(QWidget):
+    def __init__(self,parent):
+        super().__init__()
+        self.setFixedHeight(40)
+        self.parent_window = parent
+        self.setStyleSheet("background-color: #262626;")
+        
+        self.close_button = QPushButton("X")
+        self.close_button.clicked.connect(self.parent_window.close)    
+        self.close_button.setStyleSheet("""
+            QPushButton {
+                background-color: none;
+                border: none;
+                color: red;
+                font-weight: bold;
+            }
+            QPushButton:hover {
+                color: white;  
+            }
+        """)
+        self.close_button.setFixedSize(30, 30)
+        
+        self.min_button = QPushButton("-")
+        self.min_button.clicked.connect(self.parent_window.showMinimized)
+        self.min_button.setStyleSheet("""
+            QPushButton {
+                background-color: none;
+                border: none;
+                color: white;
+                font-weight: bold;
+                font-size: 20px;
+            }
+            QPushButton:hover {
+                color: gray;  
+            }
+        """)
+        self.min_button.setFixedSize(30, 30)
+        topBar_layout=QHBoxLayout(self)
+        topBar_layout.setAlignment(Qt.AlignRight)
+        topBar_layout.setContentsMargins(0, 0, 10, 0)
+        topBar_layout.setSpacing(0)
+        bar1, bar2 = QLabel("|"), QLabel("|")
+        bar1.setStyleSheet("background-color: none;")
+        bar2.setStyleSheet("background-color: none;")
+        topBar_layout.addWidget(bar1)
+        topBar_layout.addWidget(self.min_button)
+        topBar_layout.addWidget(bar2)
+        topBar_layout.addWidget(self.close_button)  
+        
+    # Al presionar el mouse
+    def mousePressEvent(self, event):
+        if event.button() == Qt.LeftButton:
+            self.oldPos = event.globalPos()  # guardamos posición inicial del mouse
+
+    # Al mover el mouse mientras se mantiene presionado
+    def mouseMoveEvent(self, event):
+        if event.buttons() == Qt.LeftButton:
+            delta = event.globalPos() - self.oldPos  # calculamos desplazamiento
+            self.parent_window.move(self.parent_window.x() + delta.x(),
+                                        self.parent_window.y() + delta.y())  # movemos la ventana
+            self.oldPos = event.globalPos()  # actualizamos posición
+
+class rightContainer(QWidget):
+    
+    class IndexScreen(QWidget):
+        def __init__(self):
+            super().__init__()
+            self.setStyleSheet("background-color: #3d3d3d;")  # gris claro
+            self.layout=QVBoxLayout(self)
+            self.layout.setContentsMargins(0, 0, 0, 0)
+            self.layout.setSpacing(0)
+            self.layout.setAlignment(Qt.AlignTop)
+            
+            title = QLabel("Index")
+            title.setStyleSheet("font-size: 24px; color: lightgreen; margin: 60px;")
+            
+            introduction = QLabel("Bienvenido a FreeVirus, nuestra aplicación dedicada al estudio y analisis del funcionamiento de los antivirus. Hemos desarrollado el software de un antivirus funcional como cualquier otro con la difrencia de que nos vamos a enfocar en explcicar su funcionamiento interno con fines educativos. Esta idea surgió ya que mediante mi proceso de investigación del funcionamiento de este tipo de software, era todo muy técnico y complejo para alguien sin conocimientos. Por ello, el objetivo de este TFG es desarrollar una aplicación con el fin de tratar de explicar visualmente su funcionamiento de forma que es más fácil de estudiarlo sin tener un conocimiento previo.")
+            introduction.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 40px; margin-right: 40px;") 
+            introduction.setAlignment(Qt.AlignCenter)
+            introduction.setWordWrap(True)
+            
+            introduction2 = QLabel("A la izquierda se encuentran botones con las diferentes secciones de la aplicación. Para observar el funcionamiento del antivirus sin poner en peligro su equipo, hemos creado un apartado de simulación en el que se muestran ejemplos de virus para comprobar el funcionamiento.")
+            introduction2.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 40px; margin-right: 40px;") 
+            introduction2.setAlignment(Qt.AlignCenter)
+            introduction2.setWordWrap(True)
+            
+            
+            self.layout.addWidget(title, alignment=Qt.AlignHCenter)
+            self.layout.addWidget(introduction)
+            self.layout.addWidget(introduction2)
+    
+    class DashboardScreen(QWidget):
+        def __init__(self):
+            super().__init__()
+            self.setStyleSheet("background-color: #3d3d3d;")  # gris claro
+            self.layout=QVBoxLayout(self)
+            self.layout.setContentsMargins(0, 0, 0, 0)
+            self.layout.setSpacing(0)
+            self.layout.setAlignment(Qt.AlignTop)
+            
+            title = QLabel("Dashboard Screen")
+            title.setStyleSheet("font-size: 24px; color: lightgreen; margin: 60px;")
+            p1 = QLabel("The dashboard contains a summary of the antivirus, including two screens where you can see every fanotify detection and python analysis in real time including hash verification etc...")
+            p1.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 40px; margin-right: 40px;") 
+            p1.setAlignment(Qt.AlignCenter)
+            p1.setWordWrap(True)
+
+            data = Active_label()
+
+            self.layout.addWidget(title, alignment=Qt.AlignHCenter)
+            self.layout.addWidget(p1)
+            self.layout.addWidget(data,alignment=Qt.AlignHCenter)
+            
+    class ProtectionScreen(QWidget):
+
+        
+
+        def __init__(self):
+            super().__init__()
+            self.setStyleSheet("background-color: #3d3d3d;")  # gris claro
+            self.layout=QVBoxLayout(self)
+            self.layout.setContentsMargins(0, 0, 0, 0)
+            self.layout.setSpacing(0)
+            self.layout.setAlignment(Qt.AlignTop)
+                
+            title = QLabel("Protection Screen")
+            title.setStyleSheet("font-size: 24px; color: lightgreen; margin: 60px;")
+            p1 = QLabel("In this screen you will be able to change the level of protection of the antivirus, changing this affects in how the antivirus reacts to unknown and suspicious files, the more protection addes the more secutirty but may block some harmless files resulting in false positives. By defect its in the intermediate level, where unknown files are treated as suspicious.")
+            p1.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 40px; margin-right: 40px;") 
+            p1.setAlignment(Qt.AlignCenter)
+            p1.setWordWrap(True)
+
+            container1 = QWidget()
+            container1.setStyleSheet("margin-top:50px;")
+            container1_layout = QHBoxLayout(container1)
+
+            # Imagen 1
+
+            protectionImage1 = Image_label(1,40,70)
+            pixmap1= QPixmap("images/av_rojo.png").scaled(int(200), int(200), Qt.KeepAspectRatio, Qt.SmoothTransformation)
+            protectionImage1.setPixmap(pixmap1)
+            protectionImage1.setAlignment(Qt.AlignCenter)
+
+            #Imagen 2
+
+            protectionImage2 = Image_label(2,50,20)
+            pixmap2= QPixmap("images/av_amarillo.png").scaled(int(200), int(200), Qt.KeepAspectRatio, Qt.SmoothTransformation)
+            protectionImage2.setPixmap(pixmap2)
+            protectionImage2.setAlignment(Qt.AlignCenter)
+            protectionImage2.seleccionar()
+
+            # Imagen 3
+
+            protectionImage3 = Image_label(3,30,15)
+            pixmap3= QPixmap("images/av_verde.png").scaled(int(200), int(200), Qt.KeepAspectRatio, Qt.SmoothTransformation)
+            protectionImage3.setPixmap(pixmap3)
+            protectionImage3.setAlignment(Qt.AlignCenter)
+
+            container1_layout.addWidget(protectionImage1)
+            container1_layout.addWidget(protectionImage2)
+            container1_layout.addWidget(protectionImage3)
+                
+            self.layout.addWidget(title, alignment=Qt.AlignHCenter)
+            self.layout.addWidget(p1)
+            self.layout.addWidget(container1)
+    
+    class SimulationScreen(QWidget):
+            
+        class sim_index_screen(QWidget):
+            cambiar_pantalla = pyqtSignal(int)
+            def __init__(self):
+                super().__init__()
+                self.layout=QVBoxLayout(self)
+                self.layout.setContentsMargins(0, 0, 0, 0)
+                self.layout.setSpacing(0)
+                self.layout.setAlignment(Qt.AlignTop)
+                        
+                title = QLabel("Simulation Screen")
+                title.setStyleSheet("font-size: 24px; color: lightgreen; margin: 60px;")
+                p1 = QLabel("In this section you will watch live all the process the antivirus engine follows in order to detect the virus including the analysis of the file,how its moved to quarantine and how the databases are updated. When you click the buton, the EICAR test will download explaining step by step the process. EICAR test is a harmless file that is used to test the functionality of antivirus software. It is detected as a virus by antivirus programs, but it does not contain any malicious code and does not pose any threat to your computer.")
+                p1.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 40px; margin-right: 40px;") 
+                p1.setAlignment(Qt.AlignCenter)
+                p1.setWordWrap(True)
+                
+                arrow_container = QWidget()
+                arrow_layout = QHBoxLayout(arrow_container)
+                
+                right_btn = QToolButton()
+                right_btn.setArrowType(Qt.RightArrow)
+                
+                right_btn.setIconSize(QSize(32, 32))
+                
+                right_btn.clicked.connect(lambda: self.cambiar_pantalla.emit(1))
+                
+                arrow_layout.addStretch()
+                arrow_layout.addWidget(right_btn)
+                        
+                self.layout.addWidget(title, alignment=Qt.AlignHCenter)
+                self.layout.addWidget(p1)
+                self.layout.addWidget(arrow_container)
+            
+        class sim_fanotify_screen(QWidget):
+            cambiar_pantalla = pyqtSignal(int)
+            def __init__(self):
+                super().__init__()
+                self.layout=QVBoxLayout(self)
+                self.layout.setContentsMargins(0, 0, 0, 0)
+                self.layout.setSpacing(0)
+                self.layout.setAlignment(Qt.AlignTop)
+                
+                containerScroll = QWidget()
+                layout = QVBoxLayout(containerScroll)
+                layout.setContentsMargins(0, 0, 0, 0)
+                layout.setSpacing(0)
+                layout.setAlignment(Qt.AlignTop)
+                
+                 # Para que sea scrolleable
+                scroll = QScrollArea()
+                scroll.setWidgetResizable(True)
+                scroll.setWidget(containerScroll)
+                        
+                title = QLabel("Fanotify")
+                title.setStyleSheet("font-size: 24px; color: lightgreen; margin: 60px;")
+                p1 = QLabel("Basicly, every antivirus engine has a component that is responsible for monitoring the system in real time, watching for any file that is created, moved or executed. In our antivirus engine, this component is implemented using fanotify, a Linux kernel subsystem that provides file access notification and interception. Here is the function that intercepts executions:")
+                p1.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 40px; margin-right: 40px;") 
+                p1.setAlignment(Qt.AlignCenter)
+                p1.setWordWrap(True)
+                
+                code = '''
+                void handle_exec(int fan_fd) {
+                    char buffer[BUF_LEN];
+                    ssize_t len = read(fan_fd, buffer, sizeof(buffer));
+                    if (len <= 0)
+                        return;
+
+                    struct fanotify_event_metadata *m;
+
+                    for (m = (struct fanotify_event_metadata *)buffer;
+                        FAN_EVENT_OK(m, len);
+                        m = FAN_EVENT_NEXT(m, len)) {
+
+                        if (m->vers != FANOTIFY_METADATA_VERSION)
+                            continue;
+
+                        if (m->mask & FAN_OPEN_EXEC_PERM) {
+
+                            char path[PATH_MAX];
+                            get_path(m->fd, path, sizeof(path));
+                            pid_t ppid = get_ppid_from_pid(m->pid);
+                            uint64_t event = m->mask;
+                            printf("[EXEC] %s", path);
+
+                            int deny = ask_python(path,m->pid,ppid,event);
+
+                            struct fanotify_response resp = {
+                                .fd = m->fd,
+                                .response = deny ? FAN_DENY : FAN_ALLOW
+                            };
+
+                            write(fan_fd, &resp, sizeof(resp));
+                        }
+
+                        close(m->fd);
+                    }
+                }
+                '''
+                editor = QPlainTextEdit()
+                editor.setPlainText(code)
+                editor.setReadOnly(True)  # no editable
+                editor.setFont(QFont("Courier New", 8))  # fuente monoespaciada
+                editor.setMinimumHeight(300)
+                editor.setStyleSheet("background-color: #2d2d2d; color: #f8f8f2; padding: 5px; border-radius: 6px; margin: 30px;")
+                
+                p2 = QLabel("To sum up this code, this structure 'struct fanotify_event_metadata *m;' contains all the information used later to store in the databases such as the pid and this condition 'if (m->mask & FAN_OPEN_EXEC_PERM)' means if somethings has executed, intercept it")                                                                                                                                                                
+                p2.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 40px; margin-right: 40px;") 
+                p2.setAlignment(Qt.AlignCenter)
+                p2.setWordWrap(True)
+                
+                arrow_container = QWidget()
+                arrow_layout = QHBoxLayout(arrow_container)
+                
+                left_btn = QToolButton()
+                left_btn.setArrowType(Qt.LeftArrow)
+
+                right_btn = QToolButton()
+                right_btn.setArrowType(Qt.RightArrow)
+                
+                left_btn.setIconSize(QSize(32, 32))
+                right_btn.setIconSize(QSize(32, 32))
+                
+                left_btn.clicked.connect(lambda: self.cambiar_pantalla.emit(0))
+                right_btn.clicked.connect(lambda: self.cambiar_pantalla.emit(2))
+                
+                arrow_layout.addWidget(left_btn)
+                arrow_layout.addStretch()
+                arrow_layout.addWidget(right_btn)
+                                        
+                layout.addWidget(title, alignment=Qt.AlignHCenter)
+                layout.addWidget(p1)
+                layout.addWidget(editor)
+                layout.addWidget(p2)
+                layout.addWidget(arrow_container)
+                
+                self.layout.addWidget(scroll)
+            
+        class sim_events_screen(QWidget):
+            cambiar_pantalla = pyqtSignal(int)
+            def __init__(self):
+                super().__init__()
+                self.layout=QVBoxLayout(self)
+                self.layout.setContentsMargins(0, 0, 0, 0)
+                self.layout.setSpacing(0)
+                self.layout.setAlignment(Qt.AlignTop)
+                
+                title = QLabel("Events")
+                title.setStyleSheet("font-size: 24px; color: lightgreen; margin: 60px;")
+                p1 = QLabel("Here is a screen where you can see every event intercepted in eral time, with each type for example, [EXEC] corresponds to execution of a file. You can aslo see the path of the file that is executed. Look how the EICAR file is detected as it downloads")
+                p1.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 40px; margin-right: 40px;") 
+                p1.setAlignment(Qt.AlignCenter)
+                p1.setWordWrap(True)
+                
+                
+                arrow_container = QWidget()
+                arrow_layout = QHBoxLayout(arrow_container)
+                
+                left_btn = QToolButton()
+                left_btn.setArrowType(Qt.LeftArrow)
+
+                right_btn = QToolButton()
+                right_btn.setArrowType(Qt.RightArrow)
+                
+                left_btn.setIconSize(QSize(32, 32))
+                right_btn.setIconSize(QSize(32, 32))
+                
+                left_btn.clicked.connect(lambda: self.cambiar_pantalla.emit(1))
+                right_btn.clicked.connect(lambda: self.cambiar_pantalla.emit(2))
+                
+                arrow_layout.addWidget(left_btn)
+                arrow_layout.addStretch()
+                arrow_layout.addWidget(right_btn)
+                
+                self.layout.addWidget(title, alignment=Qt.AlignHCenter)
+                self.layout.addWidget(p1)
+                self.layout.addWidget(arrow_container)
+                
+                
+        # SimulationScreen, pantalla padre de las subpantallas de simulación        
+        def __init__(self):
+            super().__init__()
+            self.setStyleSheet("background-color: #3d3d3d;")  # gris claro
+                            
+            self.stack = QStackedWidget()
+            
+            # Layout
+                
+            self.layout=QVBoxLayout(self)
+            self.layout.setContentsMargins(0, 0, 0, 0)
+            self.layout.setSpacing(0)
+            
+            # Crear subpantallas
+                
+            index = self.sim_index_screen()
+            index.cambiar_pantalla.connect(self.stack.setCurrentIndex)
+            fanotify = self.sim_fanotify_screen()
+            fanotify.cambiar_pantalla.connect(self.stack.setCurrentIndex)
+            events = self.sim_events_screen()
+            events.cambiar_pantalla.connect(self.stack.setCurrentIndex)
+                
+            # Añadir subpantallas al stack
+                
+            self.stack.addWidget(index)
+            self.stack.addWidget(fanotify)
+            self.stack.addWidget(events)
+                
+            self.stack.setCurrentIndex(0)
+            
+            self.layout.addWidget(self.stack)
+            
+    class QuarantineScreen(QWidget):
+        def __init__(self):
+            super().__init__()
+            self.setStyleSheet("background-color: #3d3d3d;")  # gris claro
+            self.layout=QVBoxLayout(self)
+            self.layout.setContentsMargins(0, 0, 0, 0)
+            self.layout.setSpacing(0)
+            self.layout.setAlignment(Qt.AlignTop)
+                
+            title = QLabel("Quarantine Screen")
+            title.setStyleSheet("font-size: 24px; color: lightgreen; margin: 60px;")
+            p1 = QLabel("When a file is detected as a virus or malicious, it is moved to quarantine where it is stored in a specific folder and has their permissions denied. In this screen you will be able to see every file detected as suspicious and its state where it verifies its integrity")
+            p1.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 40px; margin-right: 40px;") 
+            p1.setAlignment(Qt.AlignCenter)
+            p1.setWordWrap(True)
+                
+            self.layout.addWidget(title, alignment=Qt.AlignHCenter)
+            self.layout.addWidget(p1)
+            
+    class dataBasesScreen(QWidget):
+        def __init__(self):
+            super().__init__()
+            self.setStyleSheet("background-color: #3d3d3d;")  # gris claro
+            self.layout=QVBoxLayout(self)
+            self.layout.setContentsMargins(0, 0, 0, 0)
+            self.layout.setSpacing(0)
+            self.layout.setAlignment(Qt.AlignTop)
+                
+            title = QLabel("DataBases Screen")
+            title.setStyleSheet("font-size: 24px; color: lightgreen; margin: 60px;")
+            p1 = QLabel("In this section you will be able to check out the state of both databases, the one with each hash and the databse with the instances of each executable. Thius databases are updated in real time if the antivirus engine is running.")
+            p1.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 40px; margin-right: 40px;") 
+            p1.setAlignment(Qt.AlignCenter)
+            p1.setWordWrap(True)
+                
+            self.layout.addWidget(title, alignment=Qt.AlignHCenter)
+            self.layout.addWidget(p1)
+            
+    class AccountScreen(QWidget):
+        def __init__(self):
+            super().__init__()
+            self.setStyleSheet("background-color: #3d3d3d;")  # gris claro
+            self.layout=QVBoxLayout(self)
+            self.layout.setContentsMargins(0, 0, 0, 0)
+            self.layout.setSpacing(0)
+            self.layout.setAlignment(Qt.AlignTop)
+                
+            title = QLabel("Account Screen")
+            title.setStyleSheet("font-size: 24px; color: lightgreen; margin: 60px;")
+                
+            self.layout.addWidget(title, alignment=Qt.AlignHCenter)
+            
+    class SettingsScreen(QWidget):
+        def __init__(self):
+            super().__init__()
+            self.setStyleSheet("background-color: #3d3d3d;")  # gris claro
+            self.layout=QVBoxLayout(self)
+            self.layout.setContentsMargins(0, 0, 0, 0)
+            self.layout.setSpacing(0)
+            self.layout.setAlignment(Qt.AlignTop)
+                
+            title = QLabel("Settings Screen")
+            title.setStyleSheet("font-size: 24px; color: lightgreen; margin: 60px;")
+                
+            self.layout.addWidget(title, alignment=Qt.AlignHCenter)
+        
+    def __init__(self): 
+        super().__init__()
+        self.setStyleSheet("background-color: #3d3d3d;")  # gris claro
+        self.stack = QStackedWidget()
+        
+        # Layout
+        
+        self.layout=QVBoxLayout(self)
+        self.layout.setContentsMargins(0, 0, 0, 0)
+        self.layout.setSpacing(0)
+        
+        # Definir pantallas
+        
+        index = self.IndexScreen()
+        dashboard = self.DashboardScreen()
+        protection = self.ProtectionScreen()
+        quarantine = self.QuarantineScreen()
+        simulation = self.SimulationScreen()
+        dataBases = self.dataBasesScreen()
+        account = self.AccountScreen()
+        settings = self.SettingsScreen()
+
+        # Añadir pantallas al stack
+        
+        self.stack.addWidget(index)
+        self.stack.addWidget(dashboard)
+        self.stack.addWidget(protection)
+        self.stack.addWidget(quarantine)
+        self.stack.addWidget(simulation)
+        self.stack.addWidget(dataBases)
+        self.stack.addWidget(account)
+        self.stack.addWidget(settings)
+        
+        self.stack.setCurrentWidget(index)
+        
+        # Añadir  al layout
+        
+        self.layout.addWidget(self.stack)
+        
+        
+class VentanaPrincipal(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle("FreeVirus ")
+        self.setWindowFlags(Qt.FramelessWindowHint)
+        self.oldPos = self.pos()
+        # Fondo gris oscuro usando stylesheet
+        self.setStyleSheet("background-color: #2b2b2b;")  # gris oscuro
+        ancho = int(0.8 * QApplication.primaryScreen().size().width())
+        alto = int(0.8 * QApplication.primaryScreen().size().height()) 
+        self.resize(ancho, alto)
+        self.maximumWidth = ancho
+        self.maximumHeight = alto
+        
+        
+        
+        # Definimos widgets
+        
+        # TOPBAR
+        topBar = topbar(self)
+        
+        # Main container
+        
+        main_container = QWidget()
+        main_container.setStyleSheet("background-color: blue;")  # gris oscuro
+        main_container.setMinimumHeight(alto - topBar.height())
+        
+        # Left container
+        
+        dashboard = ClickableLabel("Dashboard")
+        protection = ClickableLabel("Protection")
+        quarantine = ClickableLabel("Quarantine")
+        simulation = ClickableLabel("Simulation")
+        dataBases = ClickableLabel("DataBases")
+        account = ClickableLabel("Firewall")
+        settings = ClickableLabel("Settings")
+
+        #Definirmos labels
+
+
+        buttons = [dashboard, protection, quarantine, simulation, dataBases, account, settings]
+
+        def clear_styles():
+            for btn in buttons:
+                if btn == dashboard:
+                    btn.setStyleSheet("font-weight: bold;color: darkgray;margin-top: 20px;")
+                else:
+                    btn.setStyleSheet("font-weight: bold;color: darkgray;")
+        left_container = QWidget()
+        left_container.setStyleSheet("background-color: #333333;")  # gris medio
+        left_container.setFixedWidth(int(ancho * 0.25))
+        left_container.setFixedHeight(alto - topBar.height())
+        
+        logo_img = QLabel()
+        pixmap = QPixmap("images/logo.png").scaled(int(ancho * 0.2), int(alto * 0.2), Qt.KeepAspectRatio, Qt.SmoothTransformation)
+        logo_img.setPixmap(pixmap)
+        logo_img.setAlignment(Qt.AlignCenter)
+        logo_img.setMargin(30)
+        
+        line = QFrame()
+        line.setFrameShape(QFrame.HLine)   # Línea horizontal
+        line.setFrameShadow(QFrame.Sunken) # Sombra para efecto 3D
+        line.setStyleSheet("color: gray; margin-top: 20px; margin-bottom: 20px;")
+        
+        line2 = QFrame()
+        line2.setFrameShape(QFrame.HLine)   # Línea horizontal
+        line2.setFrameShadow(QFrame.Sunken) # Sombra para efecto 3D
+        line2.setStyleSheet("color: gray; margin-top: 20%; margin-bottom: 20px;")
+
+        dashboard.setStyleSheet("font-weight: bold;color: darkgray;margin-top: 20px; ")
+        dashboard.clicked.connect(lambda: (right_container.stack.setCurrentIndex(1),clear_styles(), dashboard.setStyleSheet("color: lightgreen; font-weight: bold;margin-top: 20px; ")))
+        dashboard.setMargin(20)
+        
+        protection.clicked.connect(lambda: (right_container.stack.setCurrentIndex(2),clear_styles(), protection.setStyleSheet("color: lightgreen; font-weight: bold; ")))
+        protection.setMargin(20)
+        protection.setStyleSheet("font-weight: bold;color: darkgray;")
+
+        quarantine.clicked.connect(lambda: (right_container.stack.setCurrentIndex(3),clear_styles(), quarantine.setStyleSheet("color: lightgreen; font-weight: bold; ")))
+        quarantine.setMargin(20)
+        quarantine.setStyleSheet("font-weight: bold;color: darkgray;")
+
+        simulation.clicked.connect(lambda: (right_container.stack.setCurrentIndex(4),clear_styles(), simulation.setStyleSheet("color: lightgreen; font-weight: bold; ")))
+        simulation.setMargin(20)
+        simulation.setStyleSheet("font-weight: bold;color: darkgray;")
+        
+        dataBases.clicked.connect(lambda: (right_container.stack.setCurrentIndex(5),clear_styles(), dataBases.setStyleSheet("color: lightgreen; font-weight: bold; ")))
+        dataBases.setMargin(20)
+        dataBases.setStyleSheet("font-weight: bold;color: darkgray;")
+        
+        account.clicked.connect(lambda: (right_container.stack.setCurrentIndex(6),clear_styles(), account.setStyleSheet("color: lightgreen; font-weight: bold;")))
+        account.setMargin(20)
+        account.setStyleSheet("font-weight: bold;color: darkgray;")  
+        
+        settings.clicked.connect(lambda: (right_container.stack.setCurrentIndex(7),clear_styles(), settings.setStyleSheet("color: lightgreen; font-weight: bold; ")))
+        settings.setMargin(20)
+        settings.setStyleSheet("font-weight: bold;color: darkgray;")
+        
+        #Right container
+        
+        right_container = rightContainer()
+        
+        # Layouts
+        
+        main_layout=QVBoxLayout(self)
+        main_container_layout=QHBoxLayout(main_container)
+        left_container_layout=QVBoxLayout(left_container)
+        
+        # Añadir widgets a los layouts
+        
+        main_layout.setContentsMargins(0, 0, 0, 0)
+        main_layout.setSpacing(0)
+        main_layout.setAlignment(Qt.AlignTop)
+        main_layout.addWidget(topBar)
+        main_layout.addWidget(main_container)
+       
+        main_container_layout.setContentsMargins(0, 0, 0, 0)
+        main_container_layout.setSpacing(0)
+        main_container_layout.addWidget(left_container)
+        main_container_layout.addWidget(right_container)
+        
+        left_container_layout.setContentsMargins(0, 0, 0, 0)
+        left_container_layout.setAlignment(Qt.AlignTop)
+        left_container_layout.setSpacing(0)
+        left_container_layout.addWidget(logo_img, alignment=Qt.AlignHCenter)
+        left_container_layout.addWidget(line)
+        left_container_layout.addWidget(dashboard, alignment=Qt.AlignHCenter)
+        left_container_layout.addWidget(protection, alignment=Qt.AlignHCenter)
+        left_container_layout.addWidget(simulation, alignment=Qt.AlignHCenter)
+        left_container_layout.addWidget(quarantine, alignment=Qt.AlignHCenter)
+        left_container_layout.addWidget(dataBases, alignment=Qt.AlignHCenter)
+        left_container_layout.addWidget(account, alignment=Qt.AlignHCenter)
+        left_container_layout.addWidget(line2)
+        left_container_layout.addWidget(settings, alignment=Qt.AlignHCenter)
+
+selected = 2
+selected_image = None
+
+def check_selected():
+    global selected
+    try:
+        with open ("conf.json","r") as f:
+            conf = json.load(f)
+            selected = conf["selected"]
+    except:
+        print("Error con el JSON")
+        selected = 2
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    ventana = VentanaPrincipal()
+    ventana.show()
+    sys.exit(app.exec_())

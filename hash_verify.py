@@ -1,0 +1,129 @@
+import hashlib
+from time import strftime
+import hash_cache
+import requests
+import time
+import json
+
+
+
+API_KEY = "b76a6aef7a2aaf60aedcdd3d6bc4f7d656c593c103b12f3b85bcb1fcb8ba11cc"
+HEADERS = {
+    "x-apikey": API_KEY
+}
+
+min_malware_score = 50
+min_suspicious_score = 20
+
+'''
+EJEMPLO DE ESTRUCTURA DE LA RESPUESTA
+{
+  "data": {
+    "attributes": {
+      "last_analysis_stats": {
+        "malicious": 1,
+        "suspicious": 3,
+        "undetected": 58,
+        "harmless": 4,
+        "timeout": 0
+      }
+    }
+  }
+}
+'''
+
+def load_json(file):
+    try:
+        with open("conf.json",r) as f:
+            data = json.load(f)
+            min_malware_score = data["min_malware_score"]
+            min_suspicious_score = data["min_suspicious_score"]
+    except:
+        print("Ha ocurrido un error con el JSON")
+        min_malware_score = 50
+        min_suspicious_score = 20
+
+
+def hash_file_with_path(path):
+    sha256 = hashlib.sha256()
+    with open(path, "rb") as f:          # SIEMPRE binario
+        for chunk in iter(lambda: f.read(8192), b""):
+            sha256.update(chunk)
+    return sha256.hexdigest()
+
+def whitelist(path):
+        if(path.startswith(("/usr/","/bin/","/lib/","/sbin/","/lib64/", "/etc/","/proc/","/sys/","/dev/","/var/","/run/","/update-motd.d/")) ):
+            return True
+def verify_sha256(x, pid, ppid,event):
+    score = 0
+    if event & 0x00000020:
+        event_name = "EXEC"
+    elif event & 0x00000008:
+        event_name = "DOWNLOAD"
+    else:
+        event_name = "OTHER"
+    
+    hash = hash_file_with_path(x)
+    print(hash)
+
+    if(whitelist(x)):
+        return 0
+    else:
+        if hash_cache.contains_hash(hash):
+            #nueva instancia
+            hash_cache.store_instance(hash,pid,ppid,x,event_name)
+            hash_cache.update_last_seen(hash,time.time())
+            return 0
+        else:
+            
+            url = f"https://www.virustotal.com/api/v3/files/{hash}"
+            
+            try:
+                r = requests.get(url, headers=HEADERS, timeout=10)
+                print("REQUESt")
+                print(r.status_code)
+                print(r.text)
+                
+                
+                if (r.status_code == 404):    # No se sabe de este archivo, se suma puntos de sospechoso
+                    print("Archivo no encontrado en VirusTotal, asignando puntuación de sospechoso")
+                    score = 20
+                    state = 1  # unknown
+                    print(hash)
+                    hash_cache.store_hash(hash,score,state)
+                    return state
+                elif(r.status_code != 200):
+                    print("Error al conectar con VirusTotal:", r.status_code)
+                    return None
+                    
+                r.raise_for_status()
+                data = r.json()
+                print(data)
+                
+                stats = data["data"]["attributes"]["last_analysis_stats"]
+                malicious = stats.get("malicious", 0)
+                suspicious = stats.get("suspicious", 0)
+
+                # Calcular score simple
+                score = malicious * 10 + suspicious * 5
+
+                # Decidir veredicto
+                if score >= min_malware_score:
+                    state = 2
+                elif score >= min_suspicious_score:
+                    state = 1
+                else:
+                    state = 0
+                
+                print(hash)
+                print(score)
+                print(state)
+
+                hash_cache.store_hash(hash,score,state)
+                hash_cache.store_instance(hash,pid,ppid,x,event_name)
+                print("Almacenado")
+                print("Guardado en bases de datos")
+                return state
+            except Exception as e:
+                print("Excepción al conectar con VirusTotal:", str(e))
+                return None
