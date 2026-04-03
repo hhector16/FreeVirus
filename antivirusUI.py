@@ -1,9 +1,13 @@
 import sys
 import json
-from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QHBoxLayout, QPushButton, QLabel, QFrame, QStackedWidget, QPlainTextEdit, QScrollArea, QToolButton
+from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QHBoxLayout, QComboBox , QLineEdit , QPushButton , QLabel, QFrame, QStackedWidget, QPlainTextEdit, QScrollArea, QToolButton, QSizePolicy
 from PyQt5.QtGui import QPixmap, QFont
 from PyQt5.QtCore import pyqtSignal, Qt, QSize
 from Active_label import *
+from HashTableWidget import *
+from InstancesTableWidget import *
+import subprocess
+
 
 
 class ClickableLabel(QLabel):
@@ -458,14 +462,33 @@ class rightContainer(QWidget):
             title = QLabel("DataBases Screen")
             title.setStyleSheet("font-size: 24px; color: lightgreen; margin: 60px;")
             p1 = QLabel("In this section you will be able to check out the state of both databases, the one with each hash and the databse with the instances of each executable. Thius databases are updated in real time if the antivirus engine is running.")
-            p1.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 40px; margin-right: 40px;") 
+            p1.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 40px; margin-right: 40px; margin-bottom:40px;") 
             p1.setAlignment(Qt.AlignCenter)
             p1.setWordWrap(True)
+
+            p2 = QLabel("Hashes database")
+            p2.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 40px; margin-right: 40px; margin-bottom:40px;") 
+            p2.setAlignment(Qt.AlignCenter)
+            p2.setWordWrap(True)
+
+            p3 = QLabel("Instances database")
+            p3.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 40px; margin-right: 40px; margin-bottom:40px;") 
+            p3.setAlignment(Qt.AlignCenter)
+            p3.setWordWrap(True)
+
+            tabla = HashTableWidget()
+            instancesTable = InstancesTableWidget()
                 
             self.layout.addWidget(title, alignment=Qt.AlignHCenter)
             self.layout.addWidget(p1)
+            self.layout.addWidget(p2)
+            self.layout.addWidget(tabla, alignment=Qt.AlignHCenter)
+            self.layout.addWidget(p3)
+            self.layout.addWidget(instancesTable, alignment=Qt.AlignHCenter)
+
+
             
-    class AccountScreen(QWidget):
+    class FirewallScreen(QWidget):
         def __init__(self):
             super().__init__()
             self.setStyleSheet("background-color: #3d3d3d;")  # gris claro
@@ -474,10 +497,114 @@ class rightContainer(QWidget):
             self.layout.setSpacing(0)
             self.layout.setAlignment(Qt.AlignTop)
                 
-            title = QLabel("Account Screen")
+            title = QLabel("Firewall Screen")
             title.setStyleSheet("font-size: 24px; color: lightgreen; margin: 60px;")
+
+            p1 = QLabel("A firewall is a layer between your computer and the connections arriving or outgoing. Here we will show active nftables rules which decide which traffic is allowed to come or go and you will be able to add or delete more of this rules")
+            p1.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 40px; margin-right: 40px; margin-bottom:40px;") 
+            p1.setWordWrap(True)
+
+            iptablesLabel = QLabel()
+            iptablesLabel.setStyleSheet("border:1 solid gray;color:black;text-align:center")
+            iptablesLabel.setAlignment(Qt.AlignCenter)
+            iptablesLabel.setMinimumHeight(300)
+            iptablesLabel.setMinimumWidth(500)
+            comando = ["iptables", "-L", "-v", "-n"]
+
+            try:
+                # Ejecuta el comando y captura la salida
+                resultado = subprocess.run(
+                    comando,
+                    capture_output=True,  # Captura stdout y stderr
+                    text=True,            # Devuelve strings en lugar de bytes
+                    check=True            # Lanza excepción si hay error
+                )
+
+                # Muestra la salida
+                iptables = resultado.stdout
+                iptablesLabel.setText(iptables)
+
+            except subprocess.CalledProcessError as e:
+                print("Ocurrió un error al ejecutar el comando:")
+                print(e.stderr)
+
+            rules_container = QWidget()
+            rules_container_layout = QHBoxLayout(rules_container)
+
+            p2 = QLabel("Set rule")     
+            p2.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 40px; margin-right: 40px; margin-bottom:10px;") 
+            p2.setWordWrap(True)
+
+            p8 = QLabel("Operation:")     
+            p8.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 40px; margin-right: 10px; margin-bottom:40px;margin-top:40px") 
+            p8.setWordWrap(True)
                 
+            selectOperation = QComboBox()
+            selectOperation.addItems(["INSERT","APPEND","DELETE"])
+
+            selectOperation.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
+            selectOperation.setFixedWidth(90)
+
+            p3 = QLabel("Rule type:")     
+            p3.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 10px; margin-right: 10px; margin-bottom:40px;margin-top:40px") 
+            p3.setWordWrap(True)
+                
+            select = QComboBox()
+            select.addItems(["INPUT","OUTPUT","FORDWARD"])
+            select.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
+            select.setFixedWidth(110)
+
+            p4 = QLabel("Protocol:")     
+            p4.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 10px; margin-right: 10px; margin-bottom:40px;margin-top:40px") 
+            p4.setWordWrap(True)
+
+            protocolSelect = QComboBox()
+            protocolSelect.addItems(["tcp","udp"])
+            protocolSelect.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
+
+            p5 = QLabel("Ports:")     
+            p5.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 10px; margin-right: 10px; margin-bottom:40px;margin-top:40px") 
+            p5.setWordWrap(True)
+
+            portsInput = QLineEdit()
+            portsInput.setFixedWidth(80)
+
+            p6 = QLabel("Block ip:")     
+            p6.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 10px; margin-right: 10px; margin-bottom:40px;margin-top:40px") 
+            p6.setWordWrap(True)
+
+            ipsInput = QLineEdit()
+
+            add_rule_button = QPushButton("Add rule")
+            add_rule_button.setStyleSheet("margin-right:50px;")
+
+            p7 = QLabel("Note: for it to work properly, you first need to make sure that the iptables are activated. If there is any mistake in the indroduced ip or ports, the rule wont be added ")     
+            p7.setStyleSheet("font-size: 14px; color: darkgray; margin-left: 40px; margin-right: 10px; margin-bottom:40px;margin-top:40px") 
+            p7.setWordWrap(True)
+
+
+
             self.layout.addWidget(title, alignment=Qt.AlignHCenter)
+            self.layout.addWidget(p1)
+            self.layout.addWidget(iptablesLabel, alignment=Qt.AlignHCenter)
+            self.layout.addWidget(p2)
+
+            rules_container_layout.addWidget(p8)
+            rules_container_layout.addWidget(selectOperation)
+            rules_container_layout.addWidget(p3)
+            rules_container_layout.addWidget(select)
+            rules_container_layout.addWidget(p4)
+            rules_container_layout.addWidget(protocolSelect)
+            rules_container_layout.addWidget(p5)
+            rules_container_layout.addWidget(portsInput)
+            rules_container_layout.addWidget(p6)
+            rules_container_layout.addWidget(ipsInput)
+            rules_container_layout.addWidget(add_rule_button)
+
+            self.layout.addWidget(rules_container)
+            self.layout.addWidget(p7)
+
+
             
     class SettingsScreen(QWidget):
         def __init__(self):
@@ -512,7 +639,7 @@ class rightContainer(QWidget):
         quarantine = self.QuarantineScreen()
         simulation = self.SimulationScreen()
         dataBases = self.dataBasesScreen()
-        account = self.AccountScreen()
+        firewall = self.FirewallScreen()
         settings = self.SettingsScreen()
 
         # Añadir pantallas al stack
@@ -523,7 +650,7 @@ class rightContainer(QWidget):
         self.stack.addWidget(quarantine)
         self.stack.addWidget(simulation)
         self.stack.addWidget(dataBases)
-        self.stack.addWidget(account)
+        self.stack.addWidget(firewall)
         self.stack.addWidget(settings)
         
         self.stack.setCurrentWidget(index)
@@ -567,13 +694,13 @@ class VentanaPrincipal(QWidget):
         quarantine = ClickableLabel("Quarantine")
         simulation = ClickableLabel("Simulation")
         dataBases = ClickableLabel("DataBases")
-        account = ClickableLabel("Firewall")
+        firewall = ClickableLabel("Firewall")
         settings = ClickableLabel("Settings")
 
         #Definirmos labels
 
 
-        buttons = [dashboard, protection, quarantine, simulation, dataBases, account, settings]
+        buttons = [dashboard, protection, quarantine, simulation, dataBases, firewall, settings]
 
         def clear_styles():
             for btn in buttons:
@@ -622,9 +749,9 @@ class VentanaPrincipal(QWidget):
         dataBases.setMargin(20)
         dataBases.setStyleSheet("font-weight: bold;color: darkgray;")
         
-        account.clicked.connect(lambda: (right_container.stack.setCurrentIndex(6),clear_styles(), account.setStyleSheet("color: lightgreen; font-weight: bold;")))
-        account.setMargin(20)
-        account.setStyleSheet("font-weight: bold;color: darkgray;")  
+        firewall.clicked.connect(lambda: (right_container.stack.setCurrentIndex(6),clear_styles(), firewall.setStyleSheet("color: lightgreen; font-weight: bold;")))
+        firewall.setMargin(20)
+        firewall.setStyleSheet("font-weight: bold;color: darkgray;")  
         
         settings.clicked.connect(lambda: (right_container.stack.setCurrentIndex(7),clear_styles(), settings.setStyleSheet("color: lightgreen; font-weight: bold; ")))
         settings.setMargin(20)
@@ -663,7 +790,7 @@ class VentanaPrincipal(QWidget):
         left_container_layout.addWidget(simulation, alignment=Qt.AlignHCenter)
         left_container_layout.addWidget(quarantine, alignment=Qt.AlignHCenter)
         left_container_layout.addWidget(dataBases, alignment=Qt.AlignHCenter)
-        left_container_layout.addWidget(account, alignment=Qt.AlignHCenter)
+        left_container_layout.addWidget(firewall, alignment=Qt.AlignHCenter)
         left_container_layout.addWidget(line2)
         left_container_layout.addWidget(settings, alignment=Qt.AlignHCenter)
 
