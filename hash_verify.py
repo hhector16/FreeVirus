@@ -4,6 +4,7 @@ import hash_cache
 import requests
 import time
 import json
+import verifyNumberOfEx
 
 
 
@@ -52,7 +53,7 @@ def hash_file_with_path(path):
     return sha256.hexdigest()
 
 def whitelist(path):
-        if(path.startswith(("/usr/","/bin/","/lib/","/sbin/","/lib64/", "/etc/","/proc/","/sys/","/dev/","/var/","/run/","/update-motd.d/")) ):
+        if(path.startswith(("/usr/lib/x86_64-linux-gnu/", "usr/bin/git" , "usr/bin/bash" ,"/bin/","/lib/","/sbin/","/lib64/","/proc/","/sys/","/dev/","/run/","/update-motd.d/")) ):
             return True
 def verify_sha256(x, pid, ppid,event):
     score = 0
@@ -64,7 +65,6 @@ def verify_sha256(x, pid, ppid,event):
         event_name = "OTHER"
     
     hash = hash_file_with_path(x)
-    print(hash)
 
     if(whitelist(x)):
         return 0
@@ -72,8 +72,11 @@ def verify_sha256(x, pid, ppid,event):
         if hash_cache.contains_hash(hash):
             #nueva instancia
             hash_cache.store_instance(hash,pid,ppid,x,event_name)
+            verifyNumberOfEx.decay_score(hash)
             hash_cache.update_last_seen(hash,time.time())
-            return 0
+            verifyNumberOfEx.execution_check(hash)
+            print("YA EXISTIA")
+            return hash
         else:
             
             url = f"https://www.virustotal.com/api/v3/files/{hash}"
@@ -123,7 +126,10 @@ def verify_sha256(x, pid, ppid,event):
                 hash_cache.store_instance(hash,pid,ppid,x,event_name)
                 print("Almacenado")
                 print("Guardado en bases de datos")
-                return state
+                score = hash_cache.get_score(hash)
+                state = hash_cache.get_state(hash)
+                print(hash)
+                return hash
             except Exception as e:
                 print("Excepción al conectar con VirusTotal:", str(e))
-                return None
+                return "ERROR "

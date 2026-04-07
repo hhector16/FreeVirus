@@ -75,7 +75,51 @@ def update_last_seen(hash,last_seen):
     
     conexion.commit()
     conexion.close()
+
+def update_score(hash,score):
+    conexion = sqlite3.connect("hashes.db")
+    cursor = conexion.cursor()
+
+    cursor.execute("UPDATE hashes SET score = ? WHERE hash = ?", (score, hash))
     
+    conexion.commit()
+    conexion.close()
+
+def get_score(hash):
+    conexion = sqlite3.connect("hashes.db")
+    cursor = conexion.cursor()
+
+    cursor.execute("SELECT score FROM hashes WHERE hash = ?", (hash,))
+    result = cursor.fetchone()
+    conexion.close()
+    return result
+
+def update_state(hash,state):
+    conexion = sqlite3.connect("hashes.db")
+    cursor = conexion.cursor()
+
+    cursor.execute("UPDATE hashes SET state = ? WHERE hash = ?", (state, hash))
+    
+    conexion.commit()
+    conexion.close()
+
+def get_state(hash):
+    conexion = sqlite3.connect("hashes.db")
+    cursor = conexion.cursor()
+
+    cursor.execute("SELECT state FROM hashes WHERE hash = ?", (hash,))
+    result = cursor.fetchone()
+    conexion.close()
+    return result
+
+def get_last_seen(hash):
+    conexion = sqlite3.connect("hashes.db")
+    cursor = conexion.cursor()
+
+    cursor.execute("SELECT last_seen FROM hashes WHERE hash = ?",(hash,))
+    result = cursor.fetchone()
+    conexion.close()
+    return result
 
 # BASE DE DATOS DE INSTANCIAS
 

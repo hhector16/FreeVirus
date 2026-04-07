@@ -1,10 +1,11 @@
 from PyQt5.QtWidgets import QApplication, QTableWidget, QTableWidgetItem
 from PyQt5.QtCore import Qt
 import sqlite3
+from datetime import datetime
 class HashTableWidget(QTableWidget):
     def __init__(self):
         super().__init__()
-        self.setMinimumWidth(900)
+        self.setMinimumWidth(800)
         self.setFrameStyle(0)  
         self.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)  # quitar scroll horizontal   
         self.setVerticalScrollBarPolicy(Qt.ScrollBarAsNeeded)    # scroll vertical solo si hace falta
@@ -22,8 +23,8 @@ class HashTableWidget(QTableWidget):
             self.setItem(fila, 0, QTableWidgetItem(str(hash)))
             self.setItem(fila, 1, QTableWidgetItem(str(state)))
             self.setItem(fila, 2, QTableWidgetItem(str(score)))
-            self.setItem(fila, 3, QTableWidgetItem(str(fs)))
-            self.setItem(fila, 4, QTableWidgetItem(str(ls)))
+            self.setItem(fila, 3, QTableWidgetItem(str(datetime.fromtimestamp(fs))))
+            self.setItem(fila, 4, QTableWidgetItem(str(datetime.fromtimestamp(ls))))
 
     def getData(self):
         conn = sqlite3.connect(self.databaseName)

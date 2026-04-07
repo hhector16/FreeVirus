@@ -5,7 +5,7 @@ from xmlrpc import server
 
 import hash_cache   
 import hash_verify
-
+import hashlib
 
 SOCK ='/tmp/av.sock'
 PATH_MAX = 4096
@@ -15,6 +15,13 @@ PATH_MAX = 4096
 SOCKET_PATH = "/tmp/salidaPython.sock"
 cliente = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
 cliente.connect(SOCKET_PATH)
+
+def hash_file_with_path(path):
+    sha256 = hashlib.sha256()
+    with open(path, "rb") as f:          # SIEMPRE binario
+        for chunk in iter(lambda: f.read(8192), b""):
+            sha256.update(chunk)
+    return sha256.hexdigest()
 
 def recv_all(conn, size):
     buf = b''
@@ -56,7 +63,16 @@ while True:
             cliente.sendall((salida + "\n").encode())
 
         # Decisión AV
-        if hash_verify.verify_sha256(path,pid,ppid,event) >= 2:
+        file_hash = hash_file_with_path(path)
+        hash_verify.verify_sha256(path,pid,ppid,event)
+        print("DECIDIENDO")
+        state = hash_cache.get_state(file_hash)
+        print(state)
+        if(state == None):
+            conn.sendall(b"ALLOW")
+        elif state[0] >= 2:
+            print("DENEGADO")
             conn.sendall(b"DENY")
         else:
+            print("PERMITIDO")
             conn.sendall(b"ALLOW")

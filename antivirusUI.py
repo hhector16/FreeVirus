@@ -6,6 +6,8 @@ from PyQt5.QtCore import pyqtSignal, Qt, QSize
 from Active_label import *
 from HashTableWidget import *
 from InstancesTableWidget import *
+from PyQt5.QtGui import QRegExpValidator
+from PyQt5.QtCore import QRegExp
 import subprocess
 
 
@@ -504,11 +506,14 @@ class rightContainer(QWidget):
             p1.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 40px; margin-right: 40px; margin-bottom:40px;") 
             p1.setWordWrap(True)
 
-            iptablesLabel = QLabel()
-            iptablesLabel.setStyleSheet("border:1 solid gray;color:black;text-align:center")
-            iptablesLabel.setAlignment(Qt.AlignCenter)
-            iptablesLabel.setMinimumHeight(300)
-            iptablesLabel.setMinimumWidth(500)
+            scroll = QScrollArea()
+            scroll.setWidgetResizable(True)
+            self.iptablesLabel = QLabel()
+            self.iptablesLabel.setStyleSheet("border:1 solid gray;color:black;text-align:center")
+            self.iptablesLabel.setAlignment(Qt.AlignTop)
+            self.iptablesLabel.setMinimumWidth(500)
+            scroll.setWidget(self.iptablesLabel)
+
             comando = ["iptables", "-L", "-v", "-n"]
 
             try:
@@ -522,7 +527,7 @@ class rightContainer(QWidget):
 
                 # Muestra la salida
                 iptables = resultado.stdout
-                iptablesLabel.setText(iptables)
+                self.iptablesLabel.setText(iptables)
 
             except subprocess.CalledProcessError as e:
                 print("Ocurrió un error al ejecutar el comando:")
@@ -532,51 +537,60 @@ class rightContainer(QWidget):
             rules_container_layout = QHBoxLayout(rules_container)
 
             p2 = QLabel("Set rule")     
-            p2.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 40px; margin-right: 40px; margin-bottom:10px;") 
+            p2.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 40px; margin-right: 40px;") 
             p2.setWordWrap(True)
 
             p8 = QLabel("Operation:")     
             p8.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 40px; margin-right: 10px; margin-bottom:40px;margin-top:40px") 
             p8.setWordWrap(True)
                 
-            selectOperation = QComboBox()
-            selectOperation.addItems(["INSERT","APPEND","DELETE"])
+            self.selectOperation = QComboBox()
+            self.selectOperation.addItems(["INSERT","APPEND","DELETE"])
 
-            selectOperation.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
-            selectOperation.setFixedWidth(90)
+            self.selectOperation.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
+            self.selectOperation.setFixedWidth(90)
 
             p3 = QLabel("Rule type:")     
             p3.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 10px; margin-right: 10px; margin-bottom:40px;margin-top:40px") 
             p3.setWordWrap(True)
                 
-            select = QComboBox()
-            select.addItems(["INPUT","OUTPUT","FORDWARD"])
-            select.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
-            select.setFixedWidth(110)
+            self.select = QComboBox()
+            self.select.addItems(["INPUT","OUTPUT","FORDWARD"])
+            self.select.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
+            self.select.setFixedWidth(110)
 
             p4 = QLabel("Protocol:")     
             p4.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 10px; margin-right: 10px; margin-bottom:40px;margin-top:40px") 
             p4.setWordWrap(True)
 
-            protocolSelect = QComboBox()
-            protocolSelect.addItems(["tcp","udp"])
-            protocolSelect.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
+            self.protocolSelect = QComboBox()
+            self.protocolSelect.addItems(["tcp","udp"])
+            self.protocolSelect.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
 
             p5 = QLabel("Ports:")     
             p5.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 10px; margin-right: 10px; margin-bottom:40px;margin-top:40px") 
             p5.setWordWrap(True)
 
-            portsInput = QLineEdit()
-            portsInput.setFixedWidth(80)
+            self.portsInput = QLineEdit()
+            self.portsInput.setFixedWidth(80)
 
-            p6 = QLabel("Block ip:")     
+            p6 = QLabel("Block ip (optional):")     
             p6.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 10px; margin-right: 10px; margin-bottom:40px;margin-top:40px") 
             p6.setWordWrap(True)
 
-            ipsInput = QLineEdit()
+            self.ipsInput = QLineEdit()
+            ip_regex = QRegExp(r'^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$')
+            ip_validator = QRegExpValidator(ip_regex)
+            self.ipsInput.setValidator(ip_validator)
+            self.ipsInput.setPlaceholderText("192.168.1.120")
+
+            self.do = QComboBox()
+            self.do.addItems(["ACCEPT","DROP"])
+            self.do.setFixedWidth(80)
 
             add_rule_button = QPushButton("Add rule")
             add_rule_button.setStyleSheet("margin-right:50px;")
+            add_rule_button.clicked.connect(self.setRule)
 
             p7 = QLabel("Note: for it to work properly, you first need to make sure that the iptables are activated. If there is any mistake in the indroduced ip or ports, the rule wont be added ")     
             p7.setStyleSheet("font-size: 14px; color: darkgray; margin-left: 40px; margin-right: 10px; margin-bottom:40px;margin-top:40px") 
@@ -586,23 +600,78 @@ class rightContainer(QWidget):
 
             self.layout.addWidget(title, alignment=Qt.AlignHCenter)
             self.layout.addWidget(p1)
-            self.layout.addWidget(iptablesLabel, alignment=Qt.AlignHCenter)
-            self.layout.addWidget(p2)
+            self.layout.addWidget(scroll, alignment=Qt.AlignHCenter)
 
             rules_container_layout.addWidget(p8)
-            rules_container_layout.addWidget(selectOperation)
+            rules_container_layout.addWidget(self.selectOperation)
             rules_container_layout.addWidget(p3)
-            rules_container_layout.addWidget(select)
+            rules_container_layout.addWidget(self.select)
             rules_container_layout.addWidget(p4)
-            rules_container_layout.addWidget(protocolSelect)
+            rules_container_layout.addWidget(self.protocolSelect)
             rules_container_layout.addWidget(p5)
-            rules_container_layout.addWidget(portsInput)
+            rules_container_layout.addWidget(self.portsInput)
             rules_container_layout.addWidget(p6)
-            rules_container_layout.addWidget(ipsInput)
+            rules_container_layout.addWidget(self.ipsInput)
+            rules_container_layout.addWidget(self.do)
             rules_container_layout.addWidget(add_rule_button)
 
             self.layout.addWidget(rules_container)
             self.layout.addWidget(p7)
+
+        def setRule(self):
+            ips = self.ipsInput.text()
+            ports = self.portsInput.text()
+            operation = self.selectOperation.currentText()
+            select = self.select.currentText()
+            protocol = self.protocolSelect.currentText()
+            do = self.do.currentText()
+
+            if operation == "INSERT":
+                operation = "-I"
+            elif operation == "APPEND":
+                operation == "-A"
+            elif operation == "DELETE":
+                operation = "-D"
+
+            self.ipsInput.setText("")
+            self.portsInput.setText("")
+
+            if(ips == ""):
+                comando = ["iptables",operation,select,"-p",protocol,"--dport",ports,"-j",do]
+            else:
+                comando = ["iptables",operation,select,"-p",protocol,"--dport",ports,"-s",ips,"-j",do]
+            try:
+                # Ejecuta el comando y captura la salida
+                resultado = subprocess.run(
+                    comando,
+                    capture_output=True,  # Captura stdout y stderr
+                    text=True,            # Devuelve strings en lugar de bytes
+                    check=True            # Lanza excepción si hay error
+                )
+
+                # Muestra la salida
+                iptables = resultado.stdout
+            except subprocess.CalledProcessError as e:
+                print("Ocurrió un error al ejecutar el comando:")
+                print(e.stderr)
+
+            comando = ["iptables", "-L", "-v", "-n"]
+            try:
+                # Ejecuta el comando y captura la salida
+                resultado = subprocess.run(
+                    comando,
+                    capture_output=True,  # Captura stdout y stderr
+                    text=True,            # Devuelve strings en lugar de bytes
+                    check=True            # Lanza excepción si hay error
+                )
+
+                # Muestra la salida
+                iptables = resultado.stdout
+                self.iptablesLabel.setText(iptables)
+
+            except subprocess.CalledProcessError as e:
+                print("Ocurrió un error al ejecutar el comando:")
+                print(e.stderr)
 
 
             

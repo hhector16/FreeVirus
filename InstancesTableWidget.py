@@ -1,10 +1,11 @@
 from PyQt5.QtWidgets import QApplication, QTableWidget, QTableWidgetItem
 from PyQt5.QtCore import Qt
+from datetime import datetime
 import sqlite3
 class InstancesTableWidget(QTableWidget):
     def __init__(self):
         super().__init__()
-        self.setMinimumWidth(900)
+        self.setMinimumWidth(800)
         self.setFrameStyle(0)  
         self.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)  # quitar scroll horizontal   
         self.setVerticalScrollBarPolicy(Qt.ScrollBarAsNeeded)    # scroll vertical solo si hace falta
@@ -20,7 +21,7 @@ class InstancesTableWidget(QTableWidget):
 
         for fila, (_, hash, fecha, pid, ppid, path, event) in enumerate(data):
             self.setItem(fila, 0, QTableWidgetItem(str(hash)))
-            self.setItem(fila, 1, QTableWidgetItem(str(fecha)))
+            self.setItem(fila, 1, QTableWidgetItem(str(datetime.fromtimestamp(fecha))))
             self.setItem(fila, 2, QTableWidgetItem(str(pid)))
             self.setItem(fila, 3, QTableWidgetItem(str(ppid)))
             self.setItem(fila, 4, QTableWidgetItem(str(path)))
@@ -35,7 +36,6 @@ class InstancesTableWidget(QTableWidget):
         cursor.execute("SELECT * FROM instances")  
 
         rows = cursor.fetchall()
-        print(rows)
 
         conn.close()
         return rows
