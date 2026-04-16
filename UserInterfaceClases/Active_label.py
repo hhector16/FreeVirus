@@ -24,7 +24,7 @@ class Active_label(QTextEdit):
         self.setMinimumHeight(350)
         self.setMinimumWidth(400)
 
-        self.setText("Esperando datos del motor del antivirus...")
+        self.setText("Waiting data from antivirus engine")
         self._placeholder_active = True
 
         # Conectar señal

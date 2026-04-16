@@ -56,7 +56,6 @@ def execution_check(hash):
 
     except Exception as e:
         print("Error grave al acceder al json, ",e)
-        print("TORTILLAAA")
 
 def decay_score(hash):
     now = int(time.time())
@@ -65,7 +64,8 @@ def decay_score(hash):
 
     decay_time = now - last_seen
 
-    decay_time = decay_time // 60
+    decay_time = decay_time // 200
+
 
     new_score = max(0, score - decay_time)
     hash_cache.update_score(hash,new_score)

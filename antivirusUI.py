@@ -3,12 +3,15 @@ import json
 from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QHBoxLayout, QComboBox , QLineEdit , QPushButton , QLabel, QFrame, QStackedWidget, QPlainTextEdit, QScrollArea, QToolButton, QSizePolicy
 from PyQt5.QtGui import QPixmap, QFont
 from PyQt5.QtCore import pyqtSignal, Qt, QSize
-from Active_label import *
-from HashTableWidget import *
-from InstancesTableWidget import *
+from UserInterfaceClases.Memory_widget import *
+from UserInterfaceClases.CPU_usage_label import *
+from UserInterfaceClases.Active_label import *
+from UserInterfaceClases.HashTableWidget import *
+from UserInterfaceClases.InstancesTableWidget import *
 from PyQt5.QtGui import QRegExpValidator
 from PyQt5.QtCore import QRegExp
 import subprocess
+import psutil
 
 
 
@@ -188,7 +191,7 @@ class rightContainer(QWidget):
             p1.setWordWrap(True)
 
             container1 = QWidget()
-            container1.setStyleSheet("margin-top:50px;")
+            container1.setStyleSheet("margin-top:10em;")
             container1_layout = QHBoxLayout(container1)
 
             # Imagen 1
@@ -433,7 +436,7 @@ class rightContainer(QWidget):
             
             self.layout.addWidget(self.stack)
             
-    class QuarantineScreen(QWidget):
+    class CPUScreen(QWidget):
         def __init__(self):
             super().__init__()
             self.setStyleSheet("background-color: #3d3d3d;")  # gris claro
@@ -442,15 +445,26 @@ class rightContainer(QWidget):
             self.layout.setSpacing(0)
             self.layout.setAlignment(Qt.AlignTop)
                 
-            title = QLabel("Quarantine Screen")
+            title = QLabel("CPU usage ")
             title.setStyleSheet("font-size: 24px; color: lightgreen; margin: 60px;")
-            p1 = QLabel("When a file is detected as a virus or malicious, it is moved to quarantine where it is stored in a specific folder and has their permissions denied. In this screen you will be able to see every file detected as suspicious and its state where it verifies its integrity")
+            p1 = QLabel("Being aware of your CPU usage is important because it allows you to understand how your system resources are being used and prevent performance issues.")
             p1.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 40px; margin-right: 40px;") 
             p1.setAlignment(Qt.AlignCenter)
             p1.setWordWrap(True)
+
+            memory = Memory_widget()
+
+            p2 = QLabel(str(psutil.cpu_percent()))
+            p2.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 40px; margin-right: 40px;") 
+            p2.setAlignment(Qt.AlignCenter)
+            p2.setWordWrap(True)
+
+            cpu_label = CPU_usage_label()
                 
             self.layout.addWidget(title, alignment=Qt.AlignHCenter)
             self.layout.addWidget(p1)
+            self.layout.addWidget(memory)
+            self.layout.addWidget(cpu_label)
             
     class dataBasesScreen(QWidget):
         def __init__(self):
@@ -705,7 +719,7 @@ class rightContainer(QWidget):
         index = self.IndexScreen()
         dashboard = self.DashboardScreen()
         protection = self.ProtectionScreen()
-        quarantine = self.QuarantineScreen()
+        cpu = self.CPUScreen()
         simulation = self.SimulationScreen()
         dataBases = self.dataBasesScreen()
         firewall = self.FirewallScreen()
@@ -716,7 +730,7 @@ class rightContainer(QWidget):
         self.stack.addWidget(index)
         self.stack.addWidget(dashboard)
         self.stack.addWidget(protection)
-        self.stack.addWidget(quarantine)
+        self.stack.addWidget(cpu)
         self.stack.addWidget(simulation)
         self.stack.addWidget(dataBases)
         self.stack.addWidget(firewall)
@@ -760,7 +774,7 @@ class VentanaPrincipal(QWidget):
         
         dashboard = ClickableLabel("Dashboard")
         protection = ClickableLabel("Protection")
-        quarantine = ClickableLabel("Quarantine")
+        cpu = ClickableLabel("CPU usage")
         simulation = ClickableLabel("Simulation")
         dataBases = ClickableLabel("DataBases")
         firewall = ClickableLabel("Firewall")
@@ -769,7 +783,7 @@ class VentanaPrincipal(QWidget):
         #Definirmos labels
 
 
-        buttons = [dashboard, protection, quarantine, simulation, dataBases, firewall, settings]
+        buttons = [dashboard, protection, cpu, simulation, dataBases, firewall, settings]
 
         def clear_styles():
             for btn in buttons:
@@ -806,9 +820,9 @@ class VentanaPrincipal(QWidget):
         protection.setMargin(20)
         protection.setStyleSheet("font-weight: bold;color: darkgray;")
 
-        quarantine.clicked.connect(lambda: (right_container.stack.setCurrentIndex(3),clear_styles(), quarantine.setStyleSheet("color: lightgreen; font-weight: bold; ")))
-        quarantine.setMargin(20)
-        quarantine.setStyleSheet("font-weight: bold;color: darkgray;")
+        cpu.clicked.connect(lambda: (right_container.stack.setCurrentIndex(3),clear_styles(), cpu.setStyleSheet("color: lightgreen; font-weight: bold; ")))
+        cpu.setMargin(20)
+        cpu.setStyleSheet("font-weight: bold;color: darkgray;")
 
         simulation.clicked.connect(lambda: (right_container.stack.setCurrentIndex(4),clear_styles(), simulation.setStyleSheet("color: lightgreen; font-weight: bold; ")))
         simulation.setMargin(20)
@@ -857,7 +871,7 @@ class VentanaPrincipal(QWidget):
         left_container_layout.addWidget(dashboard, alignment=Qt.AlignHCenter)
         left_container_layout.addWidget(protection, alignment=Qt.AlignHCenter)
         left_container_layout.addWidget(simulation, alignment=Qt.AlignHCenter)
-        left_container_layout.addWidget(quarantine, alignment=Qt.AlignHCenter)
+        left_container_layout.addWidget(cpu, alignment=Qt.AlignHCenter)
         left_container_layout.addWidget(dataBases, alignment=Qt.AlignHCenter)
         left_container_layout.addWidget(firewall, alignment=Qt.AlignHCenter)
         left_container_layout.addWidget(line2)
