@@ -78,6 +78,9 @@ def verify_sha256(x, pid, ppid,event):
             print("YA EXISTIA")
             return hash
         else:
+
+            if (x.startswith("/tmp") or x.startswith("/var/tmp" or x.startswith("/dev/shm"))):
+                score += 10
             
             url = f"https://www.virustotal.com/api/v3/files/{hash}"
             
@@ -108,7 +111,7 @@ def verify_sha256(x, pid, ppid,event):
                 suspicious = stats.get("suspicious", 0)
 
                 # Calcular score simple
-                score = malicious * 10 + suspicious * 5
+                score += malicious * 10 + suspicious * 5
 
                 # Decidir veredicto
                 if score >= min_malware_score:
