@@ -1,6 +1,0 @@
-docker build -t ubuntu-desktop .
-docker run -d \
-  --name ubuntu-desktop \
-  -p 6080:6080 \
-  -p 5901:5901 \
-  ubuntu-desktop

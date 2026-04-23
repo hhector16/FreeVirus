@@ -23,26 +23,17 @@ def get_executions_last_hour(hash):
     #cursor.execute("SELECT * FROM instances WHERE hash = ?", (hash,))
 
     fecha = cursor.fetchall()
-    print(fecha)
     number = len(fecha)
-    print(number)
     conn.close()
 
     return number
-    print(actual_score + number)
 
 def execution_check(hash):
     actual_score = hash_cache.get_score(hash)[0]
-    print("**************************")
-    print(actual_score)
-    print("**************************")
 
     number = get_executions_last_hour(hash)
     actualized_score = actual_score + number
     hash_cache.update_score(hash,actualized_score)
-
-    with open("archivo.txt", "w", encoding="utf-8") as f:
-        f.write("datoSs : " + str(actualized_score) + "actual : " + str(actual_score))
 
     try:
         with open("conf.json","r") as f:

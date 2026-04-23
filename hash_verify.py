@@ -5,6 +5,7 @@ import requests
 import time
 import json
 import verifyNumberOfEx
+import entropy_verify
 
 
 
@@ -33,29 +34,33 @@ EJEMPLO DE ESTRUCTURA DE LA RESPUESTA
 }
 '''
 
-def load_json(file):
+def load_json():
     try:
-        with open("conf.json",r) as f:
+        with open("conf.json","r") as f:
             data = json.load(f)
             min_malware_score = data["min_malware_score"]
             min_suspicious_score = data["min_suspicious_score"]
     except:
-        print("Ha ocurrido un error con el JSON")
+        print("Ha ocurrido un error con el JSON jajaja ci")
         min_malware_score = 50
         min_suspicious_score = 20
 
 
 def hash_file_with_path(path):
     sha256 = hashlib.sha256()
-    with open(path, "rb") as f:          # SIEMPRE binario
-        for chunk in iter(lambda: f.read(8192), b""):
-            sha256.update(chunk)
-    return sha256.hexdigest()
+    try:
+        with open(path, "rb") as f:
+            for chunk in iter(lambda: f.read(8192), b""):
+                sha256.update(chunk)
+        return sha256.hexdigest()
+    except (FileNotFoundError, PermissionError, OSError):
+        return None
 
 def whitelist(path):
-        if(path.startswith(("/usr/lib/x86_64-linux-gnu/", "usr/bin/git" , "usr/bin/bash" ,"/bin/","/lib/","/sbin/","/lib64/","/proc/","/sys/","/dev/","/run/","/update-motd.d/")) ):
+        if(path.startswith(("/usr/lib/x86_64-linux-gnu/", "/usr/bin/git" , "usr/bin/bash" ,"/bin/","/lib/","/sbin/","/lib64/","/proc/","/sys/","/dev/","/run/","/update-motd.d/")) ):
             return True
 def verify_sha256(x, pid, ppid,event):
+    load_json()
     score = 0
     if event & 0x00000020:
         event_name = "EXEC"
@@ -70,11 +75,11 @@ def verify_sha256(x, pid, ppid,event):
         return 0
     else:
         if hash_cache.contains_hash(hash):
-            #nueva instancia
+            # new instance
             hash_cache.store_instance(hash,pid,ppid,x,event_name)
-            verifyNumberOfEx.decay_score(hash)
+            #verifyNumberOfEx.decay_score(hash)
             hash_cache.update_last_seen(hash,time.time())
-            verifyNumberOfEx.execution_check(hash)
+            #verifyNumberOfEx.execution_check(hash)
             print("YA EXISTIA")
             return hash
         else:
@@ -86,25 +91,18 @@ def verify_sha256(x, pid, ppid,event):
             
             try:
                 r = requests.get(url, headers=HEADERS, timeout=10)
-                print("REQUESt")
-                print(r.status_code)
-                print(r.text)
                 
                 
                 if (r.status_code == 404):    # No se sabe de este archivo, se suma puntos de sospechoso
                     print("Archivo no encontrado en VirusTotal, asignando puntuación de sospechoso")
                     score = 20
                     state = 1  # unknown
-                    print(hash)
                     hash_cache.store_hash(hash,score,state)
-                    return state
                 elif(r.status_code != 200):
                     print("Error al conectar con VirusTotal:", r.status_code)
                     return None
                     
-                r.raise_for_status()
                 data = r.json()
-                print(data)
                 
                 stats = data["data"]["attributes"]["last_analysis_stats"]
                 malicious = stats.get("malicious", 0)
@@ -112,6 +110,15 @@ def verify_sha256(x, pid, ppid,event):
 
                 # Calcular score simple
                 score += malicious * 10 + suspicious * 5
+
+                # Now we calculate the entropy
+
+                entropy = entropy_verify.entropy_check(x)
+
+                print("****", entropy)  
+
+                score += entropy
+
 
                 # Decidir veredicto
                 if score >= min_malware_score:
@@ -121,14 +128,8 @@ def verify_sha256(x, pid, ppid,event):
                 else:
                     state = 0
                 
-                print(hash)
-                print(score)
-                print(state)
-
                 hash_cache.store_hash(hash,score,state)
                 hash_cache.store_instance(hash,pid,ppid,x,event_name)
-                print("Almacenado")
-                print("Guardado en bases de datos")
                 score = hash_cache.get_score(hash)
                 state = hash_cache.get_state(hash)
                 print(hash)

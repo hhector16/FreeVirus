@@ -254,10 +254,58 @@ class rightContainer(QWidget):
                 
                 arrow_layout.addStretch()
                 arrow_layout.addWidget(right_btn)
+
+                options_container = QWidget()
+                options_container_layout = QHBoxLayout(options_container)
+                options_container_layout.setContentsMargins(0, 100, 0, 0)
+                options_container_layout.setSpacing(60)
+
+
+                Eicar_btn = QPushButton("EICAR")
+                Eicar_btn.setFixedSize(200, 90)
+                Eicar_btn.clicked.connect(lambda: self.cambiar_pantalla.emit(3))
+
+                cpu_saturate_btm = QPushButton("Denial of service")
+                cpu_saturate_btm.setFixedSize(200, 90)
+
+                rsw_btn = QPushButton("virus 3")
+                rsw_btn.setFixedSize(200, 90)
+
+                options_container_layout.addWidget(Eicar_btn)
+                options_container_layout.addWidget(cpu_saturate_btm)
+                options_container_layout.addWidget(rsw_btn)
+
+                options_description_container = QWidget()
+                options_description_container.setStyleSheet("margin-top:50px;")
+
+                options_description_container_layout = QHBoxLayout(options_description_container)
+
+                Eicar_description = QLabel("This is a file created so all antivirus should detect this")
+                Eicar_description.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 40px; margin-right: 40px;") 
+                Eicar_description.setAlignment(Qt.AlignCenter)
+                Eicar_description.setWordWrap(True)
+
+                cpu_saturate_description = QLabel("This is a DOS virus which overloads your cpu and ram")
+                cpu_saturate_description.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 40px; margin-right: 40px;") 
+                cpu_saturate_description.setAlignment(Qt.AlignCenter)
+                cpu_saturate_description.setWordWrap(True)
+
+                rsw_description = QLabel("Ransomware which crypts your file so u cant see them")
+                rsw_description.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 40px; margin-right: 40px;") 
+                rsw_description.setAlignment(Qt.AlignCenter)
+                rsw_description.setWordWrap(True)
+
+                options_description_container_layout.addWidget(Eicar_description)
+                options_description_container_layout.addWidget(cpu_saturate_description)
+                options_description_container_layout.addWidget(rsw_description)
+
+                
                         
                 self.layout.addWidget(title, alignment=Qt.AlignHCenter)
                 self.layout.addWidget(p1)
                 self.layout.addWidget(arrow_container)
+                self.layout.addWidget(options_container)
+                self.layout.addWidget(options_description_container)
             
         class sim_fanotify_screen(QWidget):
             cambiar_pantalla = pyqtSignal(int)
@@ -402,6 +450,159 @@ class rightContainer(QWidget):
                 self.layout.addWidget(title, alignment=Qt.AlignHCenter)
                 self.layout.addWidget(p1)
                 self.layout.addWidget(arrow_container)
+
+        class sim_eicar1_screen(QWidget):
+            cambiar_pantalla = pyqtSignal(int)
+            def __init__(self):
+                super().__init__()
+                self.layout=QVBoxLayout(self)
+                self.layout.setContentsMargins(0, 0, 0, 0)
+                self.layout.setSpacing(0)
+                self.layout.setAlignment(Qt.AlignTop)
+                
+                what_is_eicar = QLabel()
+                pixmap= QPixmap("images/what_is_eicar.png").scaled(int(500), int(500), Qt.KeepAspectRatio, Qt.SmoothTransformation)
+                what_is_eicar.setPixmap(pixmap)
+                what_is_eicar.setAlignment(Qt.AlignCenter)
+
+                what_is_eicar.setStyleSheet("margin-top:100px")
+
+                title = QLabel("Events")
+                title.setStyleSheet("font-size: 24px; color: lightgreen; margin: 60px;")
+                p1 = QLabel("As we can see from 'https://procesia.com/test-antivirus-eicar-para-hackear-paginas-web/' its a file used to prove any antivirus. Next we are gonna execute this file so we check if our hash verify works properly. We will show you screenshots of how its detected and at the end you will try to execute it so you can see yourselves in the dashboard")
+                p1.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 40px; margin-right: 40px; margin-top:20px") 
+                p1.setAlignment(Qt.AlignCenter)
+                p1.setWordWrap(True)
+                
+                
+                arrow_container = QWidget()
+                arrow_layout = QHBoxLayout(arrow_container)
+
+                
+                
+
+                right_btn = QToolButton()
+                right_btn.setArrowType(Qt.RightArrow)
+                
+                right_btn.setIconSize(QSize(32, 32))
+                
+                right_btn.clicked.connect(lambda: self.cambiar_pantalla.emit(4))
+                
+                arrow_layout.addStretch()
+                arrow_layout.addWidget(right_btn)
+                
+                self.layout.addWidget(what_is_eicar)
+                self.layout.addWidget(p1)
+                self.layout.addWidget(arrow_container)
+
+        class sim_eicar2_screen(QWidget):
+            cambiar_pantalla = pyqtSignal(int)
+            def __init__(self):
+                super().__init__()
+                self.layout=QVBoxLayout(self)
+                self.layout.setContentsMargins(0, 0, 0, 0)
+                self.layout.setSpacing(0)
+                self.layout.setAlignment(Qt.AlignTop)
+                
+                title = QLabel("How does EICAR look like?")
+                title.setStyleSheet("font-size: 24px; color: lightgreen; margin: 60px;")
+                p1 = QLabel("EICAR is a combination of random symbols designed to simulate a real virus signature, allowing antivirus programs to detect it safely without causing any actual harm to the system. ")
+                p1.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 40px; margin-right: 40px; margin-top:20px") 
+                p1.setAlignment(Qt.AlignCenter)
+                p1.setWordWrap(True)
+
+                eicar_text = QLabel(r"X5O!P%@AP[4\PZX54(P^)7CC)7}$EICAR-STANDARD-ANTIVIRUS-TEST-FILE!$H+H*")
+                eicar_text.setAlignment(Qt.AlignCenter)
+                eicar_text.setStyleSheet("border: 1px solid black; margin-right:150px; margin-left:150px;margin-top:20px;margin-bottom:20px")         
+
+                p2 = QLabel("When this virus downloads or this text is written down and saved, an event is thrown by fanotify and in that instance the antivirus engine calculates its hash, checks its veracity and stores it in our databases. ")
+                p2.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 40px; margin-right: 40px; margin-top:20px") 
+                p2.setAlignment(Qt.AlignCenter)
+                p2.setWordWrap(True)       
+                
+                eicar_database = QLabel()
+                pixmap= QPixmap("images/eicar_database.png").scaled(int(500), int(500), Qt.KeepAspectRatio, Qt.SmoothTransformation)
+                eicar_database.setPixmap(pixmap)
+                eicar_database.setAlignment(Qt.AlignCenter)
+                eicar_database.setStyleSheet("margin-top:50px;")
+
+
+                arrow_container = QWidget()
+                arrow_layout = QHBoxLayout(arrow_container)
+
+                left_btn = QToolButton()
+                left_btn.setArrowType(Qt.LeftArrow)
+
+                right_btn = QToolButton()
+                right_btn.setArrowType(Qt.RightArrow)
+                
+                right_btn.setIconSize(QSize(32, 32))
+                left_btn.setIconSize(QSize(32, 32))
+                
+                left_btn.clicked.connect(lambda: self.cambiar_pantalla.emit(3))
+                right_btn.clicked.connect(lambda: self.cambiar_pantalla.emit(5))
+                
+                arrow_layout.addWidget(left_btn)
+                arrow_layout.addStretch()
+                arrow_layout.addWidget(right_btn)
+                
+                self.layout.addWidget(title, alignment=Qt.AlignHCenter)
+                self.layout.addWidget(p1)
+                self.layout.addWidget(eicar_text)
+                self.layout.addWidget(p2)
+                self.layout.addWidget(eicar_database)
+                self.layout.addWidget(arrow_container)
+            
+        class sim_eicar3_screen(QWidget):
+            cambiar_pantalla = pyqtSignal(int)
+            def __init__(self):
+                super().__init__()
+                self.layout=QVBoxLayout(self)
+                self.layout.setContentsMargins(0, 0, 0, 0)
+                self.layout.setSpacing(0)
+                self.layout.setAlignment(Qt.AlignTop)
+                
+                title = QLabel("How we check its veracity?")
+                title.setStyleSheet("font-size: 24px; color: lightgreen; margin: 60px;")
+
+                p1 = QLabel("When we calculate its hash we make a call to VirusTotalAPI where it compares it with their database and returns some suspicious socres. We also calculate its entriopy which means how dispair the text form the file is. This way we implement the hash verification which is one of the most imporant measures as it checks if the virus has been detected before")
+                p1.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 40px; margin-right: 40px; margin-top:20px") 
+                p1.setAlignment(Qt.AlignCenter)
+                p1.setWordWrap(True)
+
+
+                Eicar_btn = QPushButton("EICAR")
+                Eicar_btn.setFixedSize(200, 90)
+                Eicar_btn.clicked.connect(lambda: self.cambiar_pantalla.emit(3))
+
+                p2 = QLabel("This button will download EICAR so you can see it yourselve in the database and the dashboard!!")
+                p2.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 40px; margin-right: 40px; margin-top:20px") 
+                p2.setAlignment(Qt.AlignCenter)
+                p2.setWordWrap(True)
+
+                arrow_container = QWidget()
+                arrow_layout = QHBoxLayout(arrow_container)
+
+                left_btn = QToolButton()
+                left_btn.setArrowType(Qt.LeftArrow)
+
+                right_btn = QToolButton()
+                right_btn.setArrowType(Qt.RightArrow)
+                
+                right_btn.setIconSize(QSize(32, 32))
+                left_btn.setIconSize(QSize(32, 32))
+                
+                left_btn.clicked.connect(lambda: self.cambiar_pantalla.emit(4))
+                
+                arrow_layout.addWidget(left_btn)
+                arrow_layout.addStretch()
+                
+                self.layout.addWidget(title, alignment=Qt.AlignHCenter)
+                self.layout.addWidget(p1)
+                self.layout.addWidget(Eicar_btn, alignment=Qt.AlignHCenter)
+                self.layout.addWidget(p2)
+                self.layout.addWidget(arrow_container)
+
                 
                 
         # SimulationScreen, pantalla padre de las subpantallas de simulación        
@@ -421,17 +622,31 @@ class rightContainer(QWidget):
                 
             index = self.sim_index_screen()
             index.cambiar_pantalla.connect(self.stack.setCurrentIndex)
+
             fanotify = self.sim_fanotify_screen()
             fanotify.cambiar_pantalla.connect(self.stack.setCurrentIndex)
+
             events = self.sim_events_screen()
             events.cambiar_pantalla.connect(self.stack.setCurrentIndex)
-                
+
+            eicar1 = self.sim_eicar1_screen()
+            eicar1.cambiar_pantalla.connect(self.stack.setCurrentIndex)
+
+            eicar2 = self.sim_eicar2_screen()
+            eicar2.cambiar_pantalla.connect(self.stack.setCurrentIndex)
+
+            eicar3 = self.sim_eicar3_screen()
+            eicar3.cambiar_pantalla.connect(self.stack.setCurrentIndex)
+
             # Añadir subpantallas al stack
                 
             self.stack.addWidget(index)
             self.stack.addWidget(fanotify)
             self.stack.addWidget(events)
-                
+            self.stack.addWidget(eicar1)
+            self.stack.addWidget(eicar2)
+            self.stack.addWidget(eicar3)
+
             self.stack.setCurrentIndex(0)
             
             self.layout.addWidget(self.stack)
@@ -775,7 +990,7 @@ class VentanaPrincipal(QWidget):
         dashboard = ClickableLabel("Dashboard")
         protection = ClickableLabel("Protection")
         cpu = ClickableLabel("CPU usage")
-        simulation = ClickableLabel("Simulation")
+        simulationl = ClickableLabel("Simulation")
         dataBases = ClickableLabel("DataBases")
         firewall = ClickableLabel("Firewall")
         settings = ClickableLabel("Settings")
@@ -783,7 +998,7 @@ class VentanaPrincipal(QWidget):
         #Definirmos labels
 
 
-        buttons = [dashboard, protection, cpu, simulation, dataBases, firewall, settings]
+        buttons = [dashboard, protection, cpu, simulationl, dataBases, firewall, settings]
 
         def clear_styles():
             for btn in buttons:
@@ -824,9 +1039,9 @@ class VentanaPrincipal(QWidget):
         cpu.setMargin(20)
         cpu.setStyleSheet("font-weight: bold;color: darkgray;")
 
-        simulation.clicked.connect(lambda: (right_container.stack.setCurrentIndex(4),clear_styles(), simulation.setStyleSheet("color: lightgreen; font-weight: bold; ")))
-        simulation.setMargin(20)
-        simulation.setStyleSheet("font-weight: bold;color: darkgray;")
+        simulationl.clicked.connect(lambda: (right_container.stack.setCurrentIndex(4),clear_styles(), simulationl.setStyleSheet("color: lightgreen; font-weight: bold; "),right_container.stack.widget(4).stack.setCurrentIndex(0)))
+        simulationl.setMargin(20)
+        simulationl.setStyleSheet("font-weight: bold;color: darkgray;")
         
         dataBases.clicked.connect(lambda: (right_container.stack.setCurrentIndex(5),clear_styles(), dataBases.setStyleSheet("color: lightgreen; font-weight: bold; ")))
         dataBases.setMargin(20)
@@ -870,7 +1085,7 @@ class VentanaPrincipal(QWidget):
         left_container_layout.addWidget(line)
         left_container_layout.addWidget(dashboard, alignment=Qt.AlignHCenter)
         left_container_layout.addWidget(protection, alignment=Qt.AlignHCenter)
-        left_container_layout.addWidget(simulation, alignment=Qt.AlignHCenter)
+        left_container_layout.addWidget(simulationl, alignment=Qt.AlignHCenter)
         left_container_layout.addWidget(cpu, alignment=Qt.AlignHCenter)
         left_container_layout.addWidget(dataBases, alignment=Qt.AlignHCenter)
         left_container_layout.addWidget(firewall, alignment=Qt.AlignHCenter)

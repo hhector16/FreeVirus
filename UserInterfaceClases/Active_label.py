@@ -1,5 +1,6 @@
 from PyQt5.QtWidgets import QTextEdit
 from PyQt5.QtCore import pyqtSignal
+import time
 import threading
 import socket
 import os
@@ -61,7 +62,10 @@ class Active_label(QTextEdit):
 
     def actualizar_texto(self, texto):
         # Añade texto y hace scroll automático
-        self.append(texto)
+        if(texto != "/usr/bin/git" and texto != "/usr/bin/bash"):
+            self.append(texto)
+            time.sleep(0.001)
+            
 
     def stop(self):
         self._running = False
