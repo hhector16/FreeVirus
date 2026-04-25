@@ -267,9 +267,13 @@ class rightContainer(QWidget):
 
                 cpu_saturate_btm = QPushButton("Denial of service")
                 cpu_saturate_btm.setFixedSize(200, 90)
+                cpu_saturate_btm.clicked.connect(lambda: self.cambiar_pantalla.emit(6))
 
-                rsw_btn = QPushButton("virus 3")
+
+                rsw_btn = QPushButton("Adware")
                 rsw_btn.setFixedSize(200, 90)
+                rsw_btn.clicked.connect(lambda: self.cambiar_pantalla.emit(9))
+
 
                 options_container_layout.addWidget(Eicar_btn)
                 options_container_layout.addWidget(cpu_saturate_btm)
@@ -290,7 +294,7 @@ class rightContainer(QWidget):
                 cpu_saturate_description.setAlignment(Qt.AlignCenter)
                 cpu_saturate_description.setWordWrap(True)
 
-                rsw_description = QLabel("Ransomware which crypts your file so u cant see them")
+                rsw_description = QLabel("Virus that displays unwanted advertisements")
                 rsw_description.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 40px; margin-right: 40px;") 
                 rsw_description.setAlignment(Qt.AlignCenter)
                 rsw_description.setWordWrap(True)
@@ -566,17 +570,17 @@ class rightContainer(QWidget):
                 title.setStyleSheet("font-size: 24px; color: lightgreen; margin: 60px;")
 
                 p1 = QLabel("When we calculate its hash we make a call to VirusTotalAPI where it compares it with their database and returns some suspicious socres. We also calculate its entriopy which means how dispair the text form the file is. This way we implement the hash verification which is one of the most imporant measures as it checks if the virus has been detected before")
-                p1.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 40px; margin-right: 40px; margin-top:20px") 
+                p1.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 40px; margin-right: 40px; margin-top:20px; margin-bottom:70px") 
                 p1.setAlignment(Qt.AlignCenter)
                 p1.setWordWrap(True)
 
 
                 Eicar_btn = QPushButton("EICAR")
                 Eicar_btn.setFixedSize(200, 90)
-                Eicar_btn.clicked.connect(lambda: self.cambiar_pantalla.emit(3))
+                Eicar_btn.clicked.connect(lambda: self.cambiar_pantalla.emit(0))
 
                 p2 = QLabel("This button will download EICAR so you can see it yourselve in the database and the dashboard!!")
-                p2.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 40px; margin-right: 40px; margin-top:20px") 
+                p2.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 40px; margin-right: 40px; margin-top:50px") 
                 p2.setAlignment(Qt.AlignCenter)
                 p2.setWordWrap(True)
 
@@ -603,7 +607,164 @@ class rightContainer(QWidget):
                 self.layout.addWidget(p2)
                 self.layout.addWidget(arrow_container)
 
+        class sim_dos1_screen(QWidget):
+            cambiar_pantalla = pyqtSignal(int)
+            def __init__(self):
+                super().__init__()
+                self.layout=QVBoxLayout(self)
+                self.layout.setContentsMargins(0, 0, 0, 0)
+                self.layout.setSpacing(0)
+                self.layout.setAlignment(Qt.AlignTop)
                 
+                what_is_DoS = QLabel()
+                pixmap= QPixmap("images/what_is_DoS.png").scaled(int(700), int(700), Qt.KeepAspectRatio, Qt.SmoothTransformation)
+                what_is_DoS.setPixmap(pixmap)
+                what_is_DoS.setAlignment(Qt.AlignCenter)
+
+                what_is_DoS.setStyleSheet("margin-top:100px")
+
+                title = QLabel("WHat is a DoS attacks")
+                title.setStyleSheet("font-size: 24px; color: lightgreen; margin: 60px;")
+                p1 = QLabel("As we can see from OWASP, it is a virus which saturates the CPU and RAM so the system doesnt respond. This kind of attacks are more common in web applications as they are more exposed but there are also virus that saturate systems ")
+                p1.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 40px; margin-right: 40px; margin-top:50px") 
+                p1.setAlignment(Qt.AlignCenter)
+                p1.setWordWrap(True)
+                
+                
+                arrow_container = QWidget()
+                arrow_layout = QHBoxLayout(arrow_container)
+
+                
+                
+
+                right_btn = QToolButton()
+                right_btn.setArrowType(Qt.RightArrow)
+                
+                right_btn.setIconSize(QSize(32, 32))
+                
+                right_btn.clicked.connect(lambda: self.cambiar_pantalla.emit(7))
+                
+                arrow_layout.addStretch()
+                arrow_layout.addWidget(right_btn)
+                
+                self.layout.addWidget(what_is_DoS)
+                self.layout.addWidget(p1)
+                self.layout.addWidget(arrow_container)
+
+        class sim_dos2_screen(QWidget):
+            cambiar_pantalla = pyqtSignal(int)
+            def __init__(self):
+                super().__init__()
+                self.layout=QVBoxLayout(self)
+                self.layout.setContentsMargins(0, 0, 0, 0)
+                self.layout.setSpacing(0)
+                self.layout.setAlignment(Qt.AlignTop)
+                
+                title = QLabel("How does DoS virus work?")
+                title.setStyleSheet("font-size: 24px; color: lightgreen; margin: 60px;")
+
+                p1 = QLabel("DoS viruses work saturating the CPU with infinite while(1){} loops or allocating memory without freeing it so they saturate the RAM. There are also other ways like generating large amoounts of logs or opening thoursand of socket conncetions. In this example we are going to saturate the RAM.")
+                p1.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 40px; margin-right: 40px; margin-top:20px") 
+                p1.setAlignment(Qt.AlignCenter)
+                p1.setWordWrap(True)
+
+                saturate = QLabel()
+                pixmap= QPixmap("images/saturate.png").scaled(int(800), int(800), Qt.KeepAspectRatio, Qt.SmoothTransformation)
+                saturate.setPixmap(pixmap)
+                saturate.setAlignment(Qt.AlignCenter)
+
+                saturate.setStyleSheet("margin-top:40px")
+
+
+                p2 = QLabel("When this virus downloads or this text is written down and saved, an event is thrown by fanotify and in that instance the antivirus engine calculates its hash, checks its veracity and stores it in our databases. ")
+                p2.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 40px; margin-right: 40px; margin-top:20px") 
+                p2.setAlignment(Qt.AlignCenter)
+                p2.setWordWrap(True)       
+                
+
+                arrow_container = QWidget()
+                arrow_layout = QHBoxLayout(arrow_container)
+
+                left_btn = QToolButton()
+                left_btn.setArrowType(Qt.LeftArrow)
+
+                right_btn = QToolButton()
+                right_btn.setArrowType(Qt.RightArrow)
+                
+                right_btn.setIconSize(QSize(32, 32))
+                left_btn.setIconSize(QSize(32, 32))
+                
+                left_btn.clicked.connect(lambda: self.cambiar_pantalla.emit(6))
+                right_btn.clicked.connect(lambda: self.cambiar_pantalla.emit(8))
+                
+                arrow_layout.addWidget(left_btn)
+                arrow_layout.addStretch()
+                arrow_layout.addWidget(right_btn)
+                
+                self.layout.addWidget(title, alignment=Qt.AlignHCenter)
+                self.layout.addWidget(p1)
+                self.layout.addWidget(saturate)
+                self.layout.addWidget(p2)
+                self.layout.addWidget(arrow_container)
+
+        class sim_dos3_screen(QWidget):
+            cambiar_pantalla = pyqtSignal(int)
+            def __init__(self):
+                super().__init__()
+                self.layout=QVBoxLayout(self)
+                self.layout.setContentsMargins(0, 0, 0, 0)
+                self.layout.setSpacing(0)
+                self.layout.setAlignment(Qt.AlignTop)
+                
+                title = QLabel("How do we avoid this?")
+                title.setStyleSheet("font-size: 24px; color: lightgreen; margin: 60px;")
+
+                p1 = QLabel("FreeVirus implements a system which monitors every single process since its executed. Here is the code which receive the path and checks everytime its CPU and RAM use. The thresholds are configured in configuration screen.")
+                p1.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 40px; margin-right: 40px; margin-top:20px; margin-bottom:70px") 
+                p1.setAlignment(Qt.AlignCenter)
+                p1.setWordWrap(True)
+
+                code = QLabel()
+                pixmap= QPixmap("images/code_monitor.png").scaled(int(600), int(600), Qt.KeepAspectRatio, Qt.SmoothTransformation)
+                code.setPixmap(pixmap)
+                code.setAlignment(Qt.AlignCenter)
+
+                code.setStyleSheet("margin-top:20px; margin-bottom:50px")
+
+
+                Eicar_btn = QPushButton("DoS virus")
+                Eicar_btn.setFixedSize(200, 90)
+                Eicar_btn.clicked.connect(lambda: self.cambiar_pantalla.emit(0))
+
+                p2 = QLabel("This button will download this virus. Check the CPU usage screen!!")
+                p2.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 40px; margin-right: 40px; margin-top:50px") 
+                p2.setAlignment(Qt.AlignCenter)
+                p2.setWordWrap(True)
+
+                arrow_container = QWidget()
+                arrow_layout = QHBoxLayout(arrow_container)
+
+                left_btn = QToolButton()
+                left_btn.setArrowType(Qt.LeftArrow)
+
+                right_btn = QToolButton()
+                right_btn.setArrowType(Qt.RightArrow)
+                
+                right_btn.setIconSize(QSize(32, 32))
+                left_btn.setIconSize(QSize(32, 32))
+                
+                left_btn.clicked.connect(lambda: self.cambiar_pantalla.emit(7))
+                
+                arrow_layout.addWidget(left_btn)
+                arrow_layout.addStretch()
+                
+                self.layout.addWidget(title, alignment=Qt.AlignHCenter)
+                self.layout.addWidget(p1)
+                self.layout.addWidget(code, alignment=Qt.AlignHCenter)
+                self.layout.addWidget(Eicar_btn, alignment=Qt.AlignHCenter)
+                self.layout.addWidget(p2)
+                self.layout.addWidget(arrow_container)
+
                 
         # SimulationScreen, pantalla padre de las subpantallas de simulación        
         def __init__(self):
@@ -638,6 +799,15 @@ class rightContainer(QWidget):
             eicar3 = self.sim_eicar3_screen()
             eicar3.cambiar_pantalla.connect(self.stack.setCurrentIndex)
 
+            dos1 = self.sim_dos1_screen()
+            dos1.cambiar_pantalla.connect(self.stack.setCurrentIndex)
+
+            dos2 = self.sim_dos2_screen()
+            dos2.cambiar_pantalla.connect(self.stack.setCurrentIndex)
+
+            dos3 = self.sim_dos3_screen()
+            dos3.cambiar_pantalla.connect(self.stack.setCurrentIndex)
+
             # Añadir subpantallas al stack
                 
             self.stack.addWidget(index)
@@ -646,6 +816,9 @@ class rightContainer(QWidget):
             self.stack.addWidget(eicar1)
             self.stack.addWidget(eicar2)
             self.stack.addWidget(eicar3)
+            self.stack.addWidget(dos1)
+            self.stack.addWidget(dos2)
+            self.stack.addWidget(dos3)
 
             self.stack.setCurrentIndex(0)
             
@@ -784,7 +957,7 @@ class rightContainer(QWidget):
             p3.setWordWrap(True)
                 
             self.select = QComboBox()
-            self.select.addItems(["INPUT","OUTPUT","FORDWARD"])
+            self.select.addItems(["INPUT","OUTPUT","FORWARD"])
             self.select.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
             self.select.setFixedWidth(110)
 
@@ -803,7 +976,7 @@ class rightContainer(QWidget):
             self.portsInput = QLineEdit()
             self.portsInput.setFixedWidth(80)
 
-            p6 = QLabel("Block ip (optional):")     
+            p6 = QLabel("ip (optional):")     
             p6.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 10px; margin-right: 10px; margin-bottom:40px;margin-top:40px") 
             p6.setWordWrap(True)
 
@@ -812,6 +985,16 @@ class rightContainer(QWidget):
             ip_validator = QRegExpValidator(ip_regex)
             self.ipsInput.setValidator(ip_validator)
             self.ipsInput.setPlaceholderText("192.168.1.120")
+
+            p8 = QLabel("domain (optional):")     
+            p8.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 10px; margin-right: 10px; margin-bottom:40px;margin-top:40px") 
+            p8.setWordWrap(True)
+
+            self.domainInput = QLineEdit()
+            domain_regex = QRegExp(r'^(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,63}$')
+            domain_validator = QRegExpValidator(domain_regex)
+            self.domainInput.setValidator(domain_validator)
+            self.domainInput.setPlaceholderText("apple.com")
 
             self.do = QComboBox()
             self.do.addItems(["ACCEPT","DROP"])
@@ -841,6 +1024,8 @@ class rightContainer(QWidget):
             rules_container_layout.addWidget(self.portsInput)
             rules_container_layout.addWidget(p6)
             rules_container_layout.addWidget(self.ipsInput)
+            rules_container_layout.addWidget(p8)
+            rules_container_layout.addWidget(self.domainInput)
             rules_container_layout.addWidget(self.do)
             rules_container_layout.addWidget(add_rule_button)
 
@@ -849,9 +1034,11 @@ class rightContainer(QWidget):
 
         def setRule(self):
             ips = self.ipsInput.text()
+            domains = self.domainInput.text()
             ports = self.portsInput.text()
             operation = self.selectOperation.currentText()
             select = self.select.currentText()
+            print(select)
             protocol = self.protocolSelect.currentText()
             do = self.do.currentText()
 
@@ -865,12 +1052,15 @@ class rightContainer(QWidget):
             self.ipsInput.setText("")
             self.portsInput.setText("")
 
-            if(ips == ""):
+            if(ips == "") and (domains == ""):
                 comando = ["iptables",operation,select,"-p",protocol,"--dport",ports,"-j",do]
-            else:
+            elif (ips != "") and (domains == ""):
                 comando = ["iptables",operation,select,"-p",protocol,"--dport",ports,"-s",ips,"-j",do]
+            elif (ips == "") and (domains != ""):
+                comando = ["iptables",operation,select,"-p",protocol,"--dport",ports,"-d",domains,"-j",do]
             try:
                 # Ejecuta el comando y captura la salida
+                print(comando)
                 resultado = subprocess.run(
                     comando,
                     capture_output=True,  # Captura stdout y stderr

@@ -52,8 +52,6 @@ def monitor_loop(filepath):
 
                     # if overloads, terminates
                     if cpu > cpu_threshold or ram > ram_threshold:
-                        print(f"[ALERT] {p.info['name']} (PID {p.pid})")
-                        print(f"   CPU: {cpu:.1f}% | RAM: {ram:.1f} MB")
 
                         p.terminate() 
                         print("process killed")

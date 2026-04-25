@@ -41,7 +41,7 @@ def load_json():
             min_malware_score = data["min_malware_score"]
             min_suspicious_score = data["min_suspicious_score"]
     except:
-        print("Ha ocurrido un error con el JSON jajaja ci")
+        print("Error json")
         min_malware_score = 50
         min_suspicious_score = 20
 
@@ -115,7 +115,6 @@ def verify_sha256(x, pid, ppid,event):
 
                 entropy = entropy_verify.entropy_check(x)
 
-                print("****", entropy)  
 
                 score += entropy
 
