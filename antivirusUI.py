@@ -8,6 +8,7 @@ from UserInterfaceClases.CPU_usage_label import *
 from UserInterfaceClases.Active_label import *
 from UserInterfaceClases.HashTableWidget import *
 from UserInterfaceClases.InstancesTableWidget import *
+from UserInterfaceClases.Check_file_screen import *
 from PyQt5.QtGui import QRegExpValidator
 from PyQt5.QtCore import QRegExp
 import subprocess
@@ -134,12 +135,22 @@ class rightContainer(QWidget):
             title = QLabel("Index")
             title.setStyleSheet("font-size: 24px; color: lightgreen; margin: 60px;")
             
-            introduction = QLabel("Bienvenido a FreeVirus, nuestra aplicación dedicada al estudio y analisis del funcionamiento de los antivirus. Hemos desarrollado el software de un antivirus funcional como cualquier otro con la difrencia de que nos vamos a enfocar en explcicar su funcionamiento interno con fines educativos. Esta idea surgió ya que mediante mi proceso de investigación del funcionamiento de este tipo de software, era todo muy técnico y complejo para alguien sin conocimientos. Por ello, el objetivo de este TFG es desarrollar una aplicación con el fin de tratar de explicar visualmente su funcionamiento de forma que es más fácil de estudiarlo sin tener un conocimiento previo.")
+            introduction = QLabel(
+            "Welcome to FreeVirus, our application dedicated to the study and analysis of how antivirus software works. "
+            "We have developed a fully functional antivirus system, similar to existing solutions, with the key difference "
+            "that our focus is on explaining its internal behavior for educational purposes. "
+            "This idea emerged during the research process, where understanding how this type of software operates proved to be highly technical and complex for individuals without prior knowledge. "
+            "For this reason, the main objective of this Final Degree Project is to develop an application that visually explains how an antivirus works, making it easier to understand and study without requiring a technical background."
+            )
             introduction.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 40px; margin-right: 40px;") 
             introduction.setAlignment(Qt.AlignCenter)
             introduction.setWordWrap(True)
             
-            introduction2 = QLabel("A la izquierda se encuentran botones con las diferentes secciones de la aplicación. Para observar el funcionamiento del antivirus sin poner en peligro su equipo, hemos creado un apartado de simulación en el que se muestran ejemplos de virus para comprobar el funcionamiento.")
+            introduction2 = QLabel(
+            "On the left side, you will find buttons for the different sections of the application. "
+            "To observe how the antivirus works without putting your system at risk, we have included a simulation section "
+            "that provides examples of viruses to demonstrate its functionality."
+            )
             introduction2.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 40px; margin-right: 40px;") 
             introduction2.setAlignment(Qt.AlignCenter)
             introduction2.setWordWrap(True)
@@ -252,8 +263,6 @@ class rightContainer(QWidget):
                 
                 right_btn.clicked.connect(lambda: self.cambiar_pantalla.emit(1))
                 
-                arrow_layout.addStretch()
-                arrow_layout.addWidget(right_btn)
 
                 options_container = QWidget()
                 options_container_layout = QHBoxLayout(options_container)
@@ -765,6 +774,169 @@ class rightContainer(QWidget):
                 self.layout.addWidget(p2)
                 self.layout.addWidget(arrow_container)
 
+        class sim_adware1screen(QWidget):
+            cambiar_pantalla = pyqtSignal(int)
+            def __init__(self):
+                super().__init__()
+                self.layout=QVBoxLayout(self)
+                self.layout.setContentsMargins(0, 0, 0, 0)
+                self.layout.setSpacing(0)
+                self.layout.setAlignment(Qt.AlignTop)
+                
+                title = QLabel("What is an adware")
+                title.setStyleSheet("font-size: 24px; color: lightgreen; margin: 60px;")
+                
+                p1 = QLabel("Adware is software that displays unwanted (and sometimes irritating) pop-up adverts which can appear on your computer or mobile device. Adware typically ends up on a users device through one of two ways:You might install a free computer program or app without necessarily realizing that it contains additional software that contains adware. This allows the app developer to make money but means you could download adware onto your systems without necessarily consenting.Alternatively, there may be a vulnerability in your software or operating system which hackers exploit to insert malware, including some types of adware, into your system.")
+                p1.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 40px; margin-right: 40px; margin-top:50px") 
+                p1.setAlignment(Qt.AlignCenter)
+                p1.setWordWrap(True)
+                
+                p2 = QLabel("Signs that you may be infected with unwanted adware include: Computer adware infection signs, an unexpected change in your web browser home page, web pages that you visit not displaying correctly, being overwhelmed with pop-up ads — sometimes even if not browsing the internet, slow device performance, device crashing, reduced internet speeds, redirected internet searches, random appearance of a new toolbar or browser add-on")
+                p2.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 40px; margin-right: 40px; margin-top:50px") 
+                p2.setAlignment(Qt.AlignCenter)
+                p2.setWordWrap(True)
+
+                p3 = QLabel("In this simulation we will see an adware which modifies your gogle chrome homepage")
+                p3.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 40px; margin-right: 40px; margin-top:50px") 
+                p3.setAlignment(Qt.AlignCenter)
+                p3.setWordWrap(True)
+                
+                arrow_container = QWidget()
+                arrow_layout = QHBoxLayout(arrow_container)
+
+                
+                
+
+                right_btn = QToolButton()
+                right_btn.setArrowType(Qt.RightArrow)
+                
+                right_btn.setIconSize(QSize(32, 32))
+                
+                right_btn.clicked.connect(lambda: self.cambiar_pantalla.emit(10))
+                
+                arrow_layout.addStretch()
+                arrow_layout.addWidget(right_btn)
+                
+                self.layout.addWidget(title)
+                self.layout.addWidget(p1)
+                self.layout.addWidget(p2)
+                self.layout.addWidget(p3)
+                self.layout.addWidget(arrow_container)
+
+        class sim_adware2_screen(QWidget):
+            cambiar_pantalla = pyqtSignal(int)
+            def __init__(self):
+                super().__init__()
+                self.layout=QVBoxLayout(self)
+                self.layout.setContentsMargins(0, 0, 0, 0)
+                self.layout.setSpacing(0)
+                self.layout.setAlignment(Qt.AlignTop)
+                
+                title = QLabel("How does DoS virus work?")
+                title.setStyleSheet("font-size: 24px; color: lightgreen; margin: 60px;")
+
+                p1 = QLabel("When this virus is executed it will change your homepage to an unwanted page. The way this is detected is when the directory '.config/google-chrome/Default/Preferences' is modified. This way we can intercep when this folder is modified and we deny any write process in this folder")
+                p1.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 40px; margin-right: 40px; margin-top:20px") 
+                p1.setAlignment(Qt.AlignCenter)
+                p1.setWordWrap(True)
+
+                saturate = QLabel()
+                pixmap= QPixmap("images/saturate.png").scaled(int(800), int(800), Qt.KeepAspectRatio, Qt.SmoothTransformation)
+                saturate.setPixmap(pixmap)
+                saturate.setAlignment(Qt.AlignCenter)
+
+                saturate.setStyleSheet("margin-top:40px")
+
+
+                p2 = QLabel("When this virus downloads or this text is written down and saved, an event is thrown by fanotify and in that instance the antivirus engine calculates its hash, checks its veracity and stores it in our databases. ")
+                p2.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 40px; margin-right: 40px; margin-top:20px") 
+                p2.setAlignment(Qt.AlignCenter)
+                p2.setWordWrap(True)       
+                
+
+                arrow_container = QWidget()
+                arrow_layout = QHBoxLayout(arrow_container)
+
+                left_btn = QToolButton()
+                left_btn.setArrowType(Qt.LeftArrow)
+
+                right_btn = QToolButton()
+                right_btn.setArrowType(Qt.RightArrow)
+                
+                right_btn.setIconSize(QSize(32, 32))
+                left_btn.setIconSize(QSize(32, 32))
+                
+                left_btn.clicked.connect(lambda: self.cambiar_pantalla.emit(9))
+                right_btn.clicked.connect(lambda: self.cambiar_pantalla.emit(11))
+                
+                arrow_layout.addWidget(left_btn)
+                arrow_layout.addStretch()
+                arrow_layout.addWidget(right_btn)
+                
+                self.layout.addWidget(title, alignment=Qt.AlignHCenter)
+                self.layout.addWidget(p1)
+                self.layout.addWidget(saturate)
+                self.layout.addWidget(p2)
+                self.layout.addWidget(arrow_container)
+
+        class sim_adware3_screen(QWidget):
+            cambiar_pantalla = pyqtSignal(int)
+            def __init__(self):
+                super().__init__()
+                self.layout=QVBoxLayout(self)
+                self.layout.setContentsMargins(0, 0, 0, 0)
+                self.layout.setSpacing(0)
+                self.layout.setAlignment(Qt.AlignTop)
+                
+                title = QLabel("How do we avoid this?")
+                title.setStyleSheet("font-size: 24px; color: lightgreen; margin: 60px;")
+
+                p1 = QLabel("FreeVirus implements a system which monitors every single process since its executed. Here is the code which receive the path and checks everytime its CPU and RAM use. The thresholds are configured in configuration screen.")
+                p1.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 40px; margin-right: 40px; margin-top:20px; margin-bottom:70px") 
+                p1.setAlignment(Qt.AlignCenter)
+                p1.setWordWrap(True)
+
+                code = QLabel()
+                pixmap= QPixmap("images/code_monitor.png").scaled(int(600), int(600), Qt.KeepAspectRatio, Qt.SmoothTransformation)
+                code.setPixmap(pixmap)
+                code.setAlignment(Qt.AlignCenter)
+
+                code.setStyleSheet("margin-top:20px; margin-bottom:50px")
+
+
+                Eicar_btn = QPushButton("DoS virus")
+                Eicar_btn.setFixedSize(200, 90)
+                Eicar_btn.clicked.connect(lambda: self.cambiar_pantalla.emit(0))
+
+                p2 = QLabel("This button will download this virus. Check the CPU usage screen!!")
+                p2.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 40px; margin-right: 40px; margin-top:50px") 
+                p2.setAlignment(Qt.AlignCenter)
+                p2.setWordWrap(True)
+
+                arrow_container = QWidget()
+                arrow_layout = QHBoxLayout(arrow_container)
+
+                left_btn = QToolButton()
+                left_btn.setArrowType(Qt.LeftArrow)
+
+                right_btn = QToolButton()
+                right_btn.setArrowType(Qt.RightArrow)
+                
+                right_btn.setIconSize(QSize(32, 32))
+                left_btn.setIconSize(QSize(32, 32))
+                
+                left_btn.clicked.connect(lambda: self.cambiar_pantalla.emit(10))
+                
+                arrow_layout.addWidget(left_btn)
+                arrow_layout.addStretch()
+                
+                self.layout.addWidget(title, alignment=Qt.AlignHCenter)
+                self.layout.addWidget(p1)
+                self.layout.addWidget(code, alignment=Qt.AlignHCenter)
+                self.layout.addWidget(Eicar_btn, alignment=Qt.AlignHCenter)
+                self.layout.addWidget(p2)
+                self.layout.addWidget(arrow_container)
+
                 
         # SimulationScreen, pantalla padre de las subpantallas de simulación        
         def __init__(self):
@@ -808,6 +980,15 @@ class rightContainer(QWidget):
             dos3 = self.sim_dos3_screen()
             dos3.cambiar_pantalla.connect(self.stack.setCurrentIndex)
 
+            adware1 = self.sim_adware1screen()
+            adware1.cambiar_pantalla.connect(self.stack.setCurrentIndex)
+
+            adware2 = self.sim_adware2_screen()
+            adware2.cambiar_pantalla.connect(self.stack.setCurrentIndex)
+
+            adware3 = self.sim_adware3_screen()
+            adware3.cambiar_pantalla.connect(self.stack.setCurrentIndex)
+
             # Añadir subpantallas al stack
                 
             self.stack.addWidget(index)
@@ -819,6 +1000,9 @@ class rightContainer(QWidget):
             self.stack.addWidget(dos1)
             self.stack.addWidget(dos2)
             self.stack.addWidget(dos3)
+            self.stack.addWidget(adware1)
+            self.stack.addWidget(adware2)
+            self.stack.addWidget(adware3)
 
             self.stack.setCurrentIndex(0)
             
@@ -1107,6 +1291,34 @@ class rightContainer(QWidget):
             title.setStyleSheet("font-size: 24px; color: lightgreen; margin: 60px;")
                 
             self.layout.addWidget(title, alignment=Qt.AlignHCenter)
+
+    class AboutUsScreen(QWidget):
+        def __init__(self):
+            super().__init__()
+            self.setStyleSheet("background-color: #3d3d3d;")  # gris claro
+            self.layout=QVBoxLayout(self)
+            self.layout.setContentsMargins(0, 0, 0, 0)
+            self.layout.setSpacing(0)
+            self.layout.setAlignment(Qt.AlignTop)
+                
+            title = QLabel("About us")
+            title.setStyleSheet("font-size: 24px; color: lightgreen; margin: 60px;")
+
+            p1 = QLabel("This project represents the Final Degree Project of student 'Héctor González Viñas' in the Computer Engineering program at the Universidad Rey Juan Carlos (URJC). It has been developed under the supervision of professor 'Juan Martin Mansilla', with the objecive of developing a functional desktop app which can be used as a tool for students to understund the antivirus engines and firewall rules .The system focuses on monitoring and analyzing events in Linux-based environments thanks to fanotify, a linux kernel subsystem, integrating low-level programming techniques, inter-process communication with sockets, and security analysis tools. The project aims to provide a realistic approach to how modern cybersecurity solutions operate, combining efficiency, early threat detection, and response capabilities.During its development, several challenges have been addressed, including system event interception, real-time data processing, and integration with external services for threat analysis. This work doesnt aim to compite with commercial antiviruses as it is just a learning focused tool")
+            p1.setStyleSheet("font-size: 18px; color: darkgray; margin-left: 40px; margin-right: 40px;") 
+            p1.setAlignment(Qt.AlignCenter)
+            p1.setWordWrap(True)
+
+            urjc = QLabel()
+            pixmap= QPixmap("images/urjc.png").scaled(int(500), int(500), Qt.KeepAspectRatio, Qt.SmoothTransformation)
+            urjc.setPixmap(pixmap)
+            urjc.setAlignment(Qt.AlignCenter)
+            urjc.setStyleSheet("margin-top:50px")
+            
+                
+            self.layout.addWidget(title, alignment=Qt.AlignHCenter)
+            self.layout.addWidget(p1)
+            self.layout.addWidget(urjc)
         
     def __init__(self): 
         super().__init__()
@@ -1124,11 +1336,13 @@ class rightContainer(QWidget):
         index = self.IndexScreen()
         dashboard = self.DashboardScreen()
         protection = self.ProtectionScreen()
+        check_file_screen = Check_file_screen()
         cpu = self.CPUScreen()
         simulation = self.SimulationScreen()
         dataBases = self.dataBasesScreen()
         firewall = self.FirewallScreen()
         settings = self.SettingsScreen()
+        about_us_screen = self.AboutUsScreen()
 
         # Añadir pantallas al stack
         
@@ -1140,6 +1354,8 @@ class rightContainer(QWidget):
         self.stack.addWidget(dataBases)
         self.stack.addWidget(firewall)
         self.stack.addWidget(settings)
+        self.stack.addWidget(check_file_screen)
+        self.stack.addWidget(about_us_screen)
         
         self.stack.setCurrentWidget(index)
         
@@ -1179,16 +1395,18 @@ class VentanaPrincipal(QWidget):
         
         dashboard = ClickableLabel("Dashboard")
         protection = ClickableLabel("Protection")
+        check_file = ClickableLabel("Scann file")
         cpu = ClickableLabel("CPU usage")
         simulationl = ClickableLabel("Simulation")
         dataBases = ClickableLabel("DataBases")
         firewall = ClickableLabel("Firewall")
         settings = ClickableLabel("Settings")
+        about_us = ClickableLabel("About us")
 
         #Definirmos labels
 
 
-        buttons = [dashboard, protection, cpu, simulationl, dataBases, firewall, settings]
+        buttons = [dashboard, protection, check_file, cpu, simulationl, dataBases, firewall, settings, about_us]
 
         def clear_styles():
             for btn in buttons:
@@ -1225,6 +1443,10 @@ class VentanaPrincipal(QWidget):
         protection.setMargin(20)
         protection.setStyleSheet("font-weight: bold;color: darkgray;")
 
+        check_file.clicked.connect(lambda: (right_container.stack.setCurrentIndex(8),clear_styles(), check_file.setStyleSheet("color: lightgreen; font-weight: bold; ")))
+        check_file.setMargin(20)
+        check_file.setStyleSheet("font-weight: bold;color: darkgray;")
+
         cpu.clicked.connect(lambda: (right_container.stack.setCurrentIndex(3),clear_styles(), cpu.setStyleSheet("color: lightgreen; font-weight: bold; ")))
         cpu.setMargin(20)
         cpu.setStyleSheet("font-weight: bold;color: darkgray;")
@@ -1244,6 +1466,10 @@ class VentanaPrincipal(QWidget):
         settings.clicked.connect(lambda: (right_container.stack.setCurrentIndex(7),clear_styles(), settings.setStyleSheet("color: lightgreen; font-weight: bold; ")))
         settings.setMargin(20)
         settings.setStyleSheet("font-weight: bold;color: darkgray;")
+
+        about_us.clicked.connect(lambda: (right_container.stack.setCurrentIndex(9),clear_styles(), about_us.setStyleSheet("color: lightgreen; font-weight: bold; ")))
+        about_us.setMargin(20)
+        about_us.setStyleSheet("font-weight: bold;color: darkgray;")
         
         #Right container
         
@@ -1276,11 +1502,14 @@ class VentanaPrincipal(QWidget):
         left_container_layout.addWidget(dashboard, alignment=Qt.AlignHCenter)
         left_container_layout.addWidget(protection, alignment=Qt.AlignHCenter)
         left_container_layout.addWidget(simulationl, alignment=Qt.AlignHCenter)
+        left_container_layout.addWidget(check_file, alignment=Qt.AlignHCenter)
         left_container_layout.addWidget(cpu, alignment=Qt.AlignHCenter)
         left_container_layout.addWidget(dataBases, alignment=Qt.AlignHCenter)
         left_container_layout.addWidget(firewall, alignment=Qt.AlignHCenter)
         left_container_layout.addWidget(line2)
         left_container_layout.addWidget(settings, alignment=Qt.AlignHCenter)
+        left_container_layout.addWidget(about_us, alignment=Qt.AlignHCenter)
+
 
 selected = 2
 selected_image = None

@@ -53,6 +53,7 @@ s.bind(SOCK)
 s.listen()
 
 whitelist = ["/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2","/usr/bin/git","usr/bin/bash","/usr/lib/systemd/systemd-executor"]
+blacklist = []
 
 while True:
     conn, _ = s.accept()

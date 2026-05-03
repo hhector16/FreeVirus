@@ -216,7 +216,7 @@ int main() {
     fanotify_mark(
         fan_exec,
         FAN_MARK_ADD | FAN_MARK_MOUNT,
-        FAN_OPEN_EXEC_PERM | FAN_OPEN | FAN_CLOSE_WRITE,   // <-- AÑADIDO CLOSE_WRITE
+        FAN_OPEN_EXEC_PERM | FAN_OPEN | FAN_CLOSE_WRITE,  
         AT_FDCWD,
         "/"
     );
