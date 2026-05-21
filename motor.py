@@ -80,7 +80,7 @@ while True:
                 conn.sendall(b"ALLOW")
                 continue
 
-            # Decisión AV
+            # DECISION
             file_hash = hash_file_with_path(path)
 
             if file_hash is None:

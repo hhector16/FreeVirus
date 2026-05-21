@@ -16,6 +16,8 @@ import psutil
 
 
 
+
+
 class ClickableLabel(QLabel):
     clicked = pyqtSignal()
     def __init__(self, parent=None):
@@ -248,7 +250,7 @@ class rightContainer(QWidget):
                         
                 title = QLabel("Simulation Screen")
                 title.setStyleSheet("font-size: 24px; color: lightgreen; margin: 60px;")
-                p1 = QLabel("In this section you will watch live all the process the antivirus engine follows in order to detect the virus including the analysis of the file,how its moved to quarantine and how the databases are updated. When you click the buton, the EICAR test will download explaining step by step the process. EICAR test is a harmless file that is used to test the functionality of antivirus software. It is detected as a virus by antivirus programs, but it does not contain any malicious code and does not pose any threat to your computer.")
+                p1 = QLabel("In this section you will watch live all the process the antivirus engine follows in order to detect the virus including the analysis of the file,how its moved to quarantine and how the databases are updated. When you click the buton, you will navigate through screens which will explain how that file analysis is done. At the end of each virus it will dowload so you can see the process")
                 p1.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 40px; margin-right: 40px;") 
                 p1.setAlignment(Qt.AlignCenter)
                 p1.setWordWrap(True)
@@ -279,14 +281,9 @@ class rightContainer(QWidget):
                 cpu_saturate_btm.clicked.connect(lambda: self.cambiar_pantalla.emit(6))
 
 
-                rsw_btn = QPushButton("Adware")
-                rsw_btn.setFixedSize(200, 90)
-                rsw_btn.clicked.connect(lambda: self.cambiar_pantalla.emit(9))
-
 
                 options_container_layout.addWidget(Eicar_btn)
                 options_container_layout.addWidget(cpu_saturate_btm)
-                options_container_layout.addWidget(rsw_btn)
 
                 options_description_container = QWidget()
                 options_description_container.setStyleSheet("margin-top:50px;")
@@ -303,14 +300,9 @@ class rightContainer(QWidget):
                 cpu_saturate_description.setAlignment(Qt.AlignCenter)
                 cpu_saturate_description.setWordWrap(True)
 
-                rsw_description = QLabel("Virus that displays unwanted advertisements")
-                rsw_description.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 40px; margin-right: 40px;") 
-                rsw_description.setAlignment(Qt.AlignCenter)
-                rsw_description.setWordWrap(True)
 
                 options_description_container_layout.addWidget(Eicar_description)
                 options_description_container_layout.addWidget(cpu_saturate_description)
-                options_description_container_layout.addWidget(rsw_description)
 
                 
                         
@@ -1064,15 +1056,15 @@ class rightContainer(QWidget):
             p3.setAlignment(Qt.AlignCenter)
             p3.setWordWrap(True)
 
-            tabla = HashTableWidget()
-            instancesTable = InstancesTableWidget()
+            self.tabla = HashTableWidget()
+            self.instancesTable = InstancesTableWidget()
                 
             self.layout.addWidget(title, alignment=Qt.AlignHCenter)
             self.layout.addWidget(p1)
             self.layout.addWidget(p2)
-            self.layout.addWidget(tabla, alignment=Qt.AlignHCenter)
+            self.layout.addWidget(self.tabla, alignment=Qt.AlignHCenter)
             self.layout.addWidget(p3)
-            self.layout.addWidget(instancesTable, alignment=Qt.AlignHCenter)
+            self.layout.addWidget(self.instancesTable, alignment=Qt.AlignHCenter)
 
 
             
@@ -1278,19 +1270,178 @@ class rightContainer(QWidget):
 
 
             
+            
     class SettingsScreen(QWidget):
+
         def __init__(self):
             super().__init__()
-            self.setStyleSheet("background-color: #3d3d3d;")  # gris claro
-            self.layout=QVBoxLayout(self)
-            self.layout.setContentsMargins(0, 0, 0, 0)
-            self.layout.setSpacing(0)
+
+            self.setStyleSheet("background-color: #3d3d3d;")
+
+            self.layout = QVBoxLayout(self)
+            self.layout.setContentsMargins(20, 20, 20, 20)
+            self.layout.setSpacing(25)
             self.layout.setAlignment(Qt.AlignTop)
-                
+
+            try:
+                with open("conf.json", "r") as f:
+                    data = json.load(f)
+
+                    min_malware_score = data["min_malware_score"]
+                    min_suspicious_score = data["min_suspicious_score"]
+                    cpu_threshold = data["cpu_threshold"]
+                    ram_threshold = data["ram_threshold"]
+                    entropy = data["entropy"]
+
+            except Exception as e:
+                print("Error json:", e)
+
             title = QLabel("Settings Screen")
-            title.setStyleSheet("font-size: 24px; color: lightgreen; margin: 60px;")
-                
+
+            title.setStyleSheet("""
+                font-size: 26px;
+                color: lightgreen;
+                margin:60px;
+            """)
+
+            p2 = QLabel(
+                "Note: if you change the protection settings screen "
+                "the minimum suspicious and malware score will be changed"
+            )
+
+            p2.setStyleSheet("""
+                font-size: 16px;
+                color: darkgray;
+                margin-left: 40px;
+                margin-right: 40px;
+                margin-top:20px;
+            """)
+
+            p2.setWordWrap(True)
+
+            reloadSettings = QPushButton("Apply changes")
+            reloadSettings.setFixedWidth(120)
+
+            # conectar botón
+            reloadSettings.clicked.connect(self.update_json)
+
             self.layout.addWidget(title, alignment=Qt.AlignHCenter)
+
+            # GUARDAMOS LOS INPUTS
+            self.entropy_input = self.create_setting_row(
+                "Multiplicador de entropía:",
+                str(entropy)
+            )
+
+            self.cpu_input = self.create_setting_row(
+                "CPU threshold:",
+                str(cpu_threshold)
+            )
+
+            self.ram_input = self.create_setting_row(
+                "RAM threshold:",
+                str(ram_threshold)
+            )
+
+            self.suspicious_input = self.create_setting_row(
+                "Minimum suspicious score:",
+                str(min_suspicious_score)
+            )
+
+            self.malware_input = self.create_setting_row(
+                "Minimum malware score:",
+                str(min_malware_score)
+            )
+
+            self.layout.addWidget(self.entropy_input["container"])
+            self.layout.addWidget(self.cpu_input["container"])
+            self.layout.addWidget(self.ram_input["container"])
+            self.layout.addWidget(self.suspicious_input["container"])
+            self.layout.addWidget(self.malware_input["container"])
+
+            self.layout.addWidget(p2, alignment=Qt.AlignHCenter)
+            self.layout.addWidget(reloadSettings, alignment=Qt.AlignHCenter)
+
+        def create_setting_row(self, text, value):
+
+            container = QWidget()
+
+            layout = QHBoxLayout(container)
+            layout.setContentsMargins(20, 10, 20, 10)
+            layout.setSpacing(20)
+
+            label = QLabel(text)
+
+            label.setStyleSheet("""
+                font-size: 18px;
+                color: #cfcfcf;
+            """)
+
+            label.setMinimumWidth(350)
+
+            input_box = QLineEdit()
+
+            # ponemos el valor actual
+            input_box.setText(value)
+
+            input_box.setFixedSize(120, 35)
+
+            input_box.setStyleSheet("""
+                background-color: #555;
+                color: white;
+                border: 1px solid #777;
+                border-radius: 6px;
+                padding-left: 8px;
+                font-size: 16px;
+            """)
+
+            layout.addWidget(label)
+            layout.addWidget(input_box)
+            layout.addStretch()
+
+            return {
+                "container": container,
+                "input": input_box
+            }
+
+        def update_json(self):
+
+            try:
+                with open("conf.json", "r") as f:
+                    data = json.load(f)
+
+                # actualizar valores
+                data["entropy"] = float(
+                    self.entropy_input["input"].text()
+                )
+
+                data["cpu_threshold"] = float(
+                    self.cpu_input["input"].text()
+                )
+
+                data["ram_threshold"] = float(
+                    self.ram_input["input"].text()
+                )
+
+                data["min_suspicious_score"] = float(
+                    self.suspicious_input["input"].text()
+                )
+
+                data["min_malware_score"] = float(
+                    self.malware_input["input"].text()
+                )
+
+                # guardar archivo
+                with open("conf.json", "w") as f:
+                    json.dump(data, f, indent=4)
+
+                print("Configuración actualizada")
+
+            except Exception as e:
+                print("Error updating json:", e)
+
+                
+                
 
     class AboutUsScreen(QWidget):
         def __init__(self):
@@ -1455,7 +1606,7 @@ class VentanaPrincipal(QWidget):
         simulationl.setMargin(20)
         simulationl.setStyleSheet("font-weight: bold;color: darkgray;")
         
-        dataBases.clicked.connect(lambda: (right_container.stack.setCurrentIndex(5),clear_styles(), dataBases.setStyleSheet("color: lightgreen; font-weight: bold; ")))
+        dataBases.clicked.connect(lambda: (right_container.stack.setCurrentIndex(5),clear_styles(), dataBases.setStyleSheet("color: lightgreen; font-weight: bold; "),right_container.stack.widget(5).tabla.refresh(), right_container.stack.widget(5).instancesTable.refresh()))
         dataBases.setMargin(20)
         dataBases.setStyleSheet("font-weight: bold;color: darkgray;")
         

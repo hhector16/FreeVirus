@@ -49,3 +49,17 @@ class InstancesTableWidget(QTableWidget):
     def getRowsNumber(self):
         data = self.getData()
         return len(data)
+
+    def refresh(self):
+        data = self.getData()
+
+        self.setRowCount(len(data))
+
+        for fila, (_, hash, date, pid, ppid, path,event) in enumerate(data):
+            self.setItem(fila, 0, QTableWidgetItem(str(hash)))
+            self.setItem(fila, 1, QTableWidgetItem(str(state)))
+            self.setItem(fila, 2, QTableWidgetItem(str(score)))
+            self.setItem(fila, 3, QTableWidgetItem(str(datetime.fromtimestamp(fs))))
+            self.setItem(fila, 4, QTableWidgetItem(str(datetime.fromtimestamp(ls))))
+
+        return data
