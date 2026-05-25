@@ -6,7 +6,7 @@ from PyQt5.QtWidgets import QVBoxLayout, QWidget
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.figure import Figure
 
-
+# This class builds the graphic showed in the upper part of the CPU use screen
 class Memory_widget(QWidget):
     def __init__(self, interval_ms=500, max_points=100, limit_mb=500):
         super().__init__()

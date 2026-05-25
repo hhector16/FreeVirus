@@ -12,7 +12,7 @@ DB_INSTANCES_PATH = os.path.join(BASE_DIR, "instances.db")
 
 
 
-# LO RELACIONADO CON LA BASE DE DATOS DE HASHES
+# HASHES DATABASE
 
 def init_hashes_db():
     conexion = sqlite3.connect(DB_HASH_PATH)
@@ -143,7 +143,7 @@ def get_last_seen(hash):
         conexion.close()
         return result
 
-# BASE DE DATOS DE INSTANCIAS
+# INSTANCES DATABASE
 
 def init_instances_db():
     conexion = sqlite3.connect(DB_INSTANCES_PATH)

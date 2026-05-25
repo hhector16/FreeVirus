@@ -1,5 +1,5 @@
 ==============================
- FreeVirus Logs lun 25 may 2026 13:06:04 CEST
+ FreeVirus Logs lun 25 may 2026 23:07:40 CEST
 ==============================
  Iniciando FreeVirus...
  Compilando av_fanotify.c...
@@ -10,4 +10,1733 @@ libpng warning: iCCP: known incorrect sRGB profile
 libpng warning: iCCP: known incorrect sRGB profile
  Iniciando motor.py...
  Ejecutando av_fanotify...
- FreeVirus finalizado
+Fanotify activado
+[EXEC] /usr/bin/dbus-launch
+[EXEC] /usr/bin/dbus-launch
+[WRITE] /home/hector/.config/Code/Cache/Cache_Data/9f50bddbd978eddd_0
+[EXEC] /usr/libexec/dconf-service
+[WRITE] /root/.config/dconf/user.KXX5P3
+[WRITE] /root/.cache/dconf/user
+[WRITE] /root/.cache/dconf/user (deleted)
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /root/.config/#26083334 (deleted)
+[WRITE] /root/.config/QtProject.conf.lock (deleted)
+[WRITE] /root/.local/share/recently-used.xbel
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/-61c0ae4b
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.config/Code/User/workspaceStorage/1e51b16cf3636019adecdf303c046d48/state.vscdb-journal (deleted)
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/-61c0ae4b
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/-61c0ae4b
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/-61c0ae4b
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/-61c0ae4b
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/43027890
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/43027890
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/43027890
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/43027890
+[WRITE] /home/hector/Documentos/FreeVirus/UserInterfaceClasses/HashTableWidget.py
+[WRITE] /home/hector/.config/Code/User/workspaceStorage/1e51b16cf3636019adecdf303c046d48/state.vscdb-journal (deleted)
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/-2e65501a
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/Documentos/FreeVirus/UserInterfaceClasses/InstancesTableWidget.py
+[WRITE] /home/hector/Documentos/FreeVirus/UserInterfaceClasses/InstancesTableWidget.py
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/-7847626e
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/lib/sysstat/sa1
+[EXEC] /usr/bin/dash
+[EXEC] /usr/lib/sysstat/sadc
+[WRITE] /var/log/sysstat/sa25
+[EXEC] /usr/bin/umount
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/-7847626e
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/-7847626e
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/Documentos/FreeVirus/UserInterfaceClasses/Memory_widget.py
+[WRITE] /home/hector/.config/Code/User/workspaceStorage/1e51b16cf3636019adecdf303c046d48/state.vscdb-journal (deleted)
+[WRITE] /home/hector/.config/Code/User/workspaceStorage/1e51b16cf3636019adecdf303c046d48/state.vscdb-journal (deleted)
+[WRITE] /home/hector/.config/Code/User/workspaceStorage/1e51b16cf3636019adecdf303c046d48/state.vscdb-journal (deleted)
+[WRITE] /home/hector/.config/Code/User/workspaceStorage/1e51b16cf3636019adecdf303c046d48/state.vscdb-journal (deleted)
+[WRITE] /home/hector/.config/Code/User/workspaceStorage/1e51b16cf3636019adecdf303c046d48/state.vscdb-journal
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.config/Code/User/workspaceStorage/1e51b16cf3636019adecdf303c046d48/state.vscdb-journal (deleted)
+[WRITE] /home/hector/.config/Code/User/workspaceStorage/1e51b16cf3636019adecdf303c046d48/state.vscdb-journal (deleted)
+[WRITE] /home/hector/.config/Code/User/workspaceStorage/1e51b16cf3636019adecdf303c046d48/state.vscdb-journal (deleted)
+[WRITE] /home/hector/.configPID=18477 PPID=18425 Path=/usr/bin/dbus-launch
+Entropy =  4.571595094569787
+3e551986be75b26fd92b633de2997a421d9fa028042601e5fbcf2785dd173063
+PERMITIDO
+PID=18481 PPID=18425 Path=/usr/bin/dbus-launch
+YA EXISTIA
+PERMITIDO
+PID=18484 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=18486 PPID=18485 Path=/usr/libexec/dconf-service
+Entropy =  5.190747040394264
+23a5233ffa13e5f5998414c32f9e1fa5c2dd134938669053ad9a5ebbe7a052af
+PERMITIDO
+PID=18486 PPID=2914 Path=/root/.config/dconf/user.KXX5P3
+[ERROR HASH] No se pudo abrir /root/.config/dconf/user.KXX5P3: [Errno 2] No such file or directory: '/root/.config/dconf/user.KXX5P3'
+PID=18486 PPID=2914 Path=/root/.cache/dconf/user
+[ERROR HASH] No se pudo abrir /root/.cache/dconf/user: [Errno 2] No such file or directory: '/root/.cache/dconf/user'
+PID=18425 PPID=18424 Path=/root/.cache/dconf/user (deleted)
+[ERROR HASH] No se pudo abrir /root/.cache/dconf/user (deleted): [Errno 2] No such file or directory: '/root/.cache/dconf/user (deleted)'
+PID=18490 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=18503 PPID=18490 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=18425 PPID=18424 Path=/root/.config/#26083334 (deleted)
+[ERROR HASH] No se pudo abrir /root/.config/#26083334 (deleted): [Errno 2] No such file or directory: '/root/.config/#26083334 (deleted)'
+PID=18425 PPID=18424 Path=/root/.config/QtProject.conf.lock (deleted)
+[ERROR HASH] No se pudo abrir /root/.config/QtProject.conf.lock (deleted): [Errno 2] No such file or directory: '/root/.config/QtProject.conf.lock (deleted)'
+PID=18425 PPID=18424 Path=/root/.local/share/recently-used.xbel
+Archivo no encontrado en VirusTotal, asignando puntuación de sospechoso
+Excepción al conectar con VirusTotal: 'data'
+PERMITIDO
+PID=18510 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=18523 PPID=18510 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=18535 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=18549 PPID=18535 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=18569 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=18582 PPID=18569 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=18589 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=18602 PPID=18589 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=18610 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=18624 PPID=18610 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=18641 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=18654 PPID=18641 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=18662 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=18675 PPID=18662 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=18693 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=18705 PPID=18693 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=18722 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=18735 PPID=18722 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=18759 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=18772 PPID=18759 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=4124 PPID=2914 Path=/home/hector/Documentos/FreeVirus/UserInterfaceClasses/HashTableWidget.py
+Archivo no encontrado en VirusTotal, asignando puntuación de sospechoso
+Excepción al conectar con VirusTotal: 'data'
+PERMITIDO
+PID=18796 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=18810 PPID=18796 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=4124 PPID=2914 Path=/home/hector/Documentos/FreeVirus/UserInterfaceClasses/InstancesTableWidget.py
+Archivo no encontrado en VirusTotal, asignando puntuación de sospechoso
+Excepción al conectar con VirusTotal: 'data'
+PERMITIDO
+PID=4124 PPID=2914 Path=/home/hector/Documentos/FreeVirus/UserInterfaceClasses/InstancesTableWidget.py
+Archivo no encontrado en VirusTotal, asignando puntuación de sospechoso
+Excepción al conectar con VirusTotal: 'data'
+PERMITIDO
+PID=18832 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=18847 PPID=18832 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=18857 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=18858 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=18858 PPID=0 Path=/usr/lib/sysstat/sa1
+YA EXISTIA
+PERMITIDO
+PID=18858 PPID=0 Path=/usr/bin/dash
+YA EXISTIA
+PERMITIDO
+PID=18858 PPID=1 Path=/usr/lib/sysstat/sadc
+YA EXISTIA
+PERMITIDO
+PID=18858 PPID=1 Path=/var/log/sysstat/sa25
+Archivo no encontrado en VirusTotal, asignando puntuación de sospechoso
+Excepción al conectar con VirusTotal: 'data'
+PERMITIDO
+PID=18871 PPID=18857 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=18878 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=18892 PPID=18878 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=18912 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=18925 PPID=18912 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=18936 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=18949 PPID=18936 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=4124 PPID=2914 Path=/home/hector/Documentos/FreeVirus/UserInterfaceClasses/Memory_widget.py
+Archivo no encontrado en VirusTotal, asignando puntuación de sospechoso
+Excepción al conectar con VirusTotal: 'data'
+PERMITIDO
+PID=18969 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=18981 PPID=18969 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=19003 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=19015 PPID=19003 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=19031 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=19043 PPID=19031 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=4124 PPID=2914 Path=/home/hector/Documentos/FreeVirus/verify_functions/check_cpu_consume.py
+Archivo no encontrado en VirusTotal, asignando puntuación de sospechoso
+Excepción al conectar con VirusTotal: 'data'
+PERMITIDO
+PID=4124 PPID=2914 Path=/home/hector/Documentos/FreeVirus/verify_functions/check_cpu_consume.py
+YA EXISTIA
+PERMITIDO
+PID=19061 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=19073 PPID=19061 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=19089 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=19102 PPID=19089 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=19120 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=19132 PPID=19120 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=19156 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=19170 PPID=19156 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=19195 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=19207 PPID=19195 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=19227 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=19241 PPID=19227 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=19263 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=19276 PPID=19263 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=19292 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=19305 PPID=19292 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=19317 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=4124 PPID=2914 Path=/home/hector/Documentos/FreeVirus/verify_functions/check_cpu_consume.py
+Archivo no encontrado en VirusTotal, asignando puntuación de sospechoso
+Excepción al conectar con VirusTotal: 'data'
+PERMITIDO
+PID=4124 PPID=2914 Path=/home/hector/Documentos/FreeVirus/verify_functions/check_cpu_consume.py
+Archivo no encontrado en VirusTotal, asignando puntuación de sospechoso
+Excepción al conectar con VirusTotal: 'data'
+PERMITIDO
+PID=2935 PPID=2914 Path=/home/hector/.local/state/wireplumber/restore-stream
+Archivo no encontrado en VirusTotal, asignando puntuación de sospechoso
+Excepción al conectar con VirusTotal: 'data'
+PERMITIDO
+PID=19335 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=19348 PPID=19335 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=4124 PPID=2914 Path=/home/hector/Documentos/FreeVirus/verify_functions/check_cpu_consume.py
+Archivo no encontrado en VirusTotal, asignando puntuación de sospechoso
+Excepción al conectar con VirusTotal: 'data'
+PERMITIDO
+PID=4124 PPID=2914 Path=/home/hector/Documentos/FreeVirus/verify_functions/check_cpu_consume.py
+Archivo no encontrado en VirusTotal, asignando puntuación de sospechoso
+Excepción al conectar con VirusTotal: 'data'
+PERMITIDO
+PID=4124 PPID=2914 Path=/home/hector/Documentos/FreeVirus/verify_functions/check_cpu_consume.py
+Archivo no encontrado en VirusTotal, asignando puntuación de sospechoso
+Excepción al conectar con VirusTotal: 'data'
+PERMITIDO
+PID=19364 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=19377 PPID=19364 Path=/usr/bin/umount/Code/User/workspaceStorage/1e51b16cf3636019adecdf303c046d48/state.vscdb-journal (deleted)
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/34dbad89
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/34dbad89
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/Documentos/FreeVirus/verify_functions/check_cpu_consume.py
+[WRITE] /home/hector/Documentos/FreeVirus/verify_functions/check_cpu_consume.py
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/34dbad89
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/34dbad89
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/34dbad89
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.config/Code/User/workspaceStorage/1e51b16cf3636019adecdf303c046d48/state.vscdb-journal (deleted)
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.config/Code/User/History/-15e8b523/entries.json
+[WRITE] /home/hector/.config/Code/User/History/60ab7610/entries.json
+[WRITE] /home/hector/.config/Code/User/History/-6833ef1c/entries.json
+[WRITE] /home/hector/.config/Code/User/History/2672c12/entries.json
+[WRITE] /home/hector/.config/Code/User/History/3cf43ae6/entries.json
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/34dbad89
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/34dbad89
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/34dbad89
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/34dbad89
+[WRITE] /home/hector/.local/share/gnome-shell/application_state
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/Documentos/FreeVirus/verify_functions/check_cpu_consume.py
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/34dbad89
+[WRITE] /home/hector/Documentos/FreeVirus/verify_functions/check_cpu_consume.py
+[WRITE] /home/hector/.local/state/wireplumber/restore-stream
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/Documentos/FreeVirus/verify_functions/check_cpu_consume.py
+[WRITE] /home/hector/.config/Code/Cache/Cache_Data/9f50bddbd978eddd_0
+[WRITE] /home/hector/Documentos/FreeVirus/verify_functions/check_cpu_consume.py
+[WRITE] /home/hector/Documentos/FreeVirus/verify_functions/check_cpu_consume.py
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.config/Code/Cache/Cache_Data/index-dir/temp-index
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/-181ef3f0
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/Documentos/FreeVirus/verify_functions/entropy_verify.py
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/-181ef3f0
+[WRITE] /home/hector/Documentos/FreeVirus/verify_functions/entropy_verify.py
+[WRITE] /home/hector/Documentos/FreeVirus/verify_functions/entropy_verify.py
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/-181ef3f0
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/Documentos/FreeVirus/verify_functions/entropy_verify.py
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/46e912ed
+[WRITE] /home/hector/.config/Code/User/workspaceStorage/1e51b16cf3636019adecdf303c046d48/state.vscdb-journal (deleted)
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/46e912ed
+[WRITE] /home/hector/Documentos/FreeVirus/verify_functions/hash_verify.py
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/46e912ed
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.cache/tracker3/files/last-crawl.txt.AKSTP3
+[WRITE] /home/hector/.cache/tracker3/files/last-crawl.txt
+[EXEC] /usr/libexec/tracker-extract-3
+[WRITE] /home/hector/.local/state/wireplumber/restore-stream
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/46e912ed
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/46e912ed
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.config/Code/User/workspaceStorage/1e51b16cf3636019adecdf303c046d48/state.vscdb-journal (deleted)
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.cache/tracker3/files/meta.db-wal
+[WRITE] /home/hector/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23Documents.db-wal
+[WRITE] /home/hector/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23Software.db-wal
+[WRITE] /home/hector/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23Pictures.db-wal
+[WRITE] /home/hector/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23Audio.db-wal
+[WRITE] /home/hector/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23FileSystem.db-wal
+[WRITE] /home/hector/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23Video.db-wal
+[EXEC] /usr/bin/dash
+[EXEC] /usr/lib/sysstat/debian-sa1
+[EXEC] /usr/bin/dash
+[WRITE] /tmp/#23855203 (deleted)
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/46e912ed
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/46e912ed
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/46e912ed
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/46e912ed
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/46e912ed
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/46e912ed
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.config/Code/User/workspaceStorage/1e51b16cf3636019adecdf303c046d48/state.vscdb-journal (deleted)
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[EXEC] /usr/bin/dash
+[EXEC] /usr/bin/run-parts
+[WRITE] /tmp/#23855203 (deleted)
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/46e912ed
+[WRITE] /home/hector/Documentos/FreeVirus/verify_functions/hash_verify.py
+[WRITE] /home/hector/Documentos/FreeVirus/verify_functions/hash_verify.py
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.config/Code/User/workspaceStorage/1e51b16cf3636019adecdf303c046d48/state.vscdb-journal (deleted)
+[WRITE] /home/hector/.config/Code/User/workspaceStorage/1e51b16cf3636019adecdf303c046d48/state.vscdb-journal (deleted)
+[WRITE] /home/hector/.config/Code/User/globalStorage/state.vscdb-journal (deleted)
+[WRITE] /home/hector/.config/Code/User/workspaceStorage/1e51b16cf3636019adecdf303c046d48/state.vscdb-journal (deleted)
+[WRITE] /home/hector/.config/Code/User/workspaceStorage/1e51b16cf3636019adecdf303c046d48/state.vscdb-journal
+[WRITE] /home/hector/.config/Code/User/globalStorage/state.vscdb-journal (deleted)
+[WRITE] /home/hector/.config/Code
+YA EXISTIA
+PERMITIDO
+PID=19402 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=19416 PPID=19402 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=19431 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=19444 PPID=19431 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=4124 PPID=2914 Path=/home/hector/Documentos/FreeVirus/verify_functions/entropy_verify.py
+Archivo no encontrado en VirusTotal, asignando puntuación de sospechoso
+Excepción al conectar con VirusTotal: 'data'
+PERMITIDO
+PID=4124 PPID=2914 Path=/home/hector/Documentos/FreeVirus/verify_functions/entropy_verify.py
+YA EXISTIA
+PERMITIDO
+PID=4124 PPID=2914 Path=/home/hector/Documentos/FreeVirus/verify_functions/entropy_verify.py
+YA EXISTIA
+PERMITIDO
+PID=19461 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=19475 PPID=19461 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=4124 PPID=2914 Path=/home/hector/Documentos/FreeVirus/verify_functions/entropy_verify.py
+Archivo no encontrado en VirusTotal, asignando puntuación de sospechoso
+Excepción al conectar con VirusTotal: 'data'
+PERMITIDO
+PID=19491 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=19504 PPID=19491 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=19528 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=19541 PPID=19528 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=4124 PPID=2914 Path=/home/hector/Documentos/FreeVirus/verify_functions/hash_verify.py
+Archivo no encontrado en VirusTotal, asignando puntuación de sospechoso
+Excepción al conectar con VirusTotal: 'data'
+PERMITIDO
+PID=19562 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=19575 PPID=19562 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=19591 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=19604 PPID=19591 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=3812 PPID=2914 Path=/home/hector/.cache/tracker3/files/last-crawl.txt.AKSTP3
+[ERROR HASH] No se pudo abrir /home/hector/.cache/tracker3/files/last-crawl.txt.AKSTP3: [Errno 2] No such file or directory: '/home/hector/.cache/tracker3/files/last-crawl.txt.AKSTP3'
+PID=3812 PPID=2914 Path=/home/hector/.cache/tracker3/files/last-crawl.txt
+Archivo no encontrado en VirusTotal, asignando puntuación de sospechoso
+Excepción al conectar con VirusTotal: 'data'
+PERMITIDO
+PID=19612 PPID=3812 Path=/usr/libexec/tracker-extract-3
+Archivo no encontrado en VirusTotal, asignando puntuación de sospechoso
+Excepción al conectar con VirusTotal: 'data'
+PERMITIDO
+PID=2935 PPID=2914 Path=/home/hector/.local/state/wireplumber/restore-stream
+YA EXISTIA
+PERMITIDO
+PID=19626 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=19639 PPID=19626 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=19654 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=19667 PPID=19654 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=19679 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=19693 PPID=19679 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=19701 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=19714 PPID=19701 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=19723 PPID=19722 Path=/usr/bin/dash
+YA EXISTIA
+PERMITIDO
+PID=19724 PPID=19723 Path=/usr/lib/sysstat/debian-sa1
+YA EXISTIA
+PERMITIDO
+PID=19724 PPID=19723 Path=/usr/bin/dash
+YA EXISTIA
+PERMITIDO
+PID=19722 PPID=986 Path=/tmp/#23855203 (deleted)
+[ERROR HASH] No se pudo abrir /tmp/#23855203 (deleted): [Errno 2] No such file or directory: '/tmp/#23855203 (deleted)'
+PID=19729 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=19743 PPID=19729 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=19749 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=19763 PPID=19749 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=19769 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=19782 PPID=19769 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=19789 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=19802 PPID=19789 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=19808 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=19821 PPID=19808 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=19830 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=19843 PPID=19830 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=19859 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=19872 PPID=19859 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=19898 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=19911 PPID=19898 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=19929 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=19941 PPID=19929 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=19965 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=19979 PPID=19965 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=19995 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=20008 PPID=19995 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=20027 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=20041 PPID=20027 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=20059 PPID=20058 Path=/usr/bin/dash
+YA EXISTIA
+PERMITIDO
+PID=20060 PPID=20059 Path=/usr/bin/run-parts
+Entropy =  3.8317054124939394
+3f36124107498d18ddacfbfe773df11e7094d5d143194cdfcec8804cccc81f64
+PERMITIDO
+PID=20058 PPID=986 Path=/tmp/#23855203 (deleted)
+[ERROR HASH] No se pudo abrir /tmp/#23855203 (deleted): [Errno 2] No such file or directory: '/tmp/#23855203 (deleted)'
+PID=20069 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=20083 PPID=20069 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=20108 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=20121 PPID=20108 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=20138 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=20151 PPID=20138 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=4124 PPID=2914 Path=/home/hector/Documentos/FreeVirus/verify_functions/hash_verify.py
+Archivo no encontrado en VirusTotal, asignando puntuación de sospechoso
+Excepción al conectar con VirusTotal: 'data'
+PERMITIDO
+PID=4124 PPID=2914 Path=/home/hector/Documentos/FreeVirus/verify_functions/hash_verify.py
+Archivo no encontrado en VirusTotal, asignando puntuación de sospechoso
+Excepción al conectar con VirusTotal: 'data'
+PERMITIDO
+PID=20169 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=20183 PPID=20169 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=20219 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=20233 PPID=20219 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=20246 PPID=4124 Path=/usr/bin/gio
+Entropy =  5.062599813234307
+1d7795db625ed36711ffdb97bd68c53f18458ce9c3b1145df31e1fd6d7572999
+PERMITIDO
+PID=20260 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=20273 PPID=20260 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=20292 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=20305 PPID=20292 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=20313 PPID=5123 Path=/usr/bin/pip3
+Entropy =  5.006260377320806
+6d1f19b17ef3ab9b6d3532be2198766bb1709c83da6a6684152b8af1930da6fa
+PERMITIDO
+PID=20313 PPID=5123 Path=/usr/bin/python3.12
+Entropy =  5.619266047877662
+e1efa562c2cc2e35521a5c9c9b9939921001ff8ca9708a13ef15ace68cc2ccd7
+PERMITIDO
+PID=20314 PPID=4882 Path=/usr/bin/dash
+YA EXISTIA
+PERMITIDO
+PID=20315 PPID=20314 Path=/usr/bin/which.debianutils
+Entropy =  4.894993977874272
+59e7cf8b9bd8711ae1aa6f7bbbd4132b61492409c3afe8e1505225efda1cb8f6
+PERMITIDO
+PID=20316 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=20315 PPID=20314 Path=/usr/bin/dash
+YA EXISTIA
+PERMITIDO
+PID=20317 PPID=4882 Path=/usr/bin/dash
+YA EXISTIA
+PERMITIDO
+PID=20318 PPID=20317 Path=/usr/bin/ps
+Entropy =  5.205198885556563
+8e86f498aa4aabfcea6c179d6181557140b4597f1c39bb94e2aba32158b58297
+PERMITIDO
+PID=20331 PPID=20316 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=20333 PPID=4882 Path=/usr/bin/dash
+YA EXISTIA
+PERMITIDO
+PID=20335 PPID=20333 Path=/usr/bin/bash
+YA EXISTIA
+PERMITIDO
+PID=20337 PPID=20335 Path=/usr/bin/sed
+Entropy =  5.880919356429525
+23f70dd6496d75419823039e1cebf95a2fd0508c6dfec72ac2352f7e08391dd5
+PERMITIDO
+PID=20338 PPID=20335 Path=/usr/bin/cat
+Entropy =  4.756310734054913
+a63158e6e5bce20616425f5d61e5bd7374bb5bccf15bbb93ae2e40238248f179
+PERMITIDO
+PID=20340 PPID=20335 Path=/usr/bin/sleep
+Entropy =  4.361000580566919
+a65efec857cfac0d4f43fc53affa73794ff1d1fdcb547931d4b92a98bda8e646
+PERMITIDO
+PID=20345 PPID=4882 Path=/usr/bin/dash
+YA EXISTIA
+PERMITIDO
+PID=20346 PPID=20345 Path=/usr/bin/which.debianutils
+YA EXISTIA
+PERMITIDO
+PID=20346 PPID=20345 Path=/usr/bin/dash
+YA EXISTIA
+PERMITIDO/User/History/-15e8b523/entries.json
+[WRITE] /home/hector/.config/Code/User/History/32a3f41/entries.json
+[WRITE] /home/hector/.config/Code/User/History/4c268f3c/entries.json
+[WRITE] /home/hector/.config/Code/User/workspaceStorage/1e51b16cf3636019adecdf303c046d48/state.vscdb-journal (deleted)
+[WRITE] /home/hector/.config/Code/User/globalStorage/state.vscdb-journal (deleted)
+[WRITE] /home/hector/.config/Code/Cache/Cache_Data/f0ec75aabaef6334_0
+[WRITE] /home/hector/.config/Code/User/globalStorage/state.vscdb-journal (deleted)
+[WRITE] /home/hector/.config/Code/User/workspaceStorage/1e51b16cf3636019adecdf303c046d48/state.vscdb-journal (deleted)
+[WRITE] /home/hector/.config/Code/User/workspaceStorage/1e51b16cf3636019adecdf303c046d48/state.vscdb-journal (deleted)
+[WRITE] /home/hector/.config/Code/User/globalStorage/state.vscdb-journal (deleted)
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.config/Code/User/workspaceStorage/1e51b16cf3636019adecdf303c046d48/state.vscdb-journal (deleted)
+[WRITE] /home/hector/.config/Code/User/workspaceStorage/1e51b16cf3636019adecdf303c046d48/state.vscdb-journal (deleted)
+[WRITE] /home/hector/.config/Code/Cache/Cache_Data/9f50bddbd978eddd_0
+[EXEC] /usr/bin/gio
+[WRITE] /home/hector/.config/Code/User/workspaceStorage/1e51b16cf3636019adecdf303c046d48/state.vscdb-journal (deleted)
+[WRITE] /home/hector/.config/Code/User/workspaceStorage/1e51b16cf3636019adecdf303c046d48/state.vscdb-journal (deleted)
+[WRITE] /home/hector/.config/Code/User/globalStorage/state.vscdb-journal
+[WRITE] /home/hector/.config/Code/User/workspaceStorage/1e51b16cf3636019adecdf303c046d48/state.vscdb-journal (deleted)
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.config/Code/User/workspaceStorage/1e51b16cf3636019adecdf303c046d48/state.vscdb-journal (deleted)
+[WRITE] /home/hector/.config/Code/User/globalStorage/state.vscdb-journal (deleted)
+[WRITE] /home/hector/.config/Code/User/workspaceStorage/1e51b16cf3636019adecdf303c046d48/state.vscdb-journal (deleted)
+[WRITE] /home/hector/.config/Code/User/globalStorage/state.vscdb-journal (deleted)
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[EXEC] /usr/bin/pip3
+[EXEC] /usr/bin/python3.12
+[EXEC] /usr/bin/dash
+[EXEC] /usr/bin/which.debianutils
+[EXEC] /usr/bin/dash
+[EXEC] /usr/bin/dash
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/ps
+[EXEC] /usr/bin/umount
+[EXEC] /usr/bin/dash
+[EXEC] /usr/bin/sed
+[EXEC] /usr/bin/cat
+[EXEC] /usr/bin/sleep
+[EXEC] /usr/bin/dash
+[EXEC] /usr/bin/which.debianutils
+[EXEC] /usr/bin/dash
+[EXEC] /usr/bin/dash
+[EXEC] /usr/bin/ps
+[EXEC] /usr/bin/dash
+[EXEC] /usr/bin/sed
+[EXEC] /usr/bin/cat
+[EXEC] /usr/bin/sleep
+[EXEC] /usr/bin/sed
+[EXEC] /usr/bin/cat
+[EXEC] /usr/bin/sed
+[EXEC] /usr/bin/cat
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.config/Code/User/workspaceStorage/1e51b16cf3636019adecdf303c046d48/state.vscdb-journal (deleted)
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[EXEC] /usr/bin/dash
+[EXEC] /usr/bin/which.debianutils
+[EXEC] /usr/bin/dash
+[EXEC] /usr/bin/dash
+[EXEC] /usr/bin/ps
+[EXEC] /usr/bin/dash
+[EXEC] /usr/bin/sed
+[EXEC] /usr/bin/cat
+[EXEC] /usr/bin/sleep
+[EXEC] /usr/bin/sed
+[EXEC] /usr/bin/cat
+[EXEC] /usr/bin/dash
+[EXEC] /usr/bin/which.debianutils
+[EXEC] /usr/bin/dash
+[EXEC] /usr/bin/dash
+[EXEC] /usr/bin/ps
+[EXEC] /usr/bin/dash
+[EXEC] /usr/bin/sed
+[EXEC] /usr/bin/cat
+[EXEC] /usr/bin/sleep
+[WRITE] /home/hector/.config/Code/User/globalStorage/state.vscdb-journal (deleted)
+[EXEC] /usr/bin/sed
+[EXEC] /usr/bin/cat
+[EXEC] /usr/bin/dash
+[EXEC] /usr/bin/which.debianutils
+[EXEC] /usr/bin/dash
+[EXEC] /usr/bin/dash
+[EXEC] /usr/bin/ps
+[EXEC] /usr/bin/dash
+[EXEC] /usr/bin/sed
+[EXEC] /usr/bin/cat
+[EXEC] /usr/bin/sleep
+[EXEC] /usr/bin/pip
+[EXEC] /usr/bin/python3.12
+[EXEC] /usr/bin/lsb_release
+[EXEC] /usr/bin/sed
+[EXEC] /usr/bin/dash
+[EXEC] /usr/bin/dash
+[EXEC] /usr/bin/cat
+[EXEC] /usr/bin/getopt
+[EXEC] /usr/bin/which.debianutils
+[EXEC] /usr/bin/dash
+[EXEC] /usr/bin/cut
+[EXEC] /usr/bin/tr
+[EXEC] /usr/bin/cut
+[EXEC] /u
+PID=20347 PPID=4882 Path=/usr/bin/dash
+YA EXISTIA
+PERMITIDO
+PID=20348 PPID=20347 Path=/usr/bin/ps
+YA EXISTIA
+PERMITIDO
+PID=20349 PPID=4882 Path=/usr/bin/dash
+YA EXISTIA
+PERMITIDO
+PID=20350 PPID=20349 Path=/usr/bin/bash
+YA EXISTIA
+PERMITIDO
+PID=20351 PPID=20350 Path=/usr/bin/sed
+YA EXISTIA
+PERMITIDO
+PID=20352 PPID=20350 Path=/usr/bin/cat
+YA EXISTIA
+PERMITIDO
+PID=20353 PPID=20350 Path=/usr/bin/sleep
+YA EXISTIA
+PERMITIDO
+PID=20354 PPID=20335 Path=/usr/bin/sed
+YA EXISTIA
+PERMITIDO
+PID=20355 PPID=20335 Path=/usr/bin/cat
+YA EXISTIA
+PERMITIDO
+PID=20357 PPID=20350 Path=/usr/bin/sed
+YA EXISTIA
+PERMITIDO
+PID=20358 PPID=20350 Path=/usr/bin/cat
+YA EXISTIA
+PERMITIDO
+PID=20365 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=20378 PPID=20365 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=20392 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=20405 PPID=20392 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=20407 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=20420 PPID=20407 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=20428 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=20442 PPID=20428 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=20449 PPID=4882 Path=/usr/bin/dash
+YA EXISTIA
+PERMITIDO
+PID=20450 PPID=20449 Path=/usr/bin/which.debianutils
+YA EXISTIA
+PERMITIDO
+PID=20450 PPID=20449 Path=/usr/bin/dash
+YA EXISTIA
+PERMITIDO
+PID=20451 PPID=4882 Path=/usr/bin/dash
+YA EXISTIA
+PERMITIDO
+PID=20452 PPID=20451 Path=/usr/bin/ps
+YA EXISTIA
+PERMITIDO
+PID=20453 PPID=4882 Path=/usr/bin/dash
+YA EXISTIA
+PERMITIDO
+PID=20454 PPID=20453 Path=/usr/bin/bash
+YA EXISTIA
+PERMITIDO
+PID=20455 PPID=20454 Path=/usr/bin/sed
+YA EXISTIA
+PERMITIDO
+PID=20456 PPID=20454 Path=/usr/bin/cat
+YA EXISTIA
+PERMITIDO
+PID=20457 PPID=20454 Path=/usr/bin/sleep
+YA EXISTIA
+PERMITIDO
+PID=20459 PPID=20454 Path=/usr/bin/sed
+YA EXISTIA
+PERMITIDO
+PID=20460 PPID=20454 Path=/usr/bin/cat
+YA EXISTIA
+PERMITIDO
+PID=20462 PPID=4882 Path=/usr/bin/dash
+YA EXISTIA
+PERMITIDO
+PID=20463 PPID=20462 Path=/usr/bin/which.debianutils
+YA EXISTIA
+PERMITIDO
+PID=20463 PPID=20462 Path=/usr/bin/dash
+YA EXISTIA
+PERMITIDO
+PID=20464 PPID=4882 Path=/usr/bin/dash
+YA EXISTIA
+PERMITIDO
+PID=20465 PPID=20464 Path=/usr/bin/ps
+YA EXISTIA
+PERMITIDO
+PID=20466 PPID=4882 Path=/usr/bin/dash
+YA EXISTIA
+PERMITIDO
+PID=20467 PPID=20466 Path=/usr/bin/bash
+YA EXISTIA
+PERMITIDO
+PID=20468 PPID=20467 Path=/usr/bin/sed
+YA EXISTIA
+PERMITIDO
+PID=20469 PPID=20467 Path=/usr/bin/cat
+YA EXISTIA
+PERMITIDO
+PID=20470 PPID=20467 Path=/usr/bin/sleep
+YA EXISTIA
+PERMITIDO
+PID=20478 PPID=20467 Path=/usr/bin/sed
+YA EXISTIA
+PERMITIDO
+PID=20479 PPID=20467 Path=/usr/bin/cat
+YA EXISTIA
+PERMITIDO
+PID=20481 PPID=4882 Path=/usr/bin/dash
+YA EXISTIA
+PERMITIDO
+PID=20482 PPID=20481 Path=/usr/bin/which.debianutils
+YA EXISTIA
+PERMITIDO
+PID=20482 PPID=20481 Path=/usr/bin/dash
+YA EXISTIA
+PERMITIDO
+PID=20483 PPID=4882 Path=/usr/bin/dash
+YA EXISTIA
+PERMITIDO
+PID=20484 PPID=20483 Path=/usr/bin/ps
+YA EXISTIA
+PERMITIDO
+PID=20485 PPID=4882 Path=/usr/bin/dash
+YA EXISTIA
+PERMITIDO
+PID=20486 PPID=20485 Path=/usr/bin/bash
+YA EXISTIA
+PERMITIDO
+PID=20487 PPID=20486 Path=/usr/bin/sed
+YA EXISTIA
+PERMITIDO
+PID=20488 PPID=20486 Path=/usr/bin/cat
+YA EXISTIA
+PERMITIDO
+PID=20489 PPID=20486 Path=/usr/bin/sleep
+YA EXISTIA
+PERMITIDO
+PID=20492 PPID=5123 Path=/usr/bin/pip
+YA EXISTIA
+PERMITIDO
+PID=20492 PPID=5123 Path=/usr/bin/python3.12
+YA EXISTIA
+PERMITIDO
+PID=20493 PPID=20492 Path=/usr/bin/lsb_release
+Entropy =  5.205141566540601
+484188f4b37b4021998dafd1966cda1c6f8207af9aee3ad51746a5d22acf3e65
+PERMITIDO
+PID=20494 PPID=20486 Path=/usr/bin/sed
+YA EXISTIA
+PERMITIDO
+PID=20493 PPID=20492 Path=/usr/bin/dash
+YA EXISTIA
+PERMITIDO
+PID=20495 PPID=4882 Path=/usr/bin/dash
+YA EXISTIA
+PERMITIDO
+PID=20496 PPID=20486 Path=/usr/bin/cat
+YA EXISTIA
+PERMITIDO
+PID=20497 PPID=20493 Path=/usr/bin/getopt
+Entropy =  3.590715041195963
+7b5a203bc9de7d924273fd7f60afd85e3013eaa6549222d43015fe0614d268f4
+PERMITIDO
+PID=20498 PPID=20495 Path=/usr/bin/which.debianutils
+YA EXISTIA
+PERMITIDO
+PID=20498 PPID=20495 Path=/usr/bin/dash
+YA EXISTIA
+PERMITIDO
+PID=20502 PPID=20500 Path=/usr/bin/cut
+Entropy =  5.342218974090789
+94d1a3030de44ef8e4c2d157911b6246ae009d4eecaa52a072060c7070011b0e
+PERMITIDO
+PID=20503 PPID=20500 Path=/usr/bin/tr
+Entropy =  5.29829558892004
+ce32eb4705821ce89dbf770d1287959f58c452142350862637f09a8aed473213
+PERMITIDO
+PID=20504 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=20507 PPID=20505 Path=/usr/bin/cut
+YA EXISTIA
+PERMITIDO
+PID=20508 PPID=4882 Path=/usr/bin/dash
+YA EXISTIA
+PERMITIDO
+PID=20511 PPID=20509 Path=/usr/bin/tr
+YA EXISTIA
+PERMITIDO
+PID=20512 PPID=20508 Path=/usr/bin/ps
+YA EXISTIA
+PERMITIDO
+PID=20525 PPID=20523 Path=/usr/bin/tr
+YA EXISTIA
+PERMITIDO
+PID=20526 PPID=20492 Path=/usr/bin/uname
+Entropy =  4.456029582375885
+8fd593fd9e1902eb67cfeba15642719b0ef6c44ba97febceac819e7e5c442abb
+PERMITIDO
+PID=20527 PPID=4882 Path=/usr/bin/dash
+YA EXISTIA
+PERMITIDO
+PID=20529 PPID=20504 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=20530 PPID=20527 Path=/usr/bin/bash
+YA EXISTIA
+PERMITIDO
+PID=20531 PPID=4882 Path=/usr/bin/dash
+YA EXISTIA
+PERMITIDO
+PID=20533 PPID=20530 Path=/usr/bin/sed
+YA EXISTIA
+PERMITIDO
+PID=20534 PPID=20531 Path=/usr/bin/which.debianutils
+YA EXISTIA
+PERMITIDO
+PID=20534 PPID=20531 Path=/usr/bin/dash
+YA EXISTIA
+PERMITIDO
+PID=20535 PPID=20530 Path=/usr/bin/cat
+YA EXISTIA
+PERMITIDO
+PID=20536 PPID=20530 Path=/usr/bin/cat
+YA EXISTIA
+PERMITIDO
+PID=20537 PPID=4882 Path=/usr/bin/dash
+YA EXISTIA
+PERMITIDO
+PID=20538 PPID=20530 Path=/usr/bin/sleep
+YA EXISTIA
+PERMITIDO
+PID=20539 PPID=20537 Path=/usr/bin/ps
+YA EXISTIA
+PERMITIDO
+PID=20540 PPID=4882 Path=/usr/bin/dash
+YA EXISTIA
+PERMITIDO
+PID=20541 PPID=20540 Path=/usr/bin/bash
+YA EXISTIA
+PERMITIDO
+PID=20542 PPID=20541 Path=/usr/bin/sed
+YA EXISTIA
+PERMITIDO
+PID=20543 PPID=20541 Path=/usr/bin/cat
+YA EXISTIA
+PERMITIDO
+PID=20544 PPID=20541 Path=/usr/bin/cat
+YA EXISTIA
+PERMITIDO
+PID=20545 PPID=20541 Path=/usr/bin/sleep
+YA EXISTIA
+PERMITIDO
+PID=20492 PPID=5123 Path=/home/hector/.cache/pip/http-v2/a/b/d/d/d/abdddc46265b81c7d6dc73a20f1ad8ef043a66e9e79abdc1379bf71evhga62ng.tmp
+[ERROR HASH] No se pudo abrir /home/hector/.cache/pip/http-v2/a/b/d/d/d/abdddc46265b81c7d6dc73a20f1ad8ef043a66e9e79abdc1379bf71evhga62ng.tmp: [Errno 2] No such file or directory: '/home/hector/.cache/pip/http-v2/a/b/d/d/d/abdddc46265b81c7d6dc73a20f1ad8ef043a66e9e79abdc1379bf71evhga62ng.tmp'
+PID=20492 PPID=5123 Path=/home/hector/.cache/pip/http-v2/a/b/d/d/d/abdddc46265b81c7d6dc73a20f1ad8ef043a66e9e79abdc1379bf71e.bodygk8la1b8.tmp
+[ERROR HASH] No se pudo abrir /home/hector/.cache/pip/http-v2/a/b/d/d/d/abdddc46265b81c7d6dc73a20f1ad8ef043a66e9e79abdc1379bf71e.bodygk8la1b8.tmp: [Errno 2] No such file or directory: '/home/hector/.cache/pip/http-v2/a/b/d/d/d/abdddc46265b81c7d6dc73a20f1ad8ef043a66e9e79abdc1379bf71e.bodygk8la1b8.tmp'
+PID=20492 PPID=5123 Path=/tmp/tmpnih76x27 (deleted)
+[ERROR HASH] No se pudo abrir /tmp/tmpnih76x27 (deleted): [Errno 2] No such file or directory: '/tmp/tmpnih76x27 (deleted)'
+PID=20492 PPID=5123 Path=/home/hector/.cache/pip/http-v2/d/0/8/2/3/d0823d926a80fb5fccfb62a7fa9b5e83ce3a3dada11bae12021a29a99e0mz0_n.tmp
+[ERROR HASH] No se pudo abrir /home/hector/.cache/pip/http-v2/d/0/8/2/3/d0823d926a80fb5fccfb62a7fa9b5e83ce3a3dada11bae12021a29a99e0mz0_n.tmp: [Errno 2] No such file or directory: '/home/hector/.cache/pip/http-v2/d/0/8/2/3/d0823d926a80fb5fccfb62a7fa9b5e83ce3a3dada11bae12021a29a99e0mz0_n.tmp'
+PID=20492 PPID=5123 Path=/home/hector/.cache/pip/http-v2/d/0/8/2/3/d0823d926a80fb5fccfb62a7fa9b5e83ce3a3dada11bae12021a29a9.bodyk11u99op.tmp
+[ERROR HASH] No se pudo abrir /home/hector/.cache/pip/http-v2/d/0/8/2/3/d0823d926a80fb5fccfb62a7fa9b5e83ce3a3dada11bae12021a29a9.bodyk11u99op.tmp: [Errno 2] No such file or directory: '/home/hector/.cache/pip/http-v2/d/0/8/2/3/d0823d926a80fb5fccfb62a7fa9b5e83ce3a3dada11bae12021a29a9.bodyk11u99op.tmp'
+PID=20492 PPID=5123 Path=/tmp/tmpyujfuovm (deleted)
+[ERROR HASH] No se pudo abrir /tmp/tmpyujfuovm (deleted): [Errno 2] No such file or directory: '/tmp/tmpyujfuovm (deleted)'
+PID=20492 PPID=5123 Path=/home/hector/.cache/pip/http-v2/9/3/1/d/d/931dd4b51a80ffc83a0ce2caffcc883124ae68a310fbc8bfac06086dnfscgvop.tmp
+[ERROR HASH] No se pudo abrir /home/hector/.cache/pip/http-v2/9/3/1/d/d/931dd4b51a80ffc83a0ce2caffcc883124ae68a310fbc8bfac06086dnfscgvop.tmp: [Errno 2] No such file or directory: '/home/hector/.cache/pip/http-v2/9/3/1/d/d/931dd4b51a80ffc83a0ce2caffcc883124ae68a310fbc8bfac06086dnfscgvop.tmp'sr/bin/dash
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/tr
+[EXEC] /usr/bin/ps
+[EXEC] /usr/bin/tr
+[EXEC] /usr/bin/uname
+[EXEC] /usr/bin/dash
+[EXEC] /usr/bin/umount
+[EXEC] /usr/bin/dash
+[EXEC] /usr/bin/sed
+[EXEC] /usr/bin/which.debianutils
+[EXEC] /usr/bin/dash
+[EXEC] /usr/bin/cat
+[EXEC] /usr/bin/cat
+[EXEC] /usr/bin/dash
+[EXEC] /usr/bin/sleep
+[EXEC] /usr/bin/ps
+[EXEC] /usr/bin/dash
+[EXEC] /usr/bin/sed
+[EXEC] /usr/bin/cat
+[EXEC] /usr/bin/cat
+[EXEC] /usr/bin/sleep
+[WRITE] /home/hector/.cache/pip/http-v2/a/b/d/d/d/abdddc46265b81c7d6dc73a20f1ad8ef043a66e9e79abdc1379bf71evhga62ng.tmp
+[WRITE] /home/hector/.cache/pip/http-v2/a/b/d/d/d/abdddc46265b81c7d6dc73a20f1ad8ef043a66e9e79abdc1379bf71e.bodygk8la1b8.tmp
+[WRITE] /tmp/tmpnih76x27 (deleted)
+[WRITE] /home/hector/.cache/pip/http-v2/d/0/8/2/3/d0823d926a80fb5fccfb62a7fa9b5e83ce3a3dada11bae12021a29a99e0mz0_n.tmp
+[WRITE] /home/hector/.cache/pip/http-v2/d/0/8/2/3/d0823d926a80fb5fccfb62a7fa9b5e83ce3a3dada11bae12021a29a9.bodyk11u99op.tmp
+[WRITE] /tmp/tmpyujfuovm (deleted)
+[WRITE] /home/hector/.cache/pip/http-v2/9/3/1/d/d/931dd4b51a80ffc83a0ce2caffcc883124ae68a310fbc8bfac06086dnfscgvop.tmp
+[WRITE] /home/hector/.cache/pip/http-v2/9/3/1/d/d/931dd4b51a80ffc83a0ce2caffcc883124ae68a310fbc8bfac06086d.bodyhxm3hbn8.tmp
+[WRITE] /tmp/tmpyuulvmmr (deleted)
+[WRITE] /home/hector/.local/lib/python3.12/site-packages/dotenv/__init__.py
+[EXEC] /usr/bin/sed
+[EXEC] /usr/bin/sed
+[EXEC] /usr/bin/cat
+[EXEC] /usr/bin/cat
+[EXEC] /usr/bin/dash
+[EXEC] /usr/bin/which.debianutils
+[EXEC] /usr/bin/dash
+[EXEC] /usr/bin/dash
+[EXEC] /usr/bin/ps
+[EXEC] /usr/bin/dash
+[EXEC] /usr/bin/sed
+[EXEC] /usr/bin/cat
+[EXEC] /usr/bin/sleep
+[EXEC] /usr/bin/sed
+[EXEC] /usr/bin/cat
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.config/Code/User/workspaceStorage/1e51b16cf3636019adecdf303c046d48/state.vscdb-journal (deleted)
+[WRITE] /home/hector/.config/Code/User/globalStorage/state.vscdb-journal (deleted)
+[WRITE] /home/hector/.config/Code/User/workspaceStorage/1e51b16cf3636019adecdf303c046d48/state.vscdb-journal (deleted)
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/Documentos/FreeVirus/verify_functions/hash_verify.py
+[WRITE] /home/hector/.config/Code/User/workspaceStorage/1e51b16cf3636019adecdf303c046d48/state.vscdb-journal (deleted)
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/lib/sysstat/sa1
+[EXEC] /usr/bin/dash
+[EXEC] /usr/lib/sysstat/sadc
+[WRITE] /var/log/sysstat/sa25
+[EXEC] /usr/bin/umount
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/Documentos/FreeVirus/verify_functions/hash_verify.py
+[WRITE] /home/hector/.config/Code/User/workspaceStorage/1e51b16cf3636019adecdf303c046d48/state.vscdb-journal (deleted)
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/46e912ed
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/46e912ed
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/46e912ed
+[WRITE] /home/hector/Documentos/FreeVirus/verify_functions/hash_verify.py
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.config/Code/User/workspaceStorage/1e51b16cf3636019adecdf303c046d48/state.vscdb-journal (deleted)
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.config/Code/User/workspaceStorage/1e51b16cf3636019adecdf303c046d48/state.vscdb-journal (deleted)
+[WRITE] /home/hector/.config/Code/User/globalStorage/state.vscdb-journal
+[WRITE] /home/hector/.config/Code/User/workspaceStorage/1e51b16cf3636019adecdf303c046d48/state.vscdb-journal (deleted)
+[WRITE] /home/hector/.config/Code/User/globalStorage/state.vscdb-journal
+[WRITE] /home/hector/.config/Code/User/workspaceStorage/1e51b16cf3636019adecdf303c046d48/state.vscdb-journal (deleted)
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/Documentos/FreeVirus/.env
+[WRITE] /home/hector/.config/Code/User/workspaceStorage/1e51b16cf3636019adecdf303c046d48/state.vscdb-journal (de
+PID=20492 PPID=5123 Path=/home/hector/.cache/pip/http-v2/9/3/1/d/d/931dd4b51a80ffc83a0ce2caffcc883124ae68a310fbc8bfac06086d.bodyhxm3hbn8.tmp
+[ERROR HASH] No se pudo abrir /home/hector/.cache/pip/http-v2/9/3/1/d/d/931dd4b51a80ffc83a0ce2caffcc883124ae68a310fbc8bfac06086d.bodyhxm3hbn8.tmp: [Errno 2] No such file or directory: '/home/hector/.cache/pip/http-v2/9/3/1/d/d/931dd4b51a80ffc83a0ce2caffcc883124ae68a310fbc8bfac06086d.bodyhxm3hbn8.tmp'
+PID=20492 PPID=5123 Path=/tmp/tmpyuulvmmr (deleted)
+[ERROR HASH] No se pudo abrir /tmp/tmpyuulvmmr (deleted): [Errno 2] No such file or directory: '/tmp/tmpyuulvmmr (deleted)'
+PID=20492 PPID=5123 Path=/home/hector/.local/lib/python3.12/site-packages/dotenv/__init__.py
+Entropy =  4.473969678398748
+6e163e88aeb0c0765a996208e9e482b820165d435d9f64d016610eb97494ed23
+PERMITIDO
+PID=20547 PPID=20530 Path=/usr/bin/sed
+YA EXISTIA
+PERMITIDO
+PID=20548 PPID=20541 Path=/usr/bin/sed
+YA EXISTIA
+PERMITIDO
+PID=20549 PPID=20530 Path=/usr/bin/cat
+YA EXISTIA
+PERMITIDO
+PID=20550 PPID=20541 Path=/usr/bin/cat
+YA EXISTIA
+PERMITIDO
+PID=20560 PPID=4882 Path=/usr/bin/dash
+YA EXISTIA
+PERMITIDO
+PID=20561 PPID=20560 Path=/usr/bin/which.debianutils
+YA EXISTIA
+PERMITIDO
+PID=20561 PPID=20560 Path=/usr/bin/dash
+YA EXISTIA
+PERMITIDO
+PID=20562 PPID=4882 Path=/usr/bin/dash
+YA EXISTIA
+PERMITIDO
+PID=20563 PPID=20562 Path=/usr/bin/ps
+YA EXISTIA
+PERMITIDO
+PID=20564 PPID=4882 Path=/usr/bin/dash
+YA EXISTIA
+PERMITIDO
+PID=20565 PPID=20564 Path=/usr/bin/bash
+YA EXISTIA
+PERMITIDO
+PID=20566 PPID=20565 Path=/usr/bin/sed
+YA EXISTIA
+PERMITIDO
+PID=20567 PPID=20565 Path=/usr/bin/cat
+YA EXISTIA
+PERMITIDO
+PID=20568 PPID=20565 Path=/usr/bin/sleep
+YA EXISTIA
+PERMITIDO
+PID=20569 PPID=20565 Path=/usr/bin/sed
+YA EXISTIA
+PERMITIDO
+PID=20570 PPID=20565 Path=/usr/bin/cat
+YA EXISTIA
+PERMITIDO
+PID=20572 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=20585 PPID=20572 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=20607 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=20620 PPID=20607 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=4124 PPID=2914 Path=/home/hector/Documentos/FreeVirus/verify_functions/hash_verify.py
+Archivo no encontrado en VirusTotal, asignando puntuación de sospechoso
+Excepción al conectar con VirusTotal: 'data'
+PERMITIDO
+PID=20635 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=20648 PPID=20635 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=20653 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=20666 PPID=20653 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=20669 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=20670 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=20670 PPID=0 Path=/usr/lib/sysstat/sa1
+YA EXISTIA
+PERMITIDO
+PID=20670 PPID=0 Path=/usr/bin/dash
+YA EXISTIA
+PERMITIDO
+PID=20670 PPID=1 Path=/usr/lib/sysstat/sadc
+YA EXISTIA
+PERMITIDO
+PID=20670 PPID=1 Path=/var/log/sysstat/sa25
+Archivo no encontrado en VirusTotal, asignando puntuación de sospechoso
+Excepción al conectar con VirusTotal: 'data'
+PERMITIDO
+PID=20684 PPID=20669 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=20688 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=20701 PPID=20688 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=4124 PPID=2914 Path=/home/hector/Documentos/FreeVirus/verify_functions/hash_verify.py
+Archivo no encontrado en VirusTotal, asignando puntuación de sospechoso
+Excepción al conectar con VirusTotal: 'data'
+PERMITIDO
+PID=20718 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=20731 PPID=20718 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=4124 PPID=2914 Path=/home/hector/Documentos/FreeVirus/verify_functions/hash_verify.py
+Archivo no encontrado en VirusTotal, asignando puntuación de sospechoso
+Excepción al conectar con VirusTotal: 'data'
+PERMITIDO
+PID=20749 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=20762 PPID=20749 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=20769 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=20783 PPID=20769 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=20805 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=20819 PPID=20805 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=4124 PPID=2914 Path=/home/hector/Documentos/FreeVirus/.env
+Archivo no encontrado en VirusTotal, asignando puntuación de sospechoso
+Excepción al conectar con VirusTotal: 'data'
+PERMITIDO
+PID=20841 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=20856 PPID=20841 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=20873 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=20885 PPID=20873 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=4124 PPID=2914 Path=/home/hector/Documentos/FreeVirus/verify_functions/hash_verify.py
+Archivo no encontrado en VirusTotal, asignando puntuación de sospechoso
+Excepción al conectar con VirusTotal: 'data'
+PERMITIDO
+PID=20899 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=20912 PPID=20899 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=4124 PPID=2914 Path=/home/hector/Documentos/FreeVirus/verify_functions/hash_verify.py
+Archivo no encontrado en VirusTotal, asignando puntuación de sospechoso
+Excepción al conectar con VirusTotal: 'data'
+PERMITIDO
+PID=20929 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=20942 PPID=20929 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=20958 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=20970 PPID=20958 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=20990 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=21003 PPID=20990 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=4124 PPID=2914 Path=/home/hector/Documentos/FreeVirus/UserInterfaceClasses/Active_label.py
+Archivo no encontrado en VirusTotal, asignando puntuación de sospechoso
+Excepción al conectar con VirusTotal: 'data'
+PERMITIDO
+PID=4124 PPID=2914 Path=/home/hector/Documentos/FreeVirus/UserInterfaceClasses/Active_label.py
+YA EXISTIA
+PERMITIDO
+PID=4124 PPID=2914 Path=/home/hector/Documentos/FreeVirus/UserInterfaceClasses/Active_label.py
+YA EXISTIA
+PERMITIDO
+PID=4124 PPID=2914 Path=/home/hector/Documentos/FreeVirus/UserInterfaceClasses/Active_label.py
+YA EXISTIA
+PERMITIDO
+PID=4124 PPID=2914 Path=/home/hector/Documentos/FreeVirus/UserInterfaceClasses/Active_label.py
+YA EXISTIA
+PERMITIDO
+PID=21024 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=21038 PPID=21024 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=21051 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=21064 PPID=21051 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=21078 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=21091 PPID=21078 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=21099 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=21112 PPID=21099 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=21119 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=21132 PPID=21119 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=21149 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=21163 PPID=21149 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=21185 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=21199 PPID=21185 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=21218 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=21230 PPID=21218 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=21246 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=21258 PPID=21246 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=4124 PPID=2914 Path=/home/hector/Documentos/FreeVirus/UserInterfaceClasses/InstancesTableWidget.py
+Archivo no encontrado en VirusTotal, asignando puntuación de sospechoso
+Excepción al conectar con VirusTotal: 'data'
+PERMITIDO
+PID=4124 PPID=2914 Path=/home/hector/Documentos/FreeVirus/UserInterfaceClasses/InstancesTableWidget.py
+Archivo no encontrado en VirusTotal, asignando puntuación de sospechoso
+Excepción al conectar con VirusTotal: 'data'
+PERMITIDO
+PID=21275 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=21288 PPID=21275 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=21308 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=21321 PPID=21308 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=4124 PPID=2914 Path=/home/hector/Documentos/FreeVirus/UserInterfaceClasses/Check_file_screen.py
+Archivo no encontrado en VirusTotal, asignando puntuación de sospechoso
+Excepción al conectar con VirusTotal: 'data'
+PERMITIDO
+PID=21342 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=21355 PPID=21342 Path=/usr/bin/umount
+YA EXISTIAleted)
+[WRITE] /home/hector/.config/Code/User/globalStorage/state.vscdb-journal (deleted)
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/46e912ed
+[WRITE] /home/hector/.config/Code/User/workspaceStorage/1e51b16cf3636019adecdf303c046d48/state.vscdb-journal (deleted)
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/46e912ed
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/Documentos/FreeVirus/verify_functions/hash_verify.py
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/46e912ed
+[WRITE] /home/hector/Documentos/FreeVirus/verify_functions/hash_verify.py
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.config/Code/User/workspaceStorage/1e51b16cf3636019adecdf303c046d48/state.vscdb-journal (deleted)
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/-7982e8a1
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/-7982e8a1
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/-7982e8a1
+[WRITE] /home/hector/Documentos/FreeVirus/UserInterfaceClasses/Active_label.py
+[WRITE] /home/hector/Documentos/FreeVirus/UserInterfaceClasses/Active_label.py
+[WRITE] /home/hector/Documentos/FreeVirus/UserInterfaceClasses/Active_label.py
+[WRITE] /home/hector/Documentos/FreeVirus/UserInterfaceClasses/Active_label.py
+[WRITE] /home/hector/Documentos/FreeVirus/UserInterfaceClasses/Active_label.py
+[EXEC] /usr/bin/kubelet
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/-7982e8a1
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/-7982e8a1
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/-7982e8a1
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/-7982e8a1
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/-7982e8a1
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.config/Code/User/workspaceStorage/1e51b16cf3636019adecdf303c046d48/state.vscdb-journal (deleted)
+[WRITE] /home/hector/.config/Code/Cache/Cache_Data/9f50bddbd978eddd_0
+[WRITE] /home/hector/.config/Code/Cache/Cache_Data/d121e2a6335b7510_0
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/17e6a2bc
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/17e6a2bc
+[WRITE] /home/hector/.config/Code/Cache/Cache_Data/index-dir/temp-index
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/-2e65501a
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/Documentos/FreeVirus/UserInterfaceClasses/InstancesTableWidget.py
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/-2e65501a
+[WRITE] /home/hector/Documentos/FreeVirus/UserInterfaceClasses/InstancesTableWidget.py
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.local/share/gnome-shell/application_state
+[WRITE] /home/hector/.local/share/gnome-shell/application_state
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/-2e65501a
+[WRITE] /home/hector/.config/Code/User/workspaceStorage/1e51b16cf3636019adecdf303c046d48/state.vscdb-journal (deleted)
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/17e6a2bc
+[WRITE] /home/hector/Documentos/FreeVirus/UserInterfaceClasses/Check_file_screen.py
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/Documentos/FreeVirus/UserInterfaceClasses/Check_file_screen.py
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/Documentos/FreeVirus/UserInterfaceClasses/Check_file_screen.py
+[WRITE] /home/hector/Documentos/FreeVirus/UserInterfaceClasses/Check_file_screen.py
+[WRITE] /home/hector/Documentos/FreeVirus/UserInterfaceClasses/Check_file_screen.py
+[WRITE] /home/hector/Documentos/FreeVirus/UserInterfaceClasses/Check_file_screen.py
+[WRITE] /home/hector/Documentos/FreeVirus/UserInterfaceClasses/Check_file_screen.py
+[WRITE] /home/hector/.config/Code/User/workspaceStorage/1e51b16cf3636019adecdf303c046d48/state.vscdb-journal (deleted)
+[WRITE] /home/hector/.config/Code/User/workspaceStorage/1e51b16cf3636019adecdf303c046d48/state.vscdb-journal (deleted)
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/4d01a9d5
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.config/Code/User/History/2672c12/entries.json
+[WRITE] /home/hector/.config/Code/User/History/60ab7610/entries.json
+[WRITE] /home/hector/.config/Code/User/History/32a3f41/entries.json
+[WRITE] /home/hector/.config/Code/User/History/-10918075/entries.json
+[WRITE] /home/hector/.config/Code/User/History/253636a5/entries.json
+[WRITE] /home/hector/Documentos/FreeVirus/databases/hash_cache.py
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.config/Code/User/workspaceStorage/1e51b16cf3636019adecdf303c046d48/state.vscdb-journal (deleted)
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/Documentos/FreeVirus/verify_functions/hash_verify.py
+[WRITE] /home/hector/Documentos/FreeVirus/verify_functions/hash_verify.py
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/46e912ed
+[WRITE] /home/hector/Documentos/FreeVirus/verify_functions/hash_verify.py
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[EXEC] /usr/bin/dash
+[EXEC] /usr/lib/sysstat/debian-sa1
+[EXEC] /usr/bin/dash
+[WRITE] /tmp/#23855203 (deleted)
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/46e912ed
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/46e912ed
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/46e912ed
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/46e912ed
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/Documentos/FreeVirus/verify_functions/hash_verify.py
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/46e912ed
+[WRITE] /home/hector/.config/Code/User/workspaceStorage/1e51b16cf3636019adecdf303c046d48/state.vscdb-journal (deleted)
+[WRITE] /home/hector/Documentos/FreeVirus/verify_functions/hash_verify.py
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.config/Code/User/workspaceStorage/1e51b16cf3636019adecdf303c046d48/state.vscdb-journal (deleted)
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.config/Code/Backups/cabf61dd531e0d5abcf8074d67aee7a0/file/46e912ed
+[WRITE] /home/hector/Documentos/FreeVirus/verify_functions/hash_verify.py
+[WRITE] /home/hector/Documentos/FreeVirus/verify_functions/hash_verify.py
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/.config/Code/User/workspaceStorage/1e51b16cf3636019adecdf303c046d48/state.vscdb-journal (deleted)
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRITE] /home/hector/Documentos/FreeVirus/verify_functions/hash_verify.py
+[WRITE] /home/hector/Documentos/FreeVirus/verify_functions/hash_verify.py
+[WRITE] /home/hector/Documentos/FreeVirus/verify_functions/hash_verify.py
+[WRITE] /home/hector/Documentos/FreeVirus/verify_functions/hash_verify.py
+[EXEC] /usr/bin/kubelet
+[EXEC] /usr/bin/umount
+[WRIT
+PERMITIDO
+PID=4124 PPID=2914 Path=/home/hector/Documentos/FreeVirus/UserInterfaceClasses/Check_file_screen.py
+Archivo no encontrado en VirusTotal, asignando puntuación de sospechoso
+Excepción al conectar con VirusTotal: 'data'
+PERMITIDO
+PID=21377 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=21390 PPID=21377 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=4124 PPID=2914 Path=/home/hector/Documentos/FreeVirus/UserInterfaceClasses/Check_file_screen.py
+Archivo no encontrado en VirusTotal, asignando puntuación de sospechoso
+Excepción al conectar con VirusTotal: 'data'
+PERMITIDO
+PID=4124 PPID=2914 Path=/home/hector/Documentos/FreeVirus/UserInterfaceClasses/Check_file_screen.py
+YA EXISTIA
+PERMITIDO
+PID=4124 PPID=2914 Path=/home/hector/Documentos/FreeVirus/UserInterfaceClasses/Check_file_screen.py
+YA EXISTIA
+PERMITIDO
+PID=4124 PPID=2914 Path=/home/hector/Documentos/FreeVirus/UserInterfaceClasses/Check_file_screen.py
+YA EXISTIA
+PERMITIDO
+PID=4124 PPID=2914 Path=/home/hector/Documentos/FreeVirus/UserInterfaceClasses/Check_file_screen.py
+YA EXISTIA
+PERMITIDO
+PID=21404 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=21416 PPID=21404 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=21436 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=21449 PPID=21436 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=4124 PPID=2914 Path=/home/hector/Documentos/FreeVirus/databases/hash_cache.py
+Archivo no encontrado en VirusTotal, asignando puntuación de sospechoso
+Excepción al conectar con VirusTotal: 'data'
+PERMITIDO
+PID=21474 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=21487 PPID=21474 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=21501 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=21514 PPID=21501 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=4124 PPID=2914 Path=/home/hector/Documentos/FreeVirus/verify_functions/hash_verify.py
+Archivo no encontrado en VirusTotal, asignando puntuación de sospechoso
+Excepción al conectar con VirusTotal: 'data'
+PERMITIDO
+PID=4124 PPID=2914 Path=/home/hector/Documentos/FreeVirus/verify_functions/hash_verify.py
+Archivo no encontrado en VirusTotal, asignando puntuación de sospechoso
+Excepción al conectar con VirusTotal: 'data'
+PERMITIDO
+PID=4124 PPID=2914 Path=/home/hector/Documentos/FreeVirus/verify_functions/hash_verify.py
+Archivo no encontrado en VirusTotal, asignando puntuación de sospechoso
+Excepción al conectar con VirusTotal: 'data'
+PERMITIDO
+PID=21535 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=21548 PPID=21535 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=21551 PPID=21550 Path=/usr/bin/dash
+YA EXISTIA
+PERMITIDO
+PID=21552 PPID=21551 Path=/usr/lib/sysstat/debian-sa1
+YA EXISTIA
+PERMITIDO
+PID=21552 PPID=21551 Path=/usr/bin/dash
+YA EXISTIA
+PERMITIDO
+PID=21550 PPID=986 Path=/tmp/#23855203 (deleted)
+[ERROR HASH] No se pudo abrir /tmp/#23855203 (deleted): [Errno 2] No such file or directory: '/tmp/#23855203 (deleted)'
+PID=21567 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=21581 PPID=21567 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=21595 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=21609 PPID=21595 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=21619 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=21633 PPID=21619 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=4124 PPID=2914 Path=/home/hector/Documentos/FreeVirus/verify_functions/hash_verify.py
+Archivo no encontrado en VirusTotal, asignando puntuación de sospechoso
+Excepción al conectar con VirusTotal: 'data'
+PERMITIDO
+PID=21646 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=21659 PPID=21646 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=4124 PPID=2914 Path=/home/hector/Documentos/FreeVirus/verify_functions/hash_verify.py
+Archivo no encontrado en VirusTotal, asignando puntuación de sospechoso
+Excepción al conectar con VirusTotal: 'data'
+PERMITIDO
+PID=21678 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=21691 PPID=21678 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=21700 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=21713 PPID=21700 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=21721 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=21734 PPID=21721 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=21748 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=21761 PPID=21748 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=21769 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=21782 PPID=21769 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=4124 PPID=2914 Path=/home/hector/Documentos/FreeVirus/verify_functions/hash_verify.py
+Archivo no encontrado en VirusTotal, asignando puntuación de sospechoso
+Excepción al conectar con VirusTotal: 'data'
+PERMITIDO
+PID=4124 PPID=2914 Path=/home/hector/Documentos/FreeVirus/verify_functions/hash_verify.py
+YA EXISTIA
+PERMITIDO
+PID=21797 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=21810 PPID=21797 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=21818 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=21831 PPID=21818 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=4124 PPID=2914 Path=/home/hector/Documentos/FreeVirus/verify_functions/hash_verify.py
+YA EXISTIA
+PERMITIDO
+PID=4124 PPID=2914 Path=/home/hector/Documentos/FreeVirus/verify_functions/hash_verify.py
+YA EXISTIA
+PERMITIDO
+PID=4124 PPID=2914 Path=/home/hector/Documentos/FreeVirus/verify_functions/hash_verify.py
+YA EXISTIA
+PERMITIDO
+PID=4124 PPID=2914 Path=/home/hector/Documentos/FreeVirus/verify_functions/hash_verify.py
+YA EXISTIA
+PERMITIDO
+PID=21845 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=21858 PPID=21845 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=4124 PPID=2914 Path=/home/hector/Documentos/FreeVirus/verify_functions/hash_verify.py
+YA EXISTIA
+PERMITIDO
+PID=4124 PPID=2914 Path=/home/hector/Documentos/FreeVirus/verify_functions/hash_verify.py
+YA EXISTIA
+PERMITIDO
+PID=21870 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=21883 PPID=21870 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=4124 PPID=2914 Path=/home/hector/Documentos/FreeVirus/.gitignore
+Entropy =  2.0
+e9cbb0224c4a3d23a6019ba557e0cd568c1ad5e1582ff1e335fb7d99b7a1055d
+PERMITIDO
+PID=21913 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=21926 PPID=21913 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=4124 PPID=2914 Path=/home/hector/Documentos/FreeVirus/.gitignore
+YA EXISTIA
+PERMITIDO
+PID=4124 PPID=2914 Path=/home/hector/Documentos/FreeVirus/.gitignore
+YA EXISTIA
+PERMITIDO
+PID=21945 PPID=1 Path=/usr/lib/systemd/systemd-executor
+PID=21959 PPID=21945 Path=/usr/bin/umount
+YA EXISTIA
+PERMITIDO
+PID=4124 PPID=2914 Path=/home/hector/Documentos/FreeVirus/UserInterfaceClasses/Active_label.py
+YA EXISTIA
+PERMITIDO
+PID=21966 PPID=4838 Path=/home/hector/Documentos/FreeVirus/.git/objects/20/tmp_obj_42Jtlp
+[ERROR HASH] No se pudo abrir /home/hector/Documentos/FreeVirus/.git/objects/20/tmp_obj_42Jtlp: [Errno 2] No such file or directory: '/home/hector/Documentos/FreeVirus/.git/objects/20/tmp_obj_42Jtlp'
+PID=21966 PPID=4838 Path=/home/hector/Documentos/FreeVirus/.git/objects/8a/tmp_obj_49Qj7e (deleted)
+[ERROR HASH] No se pudo abrir /home/hector/Documentos/FreeVirus/.git/objects/8a/tmp_obj_49Qj7e (deleted): [Errno 2] No such file or directory: '/home/hector/Documentos/FreeVirus/.git/objects/8a/tmp_obj_49Qj7e (deleted)'
+PID=21966 PPID=4838 Path=/home/hector/Documentos/FreeVirus/.git/objects/21/tmp_obj_mbH4NL (deleted)
+[ERROR HASH] No se pudo abrir /home/hector/Documentos/FreeVirus/.git/objects/21/tmp_obj_mbH4NL (deleted): [Errno 2] No such file or directory: '/home/hector/Documentos/FreeVirus/.git/objects/21/tmp_obj_mbH4NL (deleted)'
+PID=21966 PPID=4838 Path=/home/hector/Documentos/FreeVirus/.git/objects/ae/tmp_obj_9cxOOF
+[ERROR HASH] No se pudo abrir /home/hector/Documentos/FreeVirus/.git/objects/ae/tmp_obj_9cxOOF: [Errno 2] No such file or directory: '/home/hector/Documentos/FreeVirus/.git/objects/ae/tmp_obj_9cxOOF'
+PID=21966 PPID=4838 Path=/home/hector/Documentos/FreeVirus/.git/objects/9a/tmp_obj_uPIvDR
+[ERROR HASH] No se pudo abrir /home/hector/Documentos/FreeVirus/.git/objects/9a/tmp_obj_uPIvDR: [Errno 2] No such file or directory: '/home/hector/Documentos/FreeVirus/.git/objects/9a/tmp_obj_uPIvDR'
+PID=21966 PPID=4838 Path=/home/hector/Documentos/FreeVirus/.git/objects/10/tmp_obj_Vu7AzG
+[ERROR HASH] No se pudo abrir /home/hector/Documentos/FreeVirus/.git/objects/10/tmp_obj_Vu7AzG: [Errno 2] No such file or directory: '/home/hector/Documentos/FreeVirus/.git/objects/10/tmp_obj_Vu7AzG'

@@ -8,6 +8,7 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
+# This class creates the hash database showed in databases screen
 class HashTableWidget(QTableWidget):
     def __init__(self):
         super().__init__()

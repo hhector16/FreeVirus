@@ -5,19 +5,24 @@ import requests
 import time
 import json
 from verify_functions import entropy_verify
+from dotenv import load_dotenv
+import os
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ENV_PATH = os.path.join(BASE_DIR, ".env")
+
+load_dotenv(ENV_PATH)
 
 
 
-API_KEY = "b76a6aef7a2aaf60aedcdd3d6bc4f7d656c593c103b12f3b85bcb1fcb8ba11cc"
+API_KEY = os.getenv("API_KEY")
 HEADERS = {
     "x-apikey": API_KEY
 }
 
-min_malware_score = 50
-min_suspicious_score = 20
 
 '''
-EJEMPLO DE ESTRUCTURA DE LA RESPUESTA
+RESPONSE EXAMPLE
 {
   "data": {
     "attributes": {
@@ -33,6 +38,7 @@ EJEMPLO DE ESTRUCTURA DE LA RESPUESTA
 }
 '''
 
+# Function which gets the value of the json file
 def load_json():
     try:
         with open("conf.json","r") as f:
@@ -44,7 +50,7 @@ def load_json():
         min_malware_score = 50
         min_suspicious_score = 20
 
-
+# Function that obtains the hash
 def hash_file_with_path(path):
     sha256 = hashlib.sha256()
     try:
@@ -55,15 +61,21 @@ def hash_file_with_path(path):
     except (FileNotFoundError, PermissionError, OSError):
         return None
 
+# Decides which files shouldnt be analized
 def whitelist(path):
         if(path.startswith(("/usr/lib/x86_64-linux-gnu/", "/usr/bin/git" , "usr/bin/bash" ,"/bin/","/lib/","/sbin/","/lib64/","/proc/","/sys/","/dev/","/run/","/update-motd.d/")) ):
             return True
+
+# Main function. Gets file and analizes it thanks tu VirusTotal. Then it checks if its already in the hashes database
+# If its not, the API call is done and also its verified its entropy, where the file is executed or downloaded...
+# If it exists then an instance is created and stored in the instance database
+# Every file is registered with the pid, ppid and dates so we can have a better feedback
 def verify_sha256(x, pid, ppid,event):
     load_json()
     score = 0
-    if event & 0x00000020:
+    if (event & 0x00000020) != 0:
         event_name = "EXEC"
-    elif event & 0x00000008:
+    elif (event & 0x00000008) != 0:
         event_name = "DOWNLOAD"
     else:
         event_name = "OTHER"
@@ -92,13 +104,13 @@ def verify_sha256(x, pid, ppid,event):
                 r = requests.get(url, headers=HEADERS, timeout=10)
                 
                 
-                if (r.status_code == 404):    # No se sabe de este archivo, se suma puntos de sospechoso
-                    print("Archivo no encontrado en VirusTotal, asignando puntuación de sospechoso")
+                if (r.status_code == 404):    
+                    print("File not found. Setting default score")
                     score = 20
                     state = 1  # unknown
                     hash_cache.store_hash(hash,score,state)
                 elif(r.status_code != 200):
-                    print("Error al conectar con VirusTotal:", r.status_code)
+                    print("Error trying to connect with VirusTotal:", r.status_code)
                     return None
                     
                 data = r.json()
@@ -107,7 +119,7 @@ def verify_sha256(x, pid, ppid,event):
                 malicious = stats.get("malicious", 0)
                 suspicious = stats.get("suspicious", 0)
 
-                # Calcular score simple
+                # Caculate score
                 score += malicious * 10 + suspicious * 5
 
                 # Now we calculate the entropy
@@ -118,7 +130,7 @@ def verify_sha256(x, pid, ppid,event):
                 score += entropy
 
 
-                # Decidir veredicto
+                # Decision making
                 if score >= min_malware_score:
                     state = 2
                 elif score >= min_suspicious_score:
@@ -130,8 +142,7 @@ def verify_sha256(x, pid, ppid,event):
                 hash_cache.store_instance(hash,pid,ppid,x,event_name)
                 score = hash_cache.get_score(hash)
                 state = hash_cache.get_state(hash)
-                print(hash)
                 return hash
             except Exception as e:
-                print("Excepción al conectar con VirusTotal:", str(e))
+                print("Exception :", str(e))
                 return "ERROR "

@@ -2,7 +2,7 @@ from PyQt5.QtCore import QTimer
 from PyQt5.QtWidgets import QWidget, QLabel, QVBoxLayout, QHBoxLayout
 import psutil
 
-
+# This class gets the data from CPU and shows it in the lower part of the CPU screen 
 class CPU_usage_label(QWidget):
     def __init__(self, interval=1000, parent=None):
         super().__init__(parent)

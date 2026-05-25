@@ -1,8 +1,8 @@
 {
-    "min_malware_score": 50.0,
-    "min_suspicious_score": 20.0,
+    "min_malware_score": 50,
+    "min_suspicious_score": 20,
     "selected": 2,
-    "cpu_threshold": 120.0,
+    "cpu_threshold": 170.0,
     "ram_threshold": 5000.0,
     "entropy": 0.5
 }
