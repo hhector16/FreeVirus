@@ -2,17 +2,25 @@ from PyQt5.QtWidgets import QApplication, QTableWidget, QTableWidgetItem
 from PyQt5.QtCore import Qt
 import sqlite3
 from datetime import datetime
-import hash_cache
+from databases import hash_cache
+
 import os
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 class HashTableWidget(QTableWidget):
     def __init__(self):
         super().__init__()
         self.setMinimumWidth(800)
         self.setFrameStyle(0)  
-        self.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)  # quitar scroll horizontal   
-        self.setVerticalScrollBarPolicy(Qt.ScrollBarAsNeeded)    # scroll vertical solo si hace falta
-        self.databaseName = "hashes.db"
+        self.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)  # delete x scroll
+        self.setVerticalScrollBarPolicy(Qt.ScrollBarAsNeeded)    # y scroll if needed
+        self.databaseName = os.path.join(BASE_DIR,"..","databases", "hashes.db")
+
+        self.setHorizontalHeaderLabels(["Hash", "State","Score", "First seen", "Last seen"])
+        self.verticalHeader().setVisible(False)
+        self.setColumnCount(5)
+
 
         if not os.path.exists(self.databaseName):
             hash_cache.init_hashes_db()
@@ -20,11 +28,9 @@ class HashTableWidget(QTableWidget):
 
             data = self.getData()
 
-            self.setColumnCount(5)
             self.setRowCount(len(data))
 
-            self.setHorizontalHeaderLabels(["Hash", "State","Score", "First seen", "Last seen"])
-            self.verticalHeader().setVisible(False)
+            
 
             for fila, (_, hash, state, score, fs, ls) in enumerate(data):
                 self.setItem(fila, 0, QTableWidgetItem(str(hash)))
@@ -49,6 +55,7 @@ class HashTableWidget(QTableWidget):
     def refresh(self):
         data = self.getData()
 
+        self.setRowCount(0)
         self.setRowCount(len(data))
 
         for fila, (_, hash, state, score, fs, ls) in enumerate(data):
@@ -57,5 +64,3 @@ class HashTableWidget(QTableWidget):
             self.setItem(fila, 2, QTableWidgetItem(str(score)))
             self.setItem(fila, 3, QTableWidgetItem(str(datetime.fromtimestamp(fs))))
             self.setItem(fila, 4, QTableWidgetItem(str(datetime.fromtimestamp(ls))))
-
-        return data

@@ -1,11 +1,10 @@
 import hashlib
 from time import strftime
-import hash_cache
+import databases.hash_cache as hash_cache
 import requests
 import time
 import json
-import verifyNumberOfEx
-import entropy_verify
+from verify_functions import entropy_verify
 
 
 
