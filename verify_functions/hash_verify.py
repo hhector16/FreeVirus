@@ -13,7 +13,8 @@ ENV_PATH = os.path.join(BASE_DIR, ".env")
 
 load_dotenv(ENV_PATH)
 
-
+min_suspicious_score = 30
+min_malware_score = 50
 
 API_KEY = os.getenv("API_KEY")
 HEADERS = {
@@ -73,12 +74,10 @@ def whitelist(path):
 def verify_sha256(x, pid, ppid,event):
     load_json()
     score = 0
-    if (event & 0x00000020) != 0:
-        event_name = "EXEC"
-    elif (event & 0x00000008) != 0:
+    if (event & 0x00000008) != 0:
         event_name = "DOWNLOAD"
     else:
-        event_name = "OTHER"
+        event_name = "EXEC"
     
     hash = hash_file_with_path(x)
 

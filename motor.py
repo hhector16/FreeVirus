@@ -14,12 +14,13 @@ PATH_MAX = 4096
 
 FAN_OPEN = 0x00000020
 
-# Socket para mostrar la salida e la interfaz
+# Socket to show the output in the Active_label widget
 
 SOCKET_PATH = "/tmp/salidaPython.sock"
 cliente = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
 cliente.connect(SOCKET_PATH)
 
+# Max workers to analize files. Note that an execution could derivate in various processes so we recommend several workers
 MAX_WORKERS = min(8, (os.cpu_count() or 2) * 2)
 
 executor = ThreadPoolExecutor(
@@ -60,18 +61,11 @@ def handle_client(conn):
             pid, ppid, event, path_bytes = struct.unpack(paquete_format, data)
             path = path_bytes.split(b'\x00', 1)[0].decode(errors="replace")
 
-            if (
-                path.endswith("-journal") or
-                path.endswith("-wal") or
-                "hashes.db" in path or
-                "instances.db" in path
-            ):
+            if (path.endswith("-journal") or path.endswith("-wal") or "hashes.db" in path or "instances.db" in path):
                 conn.sendall(b"ALLOW")
                 return
 
-            if(path != "/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2" and
-               path != "/usr/bin/git" and
-               path != "usr/bin/bash"):
+            if(path != "/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2" and path != "/usr/bin/git" and path != "usr/bin/bash"):
 
                 salida = f"PID={pid} PPID={ppid} Path={path}"
                 print(salida)
@@ -80,10 +74,6 @@ def handle_client(conn):
                     cliente.sendall((salida + "\n").encode())
 
             if(path in whitelist):
-                conn.sendall(b"ALLOW")
-                return
-
-            if event & FAN_OPEN:
                 conn.sendall(b"ALLOW")
                 return
 
@@ -130,7 +120,7 @@ cliente_lock = threading.Lock()
 
 
 
-# SOCKET ENTRE FANOTIFY Y PYTHON
+# SOCKET BEETWEEN FANOTIFY AND PYTHON MOTOR
     
 if os.path.exists(SOCK):
     os.remove(SOCK) 
