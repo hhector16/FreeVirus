@@ -14,6 +14,7 @@
 #define RUTA_SOCKET "/tmp/av.sock"
 #define BUF_LEN 8192
 
+// This is an structure created to pass the data through a socket to the python motor
 #pragma pack(push, 1)
 typedef struct {
     pid_t pid;
@@ -23,6 +24,8 @@ typedef struct {
 } paquete;
 #pragma pack(pop)
 
+
+// Some cleaning paths we shouldnt analize to improve efficiency
 
 int should_analyze(const char *path) {
 
@@ -45,6 +48,7 @@ int should_analyze(const char *path) {
 
 
 
+// Get the parent pid from te child pid
 pid_t get_ppid_from_pid(pid_t pid) {
     char path[64];
     snprintf(path, sizeof(path), "/proc/%d/stat", pid);
@@ -59,6 +63,8 @@ pid_t get_ppid_from_pid(pid_t pid) {
 
     return ppid;
 }
+
+// Main function which connects with user-mode
 
 int ask_python(const char *path, pid_t pid, pid_t ppid, uint64_t event) {
     int sock;
@@ -93,6 +99,8 @@ int ask_python(const char *path, pid_t pid, pid_t ppid, uint64_t event) {
     return (strncmp(response, "DENY", 4) == 0);
 }
 
+// Function to get the path of a child
+
 void get_path(int fd, char *buf, size_t size) {
     char fdpath[64];
     char tmp[PATH_MAX];
@@ -109,6 +117,8 @@ void get_path(int fd, char *buf, size_t size) {
         buf[size - 1] = 0;
     }
 }
+
+// Function which intercepts executions and downloads
 
 void handle_exec(int fan_fd) {
     char buffer[BUF_LEN];
@@ -199,6 +209,7 @@ void handle_exec(int fan_fd) {
     }
 }
 
+// Main function
 int main() {
 
     int fan_exec;
