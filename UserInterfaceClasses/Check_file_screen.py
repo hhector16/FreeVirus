@@ -16,15 +16,23 @@ from PyQt5.QtWidgets import (
 )
 
 from PyQt5.QtCore import pyqtSignal, Qt
+from dotenv import load_dotenv
+import os
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ENV_PATH = os.path.join(BASE_DIR, ".env")
 
-API_KEY = "b76a6aef7a2aaf60aedcdd3d6bc4f7d656c593c103b12f3b85bcb1fcb8ba11cc"
+load_dotenv(ENV_PATH)
 
+API_KEY = os.getenv("API_KEY")
 
+# This class allows you to analyze a selected file
+# It connects to VirusTotal API
 class Check_file_screen(QWidget):
 
     update_text = pyqtSignal(str)
 
+    # Builder
     def __init__(self):
         super().__init__()
 
@@ -154,6 +162,7 @@ class Check_file_screen(QWidget):
             self.response.setText
         )
 
+    # This function opens de file explorer so you select the file
     def abrir_dialogo(self):
 
         file, _ = QFileDialog.getOpenFileName(
@@ -172,9 +181,11 @@ class Check_file_screen(QWidget):
 
             self.on_file_selected(file)
 
+    # Prints the file selected
     def on_file_selected(self, ruta):
         print("File selected:", ruta)
 
+    # Call to VirusTOtal API
     def scan_virustotal(self):
 
         path = self.file
@@ -192,7 +203,7 @@ class Check_file_screen(QWidget):
         )
 
         thread.start()
-
+    
     def scan_worker(self, path):
 
         try:
@@ -259,6 +270,7 @@ class Check_file_screen(QWidget):
                 f"Error:\n{str(e)}"
             )
 
+    # Gets results
     def get_report(self, analysis_id):
 
         url = (
@@ -277,6 +289,7 @@ class Check_file_screen(QWidget):
 
         return r.json()
 
+    # Waits
     def wait_for_analysis(
         self,
         analysis_id,
@@ -298,16 +311,3 @@ class Check_file_screen(QWidget):
             time.sleep(delay)
 
         return None
-
-
-if __name__ == "__main__":
-
-    app = QApplication(sys.argv)
-
-    window = Check_file_screen()
-
-    window.resize(900, 700)
-
-    window.show()
-
-    sys.exit(app.exec_())

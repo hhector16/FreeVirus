@@ -1,6 +1,7 @@
 import math
 from collections import Counter
 
+# This function verifies the entropy of the files analized thanks to the Shannon formula
 def entropy_check(path):
     try:
         with open(path, "rb") as f:
@@ -20,5 +21,5 @@ def entropy_check(path):
         return ent
 
     except Exception as e:
-        print(f"Error leyendo archivo: {e}")
+        print(f"Error: {e}")
         return None

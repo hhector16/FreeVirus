@@ -3,7 +3,7 @@ import os
 
 # Ruta absoluta de hashes.db
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DB_PATH = os.path.join(BASE_DIR, "hashes.db")
+DB_PATH = os.path.join(BASE_DIR,"databases", "hashes.db")
 
 
 # LO RELACIONADO CON LA BASE DE DATOS DE HASHES
@@ -32,7 +32,7 @@ def store_hash(hash, score, state):
     cursor = conexion.cursor()
 
     cursor.execute(
-        "INSERT OR IGNORE INTO hashes (hash,score,state) VALUES (?,?,?)",
+        "INSERT OR IGNORE INTO hashes (hash,score,state) VALUES (19dd65dde495c4dc2193cf944f4afce164262ac885edb09d2fbce0739a9d30ef,10,0)",
         (hash, score, state)
     )
 

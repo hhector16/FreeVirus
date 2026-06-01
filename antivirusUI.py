@@ -3,20 +3,17 @@ import json
 from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QHBoxLayout, QComboBox , QLineEdit , QPushButton , QLabel, QFrame, QStackedWidget, QPlainTextEdit, QScrollArea, QToolButton, QSizePolicy
 from PyQt5.QtGui import QPixmap, QFont
 from PyQt5.QtCore import pyqtSignal, Qt, QSize
-from UserInterfaceClases.Memory_widget import *
-from UserInterfaceClases.CPU_usage_label import *
-from UserInterfaceClases.Active_label import *
-from UserInterfaceClases.HashTableWidget import *
-from UserInterfaceClases.InstancesTableWidget import *
-from UserInterfaceClases.Check_file_screen import *
+from UserInterfaceClasses.Active_label import *
+from UserInterfaceClasses.CPU_usage_label import *
+from UserInterfaceClasses.Check_file_screen import *
+from UserInterfaceClasses.CPU_usage_label import *
+from UserInterfaceClasses.InstancesTableWidget import *
+from UserInterfaceClasses.HashTableWidget import *
+from UserInterfaceClasses.Memory_widget import *
 from PyQt5.QtGui import QRegExpValidator
 from PyQt5.QtCore import QRegExp
 import subprocess
 import psutil
-
-
-
-
 
 class ClickableLabel(QLabel):
     clicked = pyqtSignal()
@@ -54,9 +51,6 @@ class Image_label(QLabel):
 
         self.setStyleSheet("border: 3px solid blue;")
         selected_image = self
-    
-
-
 
     def mousePressEvent(self, event):
         self.seleccionar()
@@ -578,7 +572,7 @@ class rightContainer(QWidget):
 
                 Eicar_btn = QPushButton("EICAR")
                 Eicar_btn.setFixedSize(200, 90)
-                Eicar_btn.clicked.connect(lambda: self.cambiar_pantalla.emit(0))
+                Eicar_btn.clicked.connect(lambda: (self.cambiar_pantalla.emit(0),self.execute_virus()))
 
                 p2 = QLabel("This button will download EICAR so you can see it yourselve in the database and the dashboard!!")
                 p2.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 40px; margin-right: 40px; margin-top:50px") 
@@ -607,6 +601,27 @@ class rightContainer(QWidget):
                 self.layout.addWidget(Eicar_btn, alignment=Qt.AlignHCenter)
                 self.layout.addWidget(p2)
                 self.layout.addWidget(arrow_container)
+
+            def execute_virus(self):
+
+                def run():
+                    process = subprocess.Popen(
+                        ["bash", "./virus/eicar.sh"],
+                        stdout=subprocess.PIPE,
+                        stderr=subprocess.STDOUT,
+                        text=True,
+                        bufsize=1
+                    )
+
+                    # Mostrar logs en tiempo real
+                    for line in process.stdout:
+                        print(f"[virus] {line}", end="")
+
+                    process.wait()
+                    print(f"[virus] Finalizado con código {process.returncode}")
+
+                thread = threading.Thread(target=run, daemon=True)
+                thread.start()
 
         class sim_dos1_screen(QWidget):
             cambiar_pantalla = pyqtSignal(int)
@@ -735,7 +750,7 @@ class rightContainer(QWidget):
 
                 Eicar_btn = QPushButton("DoS virus")
                 Eicar_btn.setFixedSize(200, 90)
-                Eicar_btn.clicked.connect(lambda: self.cambiar_pantalla.emit(0))
+                Eicar_btn.clicked.connect(lambda: (self.cambiar_pantalla.emit(0),self.execute_virus()))
 
                 p2 = QLabel("This button will download this virus. Check the CPU usage screen!!")
                 p2.setStyleSheet("font-size: 16px; color: darkgray; margin-left: 40px; margin-right: 40px; margin-top:50px") 
@@ -765,6 +780,16 @@ class rightContainer(QWidget):
                 self.layout.addWidget(Eicar_btn, alignment=Qt.AlignHCenter)
                 self.layout.addWidget(p2)
                 self.layout.addWidget(arrow_container)
+
+            def execute_virus(self):
+
+                def run():
+                    subprocess.Popen(
+                        ["./virus/saturate"]
+                    )
+
+                thread = threading.Thread(target=run, daemon=True)
+                thread.start()
 
         class sim_adware1screen(QWidget):
             cambiar_pantalla = pyqtSignal(int)
